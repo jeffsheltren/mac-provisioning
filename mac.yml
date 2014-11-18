@@ -1,0 +1,7 @@
+---
+- hosts: local
+  roles:
+    - mac
+    - brew
+    - brew-php
+    - brew-cask

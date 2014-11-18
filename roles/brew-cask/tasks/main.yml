@@ -1,0 +1,3 @@
+---
+- name: Install brew cask
+  command: brew install caskroom/cask/brew-cask

@@ -1,0 +1,3 @@
+---
+brew_php_utils:
+  - drush
