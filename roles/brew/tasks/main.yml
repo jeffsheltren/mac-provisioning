@@ -5,6 +5,9 @@
 - name: Tap the main taps we need
   include: taps.yml
 
+- name: Update brew
+  command: brew update
+
 - name: Install prerequisites
   homebrew: name={{ item }} state=present
   run_once: true
