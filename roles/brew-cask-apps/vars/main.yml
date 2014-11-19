@@ -1,0 +1,57 @@
+---
+cask_manifest:
+# General:
+  - hyperdock
+  - hyperswitch
+  - moom
+  - bartender
+  - caffeine
+  - growlnotify
+  - viscosity
+  - omnigraffle
+  - evernote
+  - adobe-reader
+  - calibre
+  - cleanmymac
+  - citrix-receiver
+  - daisydisk
+  - harvest
+  - microsoft-office
+# Social:
+  - skype
+  - google-hangouts
+  - limechat
+# Browsers:
+  - google-chrome
+  - firefox
+  - opera
+# File sync
+  - google-drive
+  - dropbox
+  - copy
+  - spideroak
+  - cloud
+  - crashplan
+# Media
+  - plex-media-server
+  - plex-home-theater
+  - radiant-player
+  - vlc
+  - handbrake
+  - handbrakecli
+  - lastfm
+# Development
+  - phpstorm
+  - iterm2
+  - sequel-pro
+  - shuttle
+  - sourcetree
+  - tower
+  - dash
+  - gas-mask
+  - vagrant-manager
+  - wireshark
+  - deltawalker
+# Games:
+  - steam
+  - league-of-legends
