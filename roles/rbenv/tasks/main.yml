@@ -7,7 +7,7 @@
   debug:    msg="{{ rbenv_ruby_version.stdout }}"
 
 - name:     Install the version of Ruby we need
-  shell:    rbenv install {{ ruby_version }}
+  shell:    rbenv install {{ item }}
   when:     not rbenv_ruby_version.stdout | search("{{ item }}")
   with_items: ruby_versions
 
