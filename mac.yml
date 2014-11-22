@@ -9,4 +9,4 @@
     # - brew-cask-vagrant
     - brew-rbenv
     - rbenv
-    # - ruby
+    - ruby
