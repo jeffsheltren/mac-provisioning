@@ -9,6 +9,7 @@
 
 - name: Update the user gems
   shell: "{{ rbenv_gem_executable.stdout | quote }} update"
+  sudo: yes
 
 - name: Install gems
   gem: name={{ item }} state=present user_install=yes executable="{{ rbenv_gem_executable.stdout }}"
