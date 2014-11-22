@@ -3,7 +3,10 @@
   roles:
     - mac
     - brew
-    - brew-php
-    - brew-cask
-    - brew-cask-apps
-    - brew-cask-vagrant
+    # - brew-php
+    # - brew-cask
+    # - brew-cask-apps
+    # - brew-cask-vagrant
+    - brew-rbenv
+    - rbenv
+    # - ruby
