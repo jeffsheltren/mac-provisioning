@@ -162,7 +162,7 @@ defaults write com.apple.dock show-process-indicators -bool true
 defaults write com.apple.dock magnification -bool true
 
 # Magnify the dock
-defaults write com.apple.dock magnification -int 77,2013854980469
+defaults write com.apple.dock magnification -float 77.2013854980469
 
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
@@ -198,3 +198,4 @@ defaults write com.apple.dock wvous-tr-modifier -int 524.288
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 524.288
 
+killall Dock
