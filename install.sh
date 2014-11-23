@@ -5,7 +5,7 @@ function ansible_run() {
   sudo CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments pip install ansible;
 
   DIR=${PWD}
-  ansible-playbook -i ${DIR}/inventory ${DIR}/mac.yml
+  ansible-playbook -K -i ${DIR}/inventory ${DIR}/mac.yml
 }
 
 ansible_run
