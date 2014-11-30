@@ -436,13 +436,13 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false
 
 # Show item info near icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :GlobalKeymap dict" ~/Library/Preferences/com.googlecode.iterm2.plist
-/usr/libexec/PlistBuddy -c "Set :GlobalKeymap:0xf702-0x280000 dict" ~/Library/Preferences/com.googlecode.iterm2.plist
-/usr/libexec/PlistBuddy -c "Set :GlobalKeymap:0xf702-0x280000:Text string" ~/Library/Preferences/com.googlecode.iterm2.plist
-/usr/libexec/PlistBuddy -c "Set :GlobalKeymap:0xf702-0x280000:Action integer 2" ~/Library/Preferences/com.googlecode.iterm2.plist
-/usr/libexec/PlistBuddy -c "Set :GlobalKeymap:0xf703-0x280000 dict" ~/Library/Preferences/com.googlecode.iterm2.plist
-/usr/libexec/PlistBuddy -c "Set :GlobalKeymap:0xf703-0x280000:Text string" ~/Library/Preferences/com.googlecode.iterm2.plist
-/usr/libexec/PlistBuddy -c "Set :GlobalKeymap:0xf703-0x280000:Action integer 0" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :GlobalKeyMap dict" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :GlobalKeyMap:0xf702-0x280000 dict" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :GlobalKeyMap:0xf702-0x280000:Text string" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :GlobalKeyMap:0xf702-0x280000:Action integer 2" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :GlobalKeyMap:0xf703-0x280000 dict" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :GlobalKeyMap:0xf703-0x280000:Text string" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :GlobalKeyMap:0xf703-0x280000:Action integer 0" ~/Library/Preferences/com.googlecode.iterm2.plist
 
 ###############################################################################
 # Time Machine                                                                #
