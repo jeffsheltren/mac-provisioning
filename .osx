@@ -555,7 +555,11 @@ defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -boo
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
 
 # Symlink the User package folder to our shared Dropbox folder
-ln -s "~/Dropbox/Libraries/SublimeText 3/Packages/User/" "~/Library/Application Support/Sublime Text 3/Packages/User"
+if [ ! -h ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User]
+  then
+    rm -r "~/Library/Application Support/Sublime Text 3/Packages/User";
+    ln -s "~/Dropbox/Libraries/SublimeText 3/Packages/User/" "~/Library/Application Support/Sublime Text 3/Packages/User";
+fi
 
 # Install Sublime Text settings
 # cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
