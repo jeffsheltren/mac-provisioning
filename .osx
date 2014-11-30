@@ -301,13 +301,13 @@ defaults write com.apple.dock mru-spaces -bool false
 # 12: Notification Center
 # Top left screen corner → Mission Control
 defaults write com.apple.dock wvous-tl-corner -int 2
-defaults write com.apple.dock wvous-tl-modifier -int 524.288
+defaults write com.apple.dock wvous-tl-modifier -float 524,288
 # Top right screen corner → Desktop
 defaults write com.apple.dock wvous-tr-corner -int 4
-defaults write com.apple.dock wvous-tr-modifier -int 524.288
+defaults write com.apple.dock wvous-tr-modifier -float 524,288
 # Bottom left screen corner → Start screen saver
 defaults write com.apple.dock wvous-bl-corner -int 5
-defaults write com.apple.dock wvous-bl-modifier -int 524.288
+defaults write com.apple.dock wvous-bl-modifier -float 524,288
 
 ###############################################################################
 # Safari & WebKit                                                             #
