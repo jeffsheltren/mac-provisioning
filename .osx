@@ -554,6 +554,8 @@ defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -boo
 # Install the command-line tool shortcut
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
 
+# Don't forget to install package control
+
 # Symlink the User package folder to our shared Dropbox folder
 if [ ! -h ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User]
   then
