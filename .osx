@@ -444,6 +444,17 @@ defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false
 /usr/libexec/PlistBuddy -c "Add :GlobalKeyMap:0xf703-0x380000:Text string" ~/Library/Preferences/com.googlecode.iterm2.plist
 /usr/libexec/PlistBuddy -c "Add :GlobalKeyMap:0xf703-0x380000:Action integer 0" ~/Library/Preferences/com.googlecode.iterm2.plist
 
+# Profile 1: Unlimited scrollback
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':'Scrollback Lines' integer 0" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':'Unlimited Scrollback' boolean true" ~/Library/Preferences/com.googlecode.iterm2.plist
+
+# Profile 1: Save lines to scrollback when an app status bar is present
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':'Scrollback With Status Bar' boolean true" ~/Library/Preferences/com.googlecode.iterm2.plist
+
+# Profile 1: Make sure alt left/right work properly
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':'Keyboard Map':'0xf702-0x280000':Text string '^[b'" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':'Keyboard Map':'0xf703-0x280000':Text string '^[f'" ~/Library/Preferences/com.googlecode.iterm2.plist
+
 ###############################################################################
 # Time Machine                                                                #
 ###############################################################################
