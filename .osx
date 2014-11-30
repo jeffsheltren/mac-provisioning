@@ -444,16 +444,19 @@ defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false
 /usr/libexec/PlistBuddy -c "Add :GlobalKeyMap:0xf703-0x380000:Text string" ~/Library/Preferences/com.googlecode.iterm2.plist
 /usr/libexec/PlistBuddy -c "Add :GlobalKeyMap:0xf703-0x380000:Action integer 0" ~/Library/Preferences/com.googlecode.iterm2.plist
 
+# This section doesn't work yet:
 # Profile 1: Unlimited scrollback
-/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':'Scrollback Lines' integer 0" ~/Library/Preferences/com.googlecode.iterm2.plist
-/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':'Unlimited Scrollback' boolean true" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Scrollback Lines' 0" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Unlimited Scrollback' true" ~/Library/Preferences/com.googlecode.iterm2.plist
 
 # Profile 1: Save lines to scrollback when an app status bar is present
-/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':'Scrollback With Status Bar' boolean true" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Scrollback With Status Bar' true" ~/Library/Preferences/com.googlecode.iterm2.plist
 
 # Profile 1: Make sure alt left/right work properly
-/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':'Keyboard Map':'0xf702-0x280000':Text string '^[b'" ~/Library/Preferences/com.googlecode.iterm2.plist
-/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':'Keyboard Map':'0xf703-0x280000':Text string '^[f'" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Keyboard Map':0xf702-0x280000:Action 10" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Keyboard Map':0xf702-0x280000:Text 'b'" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Keyboard Map':0xf703-0x280000:Action 10" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Keyboard Map':0xf703-0x280000:Text 'f'" ~/Library/Preferences/com.googlecode.iterm2.plist
 
 ###############################################################################
 # Time Machine                                                                #
@@ -547,6 +550,12 @@ defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -boo
 ###############################################################################
 # Sublime Text                                                                #
 ###############################################################################
+
+# Install the command-line tool shortcut
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+
+# Symlink the User package folder to our shared Dropbox folder
+ln -s "~/Dropbox/Libraries/SublimeText 3/Packages/User/" "~/Library/Application Support/Sublime Text 3/Packages/User"
 
 # Install Sublime Text settings
 # cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
