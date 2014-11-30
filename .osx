@@ -436,11 +436,16 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false
 
 # Show item info near icons on the desktop and in other icon views
-defaults write com.googlecode.iterm2 GlobalKeyMap -dict '0xf702-0x280000' '<dict>
+defaults write com.googlecode.iterm2 GlobalKeyMap -dict-add '0xf702-0x280000' '<dict>
 <key>Text</key>
 <string></string>
 <key>Action</key>
 <integer>2</integer>'
+defaults write com.googlecode.iterm2 GlobalKeyMap -dict-add '0xf703-0x280000' '<dict>
+<key>Text</key>
+<string></string>
+<key>Action</key>
+<integer>0</integer>'
 # /usr/libexec/PlistBuddy -c "Add :GlobalKeyMap true" ~/Library/Preferences/com.apple.finder.plist
 
 ###############################################################################
@@ -570,7 +575,7 @@ defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -boo
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Mail" "Safari" "SystemUIServer" \
-  "Terminal" "iCal"; do
+  "Terminal" "iTerm" "iCal"; do
   killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
