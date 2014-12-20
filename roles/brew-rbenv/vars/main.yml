@@ -2,6 +2,8 @@
 brew_rbenv_manifest:
   - ruby-build
   - rbenv
+  - rbenv-bundler
+  - rbenv-bundler-ruby-version
   - rbenv-gem-rehash
   - rbenv-binstubs
   - rbenv-use
