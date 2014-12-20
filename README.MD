@@ -2,9 +2,10 @@
 
 ## How to run
 
-Just go to the folder and run ./install.sh
+Just go to the folder and run ./install.sh, this will run the basic installation
+Then run .osx for variable initialization for the OS and some apps
 
-## shell edits
+## Shell edits
 
 ### Bash
 
@@ -29,10 +30,3 @@ autoload bashcompinit
 bashcompinit
 source /etc/bash_completion.d/drush
 ```
-
-## TODO
-
-Drush
-Other missing apps:
-
-Check http://dotfiles.github.io/
