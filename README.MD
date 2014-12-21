@@ -30,3 +30,9 @@ autoload bashcompinit
 bashcompinit
 source /etc/bash_completion.d/drush
 ```
+
+## TODO
+
+* ~/.gitconfig
+* ~/.gitignore
+* ~/.oh-my-zsh/custom/aliases.zsh
