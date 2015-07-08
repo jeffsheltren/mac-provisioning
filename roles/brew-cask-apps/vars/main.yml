@@ -7,12 +7,14 @@ cask_manifest:
   - bartender
   - caffeine
   - growlnotify
+  - unrarx
   - viscosity
   - omnigraffle
   - evernote
   - adobe-reader
   - calibre
   - cleanmymac
+  - onyx
   - citrix-receiver
   - daisydisk
   - harvest
@@ -21,9 +23,12 @@ cask_manifest:
   - skype
   - google-hangouts
   - limechat
+  - slack
+  - hipchat
 # Browsers:
   - google-chrome
   - firefox
+  - firefoxdeveloperedition
   - opera
 # File sync
   - google-drive
@@ -42,6 +47,7 @@ cask_manifest:
   - lastfm
 # Development
   - phpstorm
+  - rubymine
   - iterm2
   - sequel-pro
   - shuttle
@@ -49,9 +55,13 @@ cask_manifest:
   - tower
   - dash
   - gas-mask
+  - virtualbox
+  - vagrant
   - vagrant-manager
   - wireshark
+  - cocoapacketanalyzer
   - deltawalker
+  - chefdk
 # Games:
   - steam
   - league-of-legends
