@@ -7,6 +7,5 @@
     - brew-cask
     - brew-cask-apps
     - brew-cask-vagrant
-    - brew-rbenv
-    - rbenv
-    - ruby
+    - brew-chruby
+    - chruby

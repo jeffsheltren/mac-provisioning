@@ -1,0 +1,4 @@
+---
+brew_chruby_manifest:
+  - ruby-install
+  - chruby
