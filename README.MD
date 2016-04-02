@@ -5,6 +5,9 @@
 Just go to the folder and run ./install.sh, this will run the basic installation
 Then run .osx for variable initialization for the OS and some apps
 
+Git-free:
+cd; curl -#L https://github.com/daften/mac-provisioning/tarball/master | tar -xzv --strip-components 1 --exclude={README.md}
+
 ## Shell edits
 
 ### Bash
@@ -30,6 +33,10 @@ autoload bashcompinit
 bashcompinit
 source /etc/bash_completion.d/drush
 ```
+
+## Manual installs
+
+* BetterSnapTool
 
 ## TODO
 
