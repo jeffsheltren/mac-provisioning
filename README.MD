@@ -36,3 +36,7 @@ source /etc/bash_completion.d/drush
 * ~/.gitconfig
 * ~/.gitignore
 * ~/.oh-my-zsh/custom/aliases.zsh
+
+## Based on
+
+* https://github.com/mathiasbynens/
