@@ -3,22 +3,20 @@ cask_manifest:
 # General:
   - hyperdock
   - hyperswitch
-  - moom
   - bartender
   - caffeine
-  - growlnotify
   - unrarx
   - viscosity
-  - omnigraffle
+#  - omnigraffle
   - evernote
   - adobe-reader
   - calibre
-  - cleanmymac
+#  - cleanmymac
   - onyx
   - citrix-receiver
   - daisydisk
   - harvest
-  - microsoft-office
+#  - microsoft-office
 # Social:
   - skype
   - google-hangouts
@@ -27,19 +25,19 @@ cask_manifest:
   - hipchat
 # Browsers:
   - google-chrome
+  - google-chrome-canary
   - firefox
   - firefoxdeveloperedition
   - opera
 # File sync
   - google-drive
   - dropbox
-  - copy
-  - spideroak
+#  - spideroak
   - cloud
   - crashplan
 # Media
   - plex-media-server
-  - plex-home-theater
+  - plex-home-player
   - radiant-player
   - vlc
   - handbrake
@@ -62,6 +60,3 @@ cask_manifest:
   - cocoapacketanalyzer
   - deltawalker
   - chefdk
-# Games:
-  - steam
-  - league-of-legends

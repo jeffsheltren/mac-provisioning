@@ -2,6 +2,11 @@
 - name: Add PHP to homebrew
   homebrew_tap: tap=homebrew/php state=present
 
+- name: Install PHP versions
+  homebrew: name={{ item }} state=unlinked
+  with_items:
+    - "{{ brew_php_versions }}"
+
 - name: Install prerequisites
   homebrew: name={{ item }} state=present
   with_items:

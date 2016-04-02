@@ -2,10 +2,8 @@
 - hosts: local
   roles:
     - mac
-    - brew
+    - shells
     - brew-php
-    - brew-cask
+    - brew-apps
     - brew-cask-apps
-    - brew-cask-vagrant
-    - brew-chruby
-    - chruby
+    - ruby

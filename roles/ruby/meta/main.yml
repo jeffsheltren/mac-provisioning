@@ -1,2 +1,2 @@
 dependencies:
-  - { role: chruby }
+  - { role: brew }

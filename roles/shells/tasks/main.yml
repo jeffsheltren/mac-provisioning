@@ -1,0 +1,8 @@
+---
+- name: Install brew apps (e.g. zsh)
+  homebrew: name={{ item }} state=present
+  with_items:
+    - "{{ brew_shell }}"
+
+- name:           Install oh-my-zsh
+  shell:          'curl -L http://install.ohmyz.sh | sh'

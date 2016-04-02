@@ -1,0 +1,5 @@
+---
+brew_shell:
+  - bash-completion
+  - zsh
+  - zsh-completions

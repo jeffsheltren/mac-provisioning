@@ -1,5 +1,0 @@
----
-- name: Install brew cask
-  command: brew install caskroom/cask/brew-cask
-  args:
-    creates:      /usr/local/bin/brew-cask.rb

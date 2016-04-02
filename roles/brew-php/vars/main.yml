@@ -1,5 +1,10 @@
 ---
-brew_php_utils:
-  - drush
+brew_php_versions:
   - php54
+  - php55
+  - php56
+brew_php_utils:
+  - php-version
+  - drush
   - php-code-sniffer
+  - drupal-code-sniffer

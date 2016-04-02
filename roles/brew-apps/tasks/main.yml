@@ -1,0 +1,7 @@
+---
+
+- name: Install brew apps
+  homebrew: name={{ item }} state=present
+  run_once: true
+  with_items:
+    - "{{ brew_apps }}"
