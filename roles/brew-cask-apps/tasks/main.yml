@@ -7,8 +7,9 @@
   with_items:
     - "{{ cask_manifest }}"
 
-- name: Link cask apps to Alfred
-  command: brew cask alfred
+# Link to Alfred, not using Alfred ATM
+#- name: Link cask apps to Alfred
+#  command: brew cask alfred
 
 - name: Cleanup casks
   command: brew cask cleanup
