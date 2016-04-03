@@ -25,7 +25,6 @@ cask_manifest:
   - hipchat
 # Browsers:
   - google-chrome
-  - google-chrome-canary
   - firefox
   - opera
 # File sync
