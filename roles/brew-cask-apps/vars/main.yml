@@ -37,7 +37,7 @@ cask_manifest:
   - crashplan
 # Media
   - plex-media-server
-  - plex-home-player
+  - plex-media-player
   - radiant-player
   - vlc
   - handbrake

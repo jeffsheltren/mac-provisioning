@@ -1,3 +1,4 @@
 ---
 brew_apps:
-# Shell:
+  - wget
+  - node

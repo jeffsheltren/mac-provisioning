@@ -1,10 +1,11 @@
 ---
 
 - name: Install casks
-  homebrew: name={{ item }} state=present
+  homebrew_cask: name={{ item }} state=present
   environment:
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
-  with_items: cask_manifest
+  with_items:
+    - "{{ cask_manifest }}"
 
 - name: Link cask apps to Alfred
   command: brew cask alfred
