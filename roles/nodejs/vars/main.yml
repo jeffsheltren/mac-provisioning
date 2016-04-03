@@ -1,0 +1,6 @@
+---
+npm_modules:
+  - grunt-cli
+  - ssh-copy-id
+  - node
+#  - tmux
