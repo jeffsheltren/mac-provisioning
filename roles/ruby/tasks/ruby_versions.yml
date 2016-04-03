@@ -1,6 +1,8 @@
 ---
 - name:     Check if the correct version of Ruby is already installed
-  command:  "chruby"
+  shell: >
+    executable=/bin/bash source /usr/local/share/chruby/chruby.sh;
+    chruby
   register: chruby_versions
 
 - name:     Debug info
@@ -8,5 +10,6 @@
 
 - name:     Install the versions of Ruby we need
   shell:    ruby-install ruby {{ item }}
-  when:     not rbenv_ruby_version.stdout | search("ruby-{{ item }}")
-  with_items: ruby_versions
+  when:     not chruby_versions.stdout | search("ruby-{{ item }}")
+  with_items:
+    - "{{ ruby_versions }}"

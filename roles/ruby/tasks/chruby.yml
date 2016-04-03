@@ -4,8 +4,10 @@
   run_once: true
   with_items: brew_chruby_manifest
 
-- name: Add chruby to bash shell initialization
-  template: src=chruby.sh.j2 dest=/etc/profile.d/chruby.sh mode=u+x
+# On Mac /etc/profile.d doesn't exist
+# TODO: fix
+#- name: Add chruby to bash shell initialization
+#  template: src=chruby.sh.j2 dest=/etc/profile.d/chruby.sh mode=u+x
 
 - name: Add chruby plugin to zsh
   replace: dest=~/.zshrc regexp=^plugins=\(((.(?!chruby))*)\)$ replace='plugins=(\1 chruby)'
