@@ -27,7 +27,6 @@ cask_manifest:
   - google-chrome
   - google-chrome-canary
   - firefox
-  - firefoxdeveloperedition
   - opera
 # File sync
   - google-drive
