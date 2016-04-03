@@ -1,0 +1,6 @@
+---
+brew_packages:
+  - wget
+  - ssh-copy-id
+  - node
+#  - tmux

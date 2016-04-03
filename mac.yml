@@ -4,6 +4,6 @@
     - mac
     - shells
     - brew-php
-    - brew-apps
+    - brew-packages
     - brew-cask-apps
     - ruby
