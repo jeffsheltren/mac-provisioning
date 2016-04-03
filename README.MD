@@ -34,9 +34,16 @@ bashcompinit
 source /etc/bash_completion.d/drush
 ```
 
-## Manual installs
+## Manual installs (App store mainly)
 
-* BetterSnapTool
+* BetterSnapTool (https://itunes.apple.com/be/app/bettersnaptool/id417375580?mt=12)
+* MONIT (https://itunes.apple.com/be/app/monit/id1014850245?mt=12)
+* HyperDock (for license)(https://itunes.apple.com/be/app/hyperdock/id449830122?mt=12)
+* Reeder 3 (https://itunes.apple.com/be/app/reeder-3/id880001334?mt=12)
+* LastPass (https://itunes.apple.com/be/app/lastpass-password-manager/id926036361?mt=12)
+* Wunderlist (https://itunes.apple.com/be/app/wunderlist-to-do-list-tasks/id410628904?mt=12)
+* Omron Bi-LINK Gateway (https://itunes.apple.com/be/app/omron-bi-link-gateway/id927492133?mt=12)
+* OneDrive (https://itunes.apple.com/be/app/onedrive/id823766827?mt=12)
 
 ## TODO
 
