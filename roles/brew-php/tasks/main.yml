@@ -2,24 +2,10 @@
 - name: Add PHP to homebrew
   homebrew_tap: tap=homebrew/php state=present
 
-# Versions have to done like this, since they need to be unlinked and install + unlink can't in one step
-- name: Install PHP 5.4
-  homebrew: name=php54 state=present
-
-- name: Unlink PHP 5.4
-  homebrew: name=php54 state=unlinked
-
-- name: Install PHP 5.5
-  homebrew: name=php55 state=present
-
-- name: Unlink PHP 5.5
-  homebrew: name=php55 state=unlinked
-
-- name: Install PHP 5.6
-  homebrew: name=php56 state=present
-
-- name: Unlink PHP 5.6
-  homebrew: name=php56 state=unlinked
+- name: Install PHP versions
+  include: php_install.yml php_version={{item}}
+  with_items:
+    - "{{ brew_php_versions }}"
 
 - name: Install PHP utilities
   homebrew: name={{ item }} state=present

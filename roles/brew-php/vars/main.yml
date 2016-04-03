@@ -8,3 +8,4 @@ brew_php_utils:
   - drush
   - php-code-sniffer
   - drupal-code-sniffer
+  - phpmd
