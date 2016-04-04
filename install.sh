@@ -8,4 +8,5 @@ function ansible_run() {
   ansible-playbook -K -i ${DIR}/inventory ${DIR}/mac.yml
 }
 
+xcode-select --install;
 ansible_run
