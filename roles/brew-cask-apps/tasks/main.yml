@@ -23,3 +23,6 @@
 - name: Unarchive varnish tmbundle
   unarchive: src=varnish.tmbundle.zip
              dest=~/.tmbundles
+
+- name: Put SequelProFavorites in place
+  copy: src=SequelProFavorites.plist dest=~/Library/Application\ Support/Sequel\ Pro/Data/Favorites.plist
