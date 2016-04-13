@@ -22,4 +22,4 @@
 
 - name: Unarchive varnish tmbundle
   unarchive: src=varnish.tmbundle.zip
-             dest=~/.tmbundles/varnish.tmbundle
+             dest=~/.tmbundles
