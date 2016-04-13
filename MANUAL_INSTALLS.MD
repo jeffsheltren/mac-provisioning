@@ -60,7 +60,7 @@ Synchronization settings
 
 ## Sequel Pro
 
-Just insert the passwords, they are stored in the keychain then. Favorites are the plist and can be exported by selecting and exporting all the favorites.
+Just insert the passwords, they are stored in the keychain then. Favorites are the plist and can be exported by getting the contents from ~/Library/Application\ Support/Sequel\ Pro/Data/Favorites.plist.
 
 See https://coderwall.com/p/pyenna/moving-favorites-from-sequel-pro-don-t-read-the-manual-if-you-are-using-the-last-sequel-pro-version (extra Data path!)
 
