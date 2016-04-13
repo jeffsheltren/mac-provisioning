@@ -56,6 +56,7 @@ Add the hosts and import the databases.
 Synchronization settings
 * Go to Preferences -> General
 * Set Sync Favorites to "via Dropbox"
+* Authorize transmit to use dropbox and use the master password for this tool for synchronization
 
 
 ## Sequel Pro
