@@ -13,3 +13,9 @@
 
 - name: Cleanup casks
   command: brew cask cleanup
+
+- name: Clone ruby tmbundle
+  git: repo=https://github.com/textmate/ruby.tmbundle.git
+       dest=~/.tmbundles/ruby.tmbundle
+       version=master
+       accept_hostkey=yes
