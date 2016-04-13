@@ -19,3 +19,7 @@
        dest=~/.tmbundles/ruby.tmbundle
        version=master
        accept_hostkey=yes
+
+- name: Unarchive varnish tmbundle
+  unarchive: src=varnish.tmbundle.zip
+             dest=~/.tmbundles/varnish.tmbundle
