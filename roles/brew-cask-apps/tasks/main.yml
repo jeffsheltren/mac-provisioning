@@ -25,4 +25,5 @@
              dest=~/.tmbundles
 
 - name: Put SequelProFavorites in place
-  copy: src=SequelProFavorites.plist dest=~/Library/Application\ Support/Sequel\ Pro/Data/Favorites.plist
+  copy: src=SequelProFavorites.plist
+        dest="~/Library/Application\ Support/Sequel\ Pro/Data/Favorites.plist"
