@@ -30,6 +30,7 @@ cask_manifest:
 # File sync
   - google-drive
   - dropbox
+  - transmit
 #  - spideroak
   - cloud
   - crashplan
