@@ -47,6 +47,7 @@ cask_manifest:
   - rubymine
   - iterm2
   - sequel-pro
+  - mamp
   - shuttle
   - sourcetree
   - tower
