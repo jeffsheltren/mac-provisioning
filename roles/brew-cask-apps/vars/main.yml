@@ -44,7 +44,7 @@ cask_manifest:
   - lastfm
 # Development
   - phpstorm
-  - sublime
+  - sublime-text3
   - rubymine
   - iterm2
   - sequel-pro
