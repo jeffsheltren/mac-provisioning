@@ -66,7 +66,7 @@ See https://coderwall.com/p/pyenna/moving-favorites-from-sequel-pro-don-t-read-t
 
 ## Git tower
 
-
+TODO: git configuration
 
 
 # TODO for automatic

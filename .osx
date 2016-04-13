@@ -670,6 +670,30 @@ defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false
 /usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Keyboard Map':0xf703-0x280000:Text 'f'" ~/Library/Preferences/com.googlecode.iterm2.plist
 
 ###############################################################################
+# Git Tower                                                                   #
+###############################################################################
+
+# Set the default directory for cloned repositories to Workspaces folder
+defaults write com.fournova.Tower2 GTUserDefaultsDefaultCloningDirectory ~/Workspaces
+
+# Set the default terminal to iterm2
+defaults write com.fournova.Tower2 GTUserDefaultsDefaultTerminalApplication com.googlecode.iterm2
+
+# Set the default sync interval to 5 minutes
+defaults write com.fournova.Tower2 GTUserDefaultsAutoFetchTimeInterval -int 300
+
+# Set to always update submodules automatically
+defaults write com.fournova.Tower2 GTUserDefaultsAlwaysAutoUpdateSubmodules -bool true
+
+# Set to not warn when discarding changes in a chunk
+defaults write com.fournova.Tower2 GTUserDefaultsAlwaysDiscardDiffContent -bool false
+
+# Set the directory diff tool
+defaults write com.fournova.Tower2 GTUserDefaultsDiffToolIdentifier deltawalker
+defaults write com.fournova.Tower2 GTUserDefaultsMergeToolIdentifier deltawalker
+
+
+###############################################################################
 # Time Machine                                                                #
 ###############################################################################
 
