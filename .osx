@@ -366,8 +366,8 @@ defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</
 
 # Add folders to the Dock extra items
 # First item needs -array; other items -array-add
-defaults write com.apple.dock persistent-others -array '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications</string><key>_CFURLStringType</key><integer>0</integer></dict></dict><key>tile-type</key><string>directory-tile</string></dict>'
-defaults write com.apple.dock persistent-others -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>file:///Users/daften/Downloads</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+defaults write com.apple.dock persistent-others -array '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications</string><key>_CFURLStringType</key><integer>0</integer></dict><key>displayas</key><integer>1</integer></dict><key>tile-type</key><string>directory-tile</string></dict>'
+defaults write com.apple.dock persistent-others -array "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>${HOME}/Downloads</string><key>_CFURLStringType</key><integer>0</integer></dict><key>displayas</key><integer>1</integer></dict><key>tile-type</key><string>directory-tile</string></dict>"
 
 # Set the Dock to the right of the screen
 defaults write com.apple.dock orientation -string "right"
