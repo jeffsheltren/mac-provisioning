@@ -9,3 +9,5 @@ brew_php_utils:
   - php-code-sniffer
   - drupal-code-sniffer
   - phpmd
+  - composer
+  - wp-cli
