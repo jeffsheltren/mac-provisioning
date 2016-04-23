@@ -856,8 +856,8 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 # Symlink the User package folder to our shared Dropbox folder
 if [ ! -h ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User ]
   then
-    rm -r "~/Library/Application Support/Sublime Text 3/Packages/User";
-    ln -s "~/Dropbox/Libraries/SublimeText 3/Packages/User/" "~/Library/Application Support/Sublime Text 3/Packages/User";
+    rm -r "$HOME/Library/Application Support/Sublime Text 3/Packages/User";
+    ln -s "$HOME/Dropbox/Libraries/SublimeText3/Packages/User/" "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User";
 fi
 
 # Install Sublime Text settings
