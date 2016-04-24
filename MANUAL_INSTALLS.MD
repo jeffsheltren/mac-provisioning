@@ -44,6 +44,10 @@ See http://stackoverflow.com/questions/16451359/is-it-possible-to-get-ruby-synta
 
 Add the bundle for Varnish on path /Users/daften/.tmbundles/varnish.tmbundle
 
+## Sublime Text
+
+Install package control (See https://packagecontrol.io/installation)
+
 ## MAMP Pro
 
 Update the settings files so the following settings are set:
