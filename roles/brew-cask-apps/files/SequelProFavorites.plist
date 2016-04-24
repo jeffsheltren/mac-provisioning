@@ -7,134 +7,8 @@
 		<key>Children</key>
 		<array>
 			<dict>
-				<key>database</key>
-				<string></string>
-				<key>host</key>
-				<string>127.0.0.1</string>
-				<key>id</key>
-				<integer>-803347161211812721</integer>
-				<key>name</key>
-				<string>DO_web</string>
-				<key>port</key>
-				<string></string>
-				<key>socket</key>
-				<string></string>
-				<key>sshHost</key>
-				<string>46.101.172.174</string>
-				<key>sshKeyLocation</key>
-				<string></string>
-				<key>sshKeyLocationEnabled</key>
-				<integer>0</integer>
-				<key>sshPort</key>
-				<string></string>
-				<key>sshUser</key>
-				<string>root</string>
-				<key>sslCACertFileLocation</key>
-				<string></string>
-				<key>sslCACertFileLocationEnabled</key>
-				<integer>0</integer>
-				<key>sslCertificateFileLocation</key>
-				<string></string>
-				<key>sslCertificateFileLocationEnabled</key>
-				<integer>0</integer>
-				<key>sslKeyFileLocation</key>
-				<string></string>
-				<key>sslKeyFileLocationEnabled</key>
-				<integer>0</integer>
-				<key>type</key>
-				<integer>2</integer>
-				<key>useSSL</key>
-				<integer>0</integer>
-				<key>user</key>
-				<string>root</string>
-			</dict>
-			<dict>
 				<key>Children</key>
 				<array>
-					<dict>
-						<key>database</key>
-						<string>bwow_be</string>
-						<key>host</key>
-						<string>bwow.be.mysql</string>
-						<key>id</key>
-						<integer>8269902680225663343</integer>
-						<key>name</key>
-						<string>BWOW</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string></string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string></string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>bwow_be</string>
-					</dict>
-					<dict>
-						<key>database</key>
-						<string>PxgwPKCx</string>
-						<key>host</key>
-						<string>chirojomego.be.mysql</string>
-						<key>id</key>
-						<integer>3929144403351159402</integer>
-						<key>name</key>
-						<string>Chiro Jomego</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string>ssh.chirojomego.be</string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string>chirojomego.be</string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>2</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>chirojomego_be</string>
-					</dict>
 					<dict>
 						<key>database</key>
 						<string>sn3601</string>
@@ -176,48 +50,6 @@
 						<integer>0</integer>
 						<key>user</key>
 						<string>sn3601</string>
-					</dict>
-					<dict>
-						<key>database</key>
-						<string></string>
-						<key>host</key>
-						<string>127.0.0.1</string>
-						<key>id</key>
-						<integer>2256731362176985483</integer>
-						<key>name</key>
-						<string>mufflermen.net</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string>mufflermen.net</string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string>zmuffler5082net</string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>2</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>mufflermen</string>
 					</dict>
 					<dict>
 						<key>database</key>
@@ -271,28 +103,30 @@
 				<key>Children</key>
 				<array>
 					<dict>
+						<key>colorIndex</key>
+						<integer>-1</integer>
 						<key>database</key>
-						<string></string>
+						<string>bwow_drupal</string>
 						<key>host</key>
 						<string>127.0.0.1</string>
 						<key>id</key>
-						<integer>-2259160490596899954</integer>
+						<integer>8269902680225663343</integer>
 						<key>name</key>
-						<string>aegir-ugent.inceptum.eu</string>
+						<string>BWOW</string>
 						<key>port</key>
 						<string></string>
 						<key>socket</key>
 						<string></string>
 						<key>sshHost</key>
-						<string>aegir-ugent.inceptum.eu</string>
+						<string>www54.totaalholding.nl</string>
 						<key>sshKeyLocation</key>
 						<string></string>
 						<key>sshKeyLocationEnabled</key>
 						<integer>0</integer>
 						<key>sshPort</key>
-						<string>2222</string>
+						<string>4000</string>
 						<key>sshUser</key>
-						<string>dblomme</string>
+						<string>bwow</string>
 						<key>sslCACertFileLocation</key>
 						<string></string>
 						<key>sslCACertFileLocationEnabled</key>
@@ -310,237 +144,34 @@
 						<key>useSSL</key>
 						<integer>0</integer>
 						<key>user</key>
-						<string>root</string>
+						<string>bwow_drupal</string>
 					</dict>
-					<dict>
-						<key>database</key>
-						<string></string>
-						<key>host</key>
-						<string>127.0.0.1</string>
-						<key>id</key>
-						<integer>-5519818597520824172</integer>
-						<key>name</key>
-						<string>aegir1.iminds.be</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string>aegir1.iminds.be</string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string>daften</string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>2</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>root</string>
-					</dict>
+				</array>
+				<key>IsExpanded</key>
+				<true/>
+				<key>Name</key>
+				<string>Neostrada</string>
+			</dict>
+			<dict>
+				<key>Children</key>
+				<array>
 					<dict>
 						<key>colorIndex</key>
 						<integer>-1</integer>
 						<key>database</key>
 						<string></string>
 						<key>host</key>
-						<string>127.0.0.1</string>
+						<string>10.135.4.187</string>
 						<key>id</key>
-						<integer>-7457030319049476239</integer>
+						<integer>2994964961833808255</integer>
 						<key>name</key>
-						<string>aegir1.iminds.be new</string>
+						<string>aegir1.production.imindsx.org</string>
 						<key>port</key>
 						<string></string>
 						<key>socket</key>
 						<string></string>
 						<key>sshHost</key>
-						<string>193.191.148.22</string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string>daften</string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>2</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>root</string>
-					</dict>
-					<dict>
-						<key>database</key>
-						<string></string>
-						<key>host</key>
-						<string>127.0.0.1</string>
-						<key>id</key>
-						<integer>8813856571559950728</integer>
-						<key>name</key>
-						<string>Atlassian server</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string>jira-student.atlantis.ugent.be</string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string>atlantis</string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>2</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>root</string>
-					</dict>
-					<dict>
-						<key>database</key>
-						<string></string>
-						<key>host</key>
-						<string>127.0.0.1</string>
-						<key>id</key>
-						<integer>-1399620525320077440</integer>
-						<key>name</key>
-						<string>iandeportal.iminds.be</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string>iandeportal.iminds.be</string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string>sysadmin</string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>2</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>root</string>
-					</dict>
-					<dict>
-						<key>database</key>
-						<string></string>
-						<key>host</key>
-						<string>127.0.0.1</string>
-						<key>id</key>
-						<integer>-8961114949107743365</integer>
-						<key>name</key>
-						<string>ICTLabs</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string>aegir.update.eitictlabs.eu</string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string>daften</string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>2</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>root</string>
-					</dict>
-					<dict>
-						<key>colorIndex</key>
-						<integer>-1</integer>
-						<key>database</key>
-						<string></string>
-						<key>host</key>
-						<string>127.0.0.1</string>
-						<key>id</key>
-						<integer>6760100908081512579</integer>
-						<key>name</key>
-						<string>aegir1.inceptum.eu (DigitalOcean)</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string>aegir1.inceptum.eu</string>
+						<string>aegir1.production.imindsx.org</string>
 						<key>sshKeyLocation</key>
 						<string></string>
 						<key>sshKeyLocationEnabled</key>
@@ -613,22 +244,20 @@
 						<string>root</string>
 					</dict>
 					<dict>
-						<key>colorIndex</key>
-						<integer>-1</integer>
 						<key>database</key>
 						<string></string>
 						<key>host</key>
-						<string>10.135.4.187</string>
+						<string>127.0.0.1</string>
 						<key>id</key>
-						<integer>2994964961833808255</integer>
+						<integer>-5519818597520824172</integer>
 						<key>name</key>
-						<string>aegir1.production.imindsx.org</string>
+						<string>aegir1.iminds.be</string>
 						<key>port</key>
 						<string></string>
 						<key>socket</key>
 						<string></string>
 						<key>sshHost</key>
-						<string>aegir1.production.imindsx.org</string>
+						<string>aegir1.iminds.be</string>
 						<key>sshKeyLocation</key>
 						<string></string>
 						<key>sshKeyLocationEnabled</key>
@@ -665,179 +294,6 @@
 			<dict>
 				<key>Children</key>
 				<array>
-					<dict>
-						<key>host</key>
-						<string>127.0.0.1</string>
-						<key>id</key>
-						<integer>246276920339539072</integer>
-						<key>name</key>
-						<string>aegir.inceptum.eu (DigitalOcean)</string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string>aegir.inceptum.eu</string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string>daften</string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>2</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>root</string>
-					</dict>
-					<dict>
-						<key>database</key>
-						<string></string>
-						<key>host</key>
-						<string>127.0.0.1</string>
-						<key>id</key>
-						<integer>6408316341524955252</integer>
-						<key>name</key>
-						<string>inceptum.eu</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string>inceptum.eu</string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string>daften</string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>2</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>root</string>
-					</dict>
-				</array>
-				<key>IsExpanded</key>
-				<true/>
-				<key>Name</key>
-				<string>Inceptum</string>
-			</dict>
-			<dict>
-				<key>Children</key>
-				<array>
-					<dict>
-						<key>database</key>
-						<string></string>
-						<key>host</key>
-						<string>172.28.128.3</string>
-						<key>id</key>
-						<integer>811808646559468415</integer>
-						<key>name</key>
-						<string>172.28.128.3</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string></string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string></string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>root</string>
-					</dict>
-					<dict>
-						<key>database</key>
-						<string></string>
-						<key>host</key>
-						<string>127.0.0.1</string>
-						<key>id</key>
-						<integer>-467133997535476862</integer>
-						<key>name</key>
-						<string>aegir1.picabit.be</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string>aegir1.picabit.be</string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string>daften</string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>2</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>root</string>
-					</dict>
 					<dict>
 						<key>database</key>
 						<string></string>
@@ -922,29 +378,38 @@
 						<key>user</key>
 						<string>root</string>
 					</dict>
+				</array>
+				<key>IsExpanded</key>
+				<true/>
+				<key>Name</key>
+				<string>Picabit</string>
+			</dict>
+			<dict>
+				<key>Children</key>
+				<array>
 					<dict>
 						<key>database</key>
 						<string></string>
 						<key>host</key>
 						<string>127.0.0.1</string>
 						<key>id</key>
-						<integer>-8308203269395836034</integer>
+						<integer>6408316341524955252</integer>
 						<key>name</key>
-						<string>Neostrada test</string>
+						<string>inceptum.eu</string>
 						<key>port</key>
 						<string></string>
 						<key>socket</key>
 						<string></string>
 						<key>sshHost</key>
-						<string>testneo.inceptum.eu</string>
+						<string>inceptum.eu</string>
 						<key>sshKeyLocation</key>
 						<string></string>
 						<key>sshKeyLocationEnabled</key>
 						<integer>0</integer>
 						<key>sshPort</key>
-						<string>4000</string>
+						<string></string>
 						<key>sshUser</key>
-						<string>incept1x</string>
+						<string>daften</string>
 						<key>sslCACertFileLocation</key>
 						<string></string>
 						<key>sslCACertFileLocationEnabled</key>
@@ -962,31 +427,33 @@
 						<key>useSSL</key>
 						<integer>0</integer>
 						<key>user</key>
-						<string>incept1x_user</string>
+						<string>root</string>
 					</dict>
 					<dict>
+						<key>colorIndex</key>
+						<integer>-1</integer>
 						<key>database</key>
 						<string></string>
 						<key>host</key>
 						<string>127.0.0.1</string>
 						<key>id</key>
-						<integer>9183949197731506552</integer>
+						<integer>6760100908081512579</integer>
 						<key>name</key>
-						<string>Vagrant</string>
+						<string>aegir.inceptum.eu (DigitalOcean)</string>
 						<key>port</key>
 						<string></string>
 						<key>socket</key>
 						<string></string>
 						<key>sshHost</key>
-						<string>127.0.0.1</string>
+						<string>aegir.inceptum.eu</string>
 						<key>sshKeyLocation</key>
 						<string></string>
 						<key>sshKeyLocationEnabled</key>
 						<integer>0</integer>
 						<key>sshPort</key>
-						<string>2222</string>
+						<string></string>
 						<key>sshUser</key>
-						<string>vagrant</string>
+						<string>daften</string>
 						<key>sslCACertFileLocation</key>
 						<string></string>
 						<key>sslCACertFileLocationEnabled</key>
@@ -1010,7 +477,7 @@
 				<key>IsExpanded</key>
 				<true/>
 				<key>Name</key>
-				<string>Picabit</string>
+				<string>Spinnovation</string>
 			</dict>
 			<dict>
 				<key>Children</key>
@@ -1188,57 +655,6 @@
 				<true/>
 				<key>Name</key>
 				<string>StudentenInternet</string>
-			</dict>
-			<dict>
-				<key>Children</key>
-				<array>
-					<dict>
-						<key>database</key>
-						<string></string>
-						<key>host</key>
-						<string>127.0.0.1</string>
-						<key>id</key>
-						<integer>-4397921860285448568</integer>
-						<key>name</key>
-						<string>developer.webinos.org</string>
-						<key>port</key>
-						<string></string>
-						<key>socket</key>
-						<string></string>
-						<key>sshHost</key>
-						<string>developer.webinos.org</string>
-						<key>sshKeyLocation</key>
-						<string></string>
-						<key>sshKeyLocationEnabled</key>
-						<integer>0</integer>
-						<key>sshPort</key>
-						<string></string>
-						<key>sshUser</key>
-						<string>dblomme</string>
-						<key>sslCACertFileLocation</key>
-						<string></string>
-						<key>sslCACertFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslCertificateFileLocation</key>
-						<string></string>
-						<key>sslCertificateFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>sslKeyFileLocation</key>
-						<string></string>
-						<key>sslKeyFileLocationEnabled</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>2</integer>
-						<key>useSSL</key>
-						<integer>0</integer>
-						<key>user</key>
-						<string>root</string>
-					</dict>
-				</array>
-				<key>IsExpanded</key>
-				<true/>
-				<key>Name</key>
-				<string>webinos</string>
 			</dict>
 		</array>
 		<key>IsExpanded</key>
