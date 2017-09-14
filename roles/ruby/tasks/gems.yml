@@ -1,6 +1,0 @@
----
-
-- name: Install and update gems
-  include: gem_install_update.yml ruby_version={{item}}
-  with_items:
-    - "{{ ruby_versions }}"

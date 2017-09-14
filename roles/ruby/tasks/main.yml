@@ -1,9 +1,0 @@
----
-- name: Install chruby and ruby-install
-  include: chruby.yml
-
-- name: Install ruby versions
-  include: ruby_versions.yml
-
-- name: Install gems
-  include: gems.yml
