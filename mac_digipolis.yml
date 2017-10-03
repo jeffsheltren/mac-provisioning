@@ -2,7 +2,7 @@
 - hosts: local
   vars:
     homebrew_installed_packages:
-      - mysql
+      # - mysql
   roles:
     - homebrew
     - shells
