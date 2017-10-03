@@ -1,1 +1,3 @@
 .idea
+roles_contrib/*
+!roles_contrib/.gitkeep
