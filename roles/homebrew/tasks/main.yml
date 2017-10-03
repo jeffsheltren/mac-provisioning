@@ -1,4 +1,4 @@
 ---
 
-- import_role:
-      name: geerlingguy.homebrew
+- include_role:
+    name: geerlingguy.homebrew
