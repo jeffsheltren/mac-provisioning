@@ -3,3 +3,4 @@
   vars:
   roles:
     - homebrew
+    - development-web
