@@ -1,0 +1,33 @@
+---
+- name: Install Sublime-text
+  homebrew_cask:
+    name: sublime-text
+    state: present
+- name: Install Git Tower
+  homebrew_cask:
+    name: tower
+    state: present
+- name: Install Shuttle
+  homebrew_cask:
+    name: shuttle
+    state: present
+- name: Install Dash
+  homebrew_cask:
+    name: dash
+    state: present
+- name: Install Virtualbox
+  homebrew_cask:
+    name: virtualbox
+    state: present
+- name: Install Vagrant
+  homebrew_cask:
+    name: vagrant
+    state: present
+- name: Install Vagrant manager
+  homebrew_cask:
+    name: vagrant-manager
+    state: present
+- name: Install ChefDK
+  homebrew_cask:
+    name: chefdk
+    state: present
