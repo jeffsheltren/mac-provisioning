@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: all
   vars:
     homebrew_installed_packages:
       # - mysql
