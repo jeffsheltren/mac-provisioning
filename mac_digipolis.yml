@@ -1,8 +1,5 @@
 ---
 - hosts: all
   vars:
-    homebrew_installed_packages:
-      # - mysql
   roles:
     - homebrew
-    - shells
