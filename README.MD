@@ -8,8 +8,6 @@ Then run .osx for variable initialization for the OS and some apps
 Git-free:
 cd; mkdir -p provision; curl -#L https://github.com/daften/mac-provisioning/tarball/master | tar -xzv --exclude={README.md} -C provision --strip-components 1
 
-
-
 ## Shell edits
 
 ### Bash
