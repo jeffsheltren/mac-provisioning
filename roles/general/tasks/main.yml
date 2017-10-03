@@ -1,0 +1,5 @@
+---
+- name: Install general casks
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - "{{ cask_manifest }}"
