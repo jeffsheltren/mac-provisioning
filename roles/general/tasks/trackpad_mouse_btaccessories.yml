@@ -1,0 +1,68 @@
+---
+###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
+
+# - name: Trackpad enable tap to click for this user and for the login screen
+#   block:
+#     - osx_defaults:
+#         domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+#         key: Clicking
+#         type: bool
+#         value: true
+#         state: present
+#     - osx_defaults:
+#         domain: NSGlobalDomain
+#         host: currentHost
+#         key: com.apple.mouse.tapBehavior
+#         type: int
+#         value: 1
+#         state: present
+#     - osx_defaults:
+#         domain: NSGlobalDomain
+#         key: com.apple.mouse.tapBehavior
+#         type: int
+#         value: 1
+#         state: present
+# - name: Trackpad enable tap to click for this user and for the login screen
+#   block:
+#     - osx_defaults:
+#         domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+#         key: TrackpadCornerSecondaryClick
+#         type: int
+#         value: 2
+#         state: present
+#     - osx_defaults:
+#         domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+#         key: TrackpadRightClick
+#         type: bool
+#         value: true
+#         state: present
+#     - osx_defaults:
+#         domain: NSGlobalDomain
+#         host: currentHost
+#         key: com.apple.trackpad.trackpadCornerClickBehavior
+#         type: int
+#         value: 1
+#         state: present
+#     - osx_defaults:
+#         domain: NSGlobalDomain
+#         host: currentHost
+#         key: com.apple.trackpad.enableSecondaryClick
+#         type: bool
+#         value: true
+#         state: present
+# - name: Disable “natural” (Lion-style) scrolling
+#   osx_defaults:
+#     domain: NSGlobalDomain
+#     key: com.apple.swipescrolldirection
+#     type: bool
+#     value: false
+#     state: present
+- name: Increase sound quality for Bluetooth headphones/headsets
+  osx_defaults:
+    domain: com.apple.BluetoothAudioAgent
+    key: Apple Bitpool Min (editable)
+    type: int
+    value: 40
+    state: present
