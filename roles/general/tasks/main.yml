@@ -8,3 +8,4 @@
   command: osascript -e 'tell application "System Preferences" to quit'
 
 - include: system.yml
+- include: ssd_tweaks.yml

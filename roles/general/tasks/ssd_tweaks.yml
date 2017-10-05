@@ -1,0 +1,16 @@
+---
+- name: Disable hibernation (speeds up entering sleep mode)
+  command: pmset -a hibernatemode 0
+  become: true
+# Disabled for now since SIP prevents this manipulation
+# - name: "Remove the sleep image file to save disk space"
+#   file:
+#     path: /private/var/vm/sleepimage
+#     state: absent
+#   become: true
+# - name: "Create a zero-byte file instead…"
+#   command: "touch /private/var/vm/sleepimage"
+#   become: true
+# - name: "…and make sure it can’t be rewritten"
+#   command: "chflags uchg /private/var/vm/sleepimage"
+#   become: true
