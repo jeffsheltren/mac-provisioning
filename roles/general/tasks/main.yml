@@ -11,3 +11,4 @@
 - include: ssd_tweaks.yml
 - include: trackpad_mouse_btaccessories.yml
 - include: input.yml
+- include: screen.yml
