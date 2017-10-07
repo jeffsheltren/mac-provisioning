@@ -6,6 +6,11 @@
 - set_fact: 'plistbuddy=/usr/libexec/PlistBuddy'
 - set_fact: 'finder_plist=~/Library/Preferences/com.apple.finder.plist'
 
+# Check if FK_StandardViewSettings exists in finder_plist
+- command: '{{ plistbuddy }} -c "print FK_StandardViewSettings" {{ finder_plist }} 2>/dev/null'
+  register: FK_StandardViewSettings
+  ignore_errors: True
+
 - name: "Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons"
   osx_defaults:
     domain: com.apple.finder
@@ -188,9 +193,10 @@
 - name: Show item info near icons on the desktop and in other icon views
   command: '{{ plistbuddy }} -c "{{ item }}" {{ finder_plist }}'
   with_items:
-    - "Set :DesktopViewSettings:IconViewSettings:showItemInfo true"
-    - "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true"
-    - "Set :StandardViewSettings:IconViewSettings:showItemInfo true"
+    - Set :DesktopViewSettings:IconViewSettings:showItemInfo true
+    - Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true
+    - Set :StandardViewSettings:IconViewSettings:showItemInfo true
+  when: (not item | search("FK_StandardViewSettings")) or FK_StandardViewSettings|succeeded
 - name: Show item info near icons on the desktop and in other icon views
   command: '{{ plistbuddy }} -c "{{ item }}" {{ finder_plist }}'
   with_items:
@@ -201,18 +207,21 @@
     - "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid"
     - "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid"
     - "Set :StandardViewSettings:IconViewSettings:arrangeBy grid"
+  when: (not item | search("FK_StandardViewSettings")) or FK_StandardViewSettings|succeeded
 - name: Increase grid spacing for icons on the desktop and in other icon views
   command: '{{ plistbuddy }} -c "{{ item }}" {{ finder_plist }}'
   with_items:
     - "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100"
     - "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 100"
     - "Set :StandardViewSettings:IconViewSettings:gridSpacing 100"
+  when: (not item | search("FK_StandardViewSettings")) or FK_StandardViewSettings|succeeded
 - name: Increase the size of icons on the desktop and in other icon views
   command: '{{ plistbuddy }} -c "{{ item }}" {{ finder_plist }}'
   with_items:
     - "Set :DesktopViewSettings:IconViewSettings:iconSize 80"
     - "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80"
     - "Set :StandardViewSettings:IconViewSettings:iconSize 80"
+  when: (not item | search("FK_StandardViewSettings")) or FK_StandardViewSettings|succeeded
 - name: Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
   osx_defaults:
