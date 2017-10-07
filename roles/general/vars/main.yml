@@ -15,3 +15,7 @@ casks_general:
   - google-backup-and-sync
   - dropbox
   - lastfm
+
+mas_installed_apps:
+  - name: Amphetamine
+    id: 937984704
