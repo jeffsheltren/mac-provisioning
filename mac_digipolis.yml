@@ -13,7 +13,6 @@
   #     default: 'Hb#Ym618nN'
   #     when: app_store_password is undefined
   roles:
-    - homebrew
     - general
     - development
     - development-web
