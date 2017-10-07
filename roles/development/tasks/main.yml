@@ -31,3 +31,8 @@
   homebrew_cask:
     name: chefdk
     state: present
+
+- name: Install .gitignore
+  copy:
+    src: files/.gitignore
+    dest: ~/.gitignore
