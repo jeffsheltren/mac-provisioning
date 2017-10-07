@@ -45,6 +45,9 @@ source /etc/bash_completion.d/drush
 
 ## TODO
 
+Set /usr/local/bin in bashrc path
+Set wheel group or user as passwordless sudo, or cask install gives issues
+
 * ~/.gitconfig
 * ~/.gitignore
 * ~/.oh-my-zsh/custom/aliases.zsh
