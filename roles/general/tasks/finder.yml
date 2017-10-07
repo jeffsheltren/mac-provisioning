@@ -5,6 +5,7 @@
 
 - set_fact: 'plistbuddy=/usr/libexec/PlistBuddy'
 - set_fact: 'finder_plist=~/Library/Preferences/com.apple.finder.plist'
+- set_fact: 'dropbox_icon=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns'
 
 # Check if FK_StandardViewSettings exists in finder_plist
 - command: '{{ plistbuddy }} -c "print FK_StandardViewSettings" {{ finder_plist }} 2>/dev/null'
@@ -248,9 +249,16 @@
   command: chflags nohidden ~/Library
 - name: Show the /Volumes folder
   command: chflags nohidden /Volumes
+  become: true
+- stat:
+    path: "{{ dropbox_icon }}"
+  register: dropbox_icon_exists
 - name: Remove Dropbox’s green checkmark icons in Finder
-  command: 'file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
-            [ -e "${file}" ] && mv -f "${file}" "${file}.bak"'
+  copy:
+    remote_src: yes
+    src: "{{ dropbox_icon }}"
+    dest: "{{ dropbox_icon }}.bak"
+  when: dropbox_icon_exists.stat.exists
 - name: 'Expand the following File Info panes: “General”, “Open with”, and “Sharing & Permissions”'
   command: 'defaults write com.apple.finder FXInfoPanesExpanded -dict \
             General -bool true \
