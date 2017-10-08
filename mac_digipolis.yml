@@ -16,3 +16,32 @@
     - general
     - development
     - development-web
+  tasks:
+    - name: Make sure we have a 'wheel' group
+      group:
+        name: wheel
+        state: present
+
+    - name: Allow 'wheel' group to have passwordless sudo
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^%wheel'
+        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+      become: true
+
+    - name: Add daften users to wheel group
+      user:
+        name: daften
+        groups: wheel
+        append: yes
+        state: present
+      become: true
+
+
+    - name: Set up authorized keys for the deployer user
+      authorized_key:
+        user: daften
+        key: "{{item}}"
+      with_file:
+        - /Users/blommedi/.ssh/id_rsa.pub
