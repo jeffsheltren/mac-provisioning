@@ -14,3 +14,4 @@
 - include: screen.yml
 - include: finder.yml
 - include: dock.yml
+- include: spotlight.yml
