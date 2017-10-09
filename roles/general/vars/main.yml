@@ -1,5 +1,5 @@
 ---
-casks_general:
+homebrew_cask_apps:
   - hyperdock
   # - hyperswitch
   - bartender
