@@ -211,12 +211,10 @@
         paths: "~/Library/Application Support/Dock"
         patterns: "*-*.db"
       register: dock_db_files
-    - debug:
-        msg: "Item: {{ dock_db_files }}"
     - file:
         path: "{{ item.path }}"
         state: absent
-      with_items: dock_db_files.files
+      with_items: "{{ dock_db_files.files }}"
 
 # Hot corners
 # Possible values:
