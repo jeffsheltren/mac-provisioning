@@ -14,6 +14,7 @@
   #     when: app_store_password is undefined
   roles:
     - general
+    - shells
     - development
     - development-web
   tasks:
