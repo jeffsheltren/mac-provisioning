@@ -1,7 +1,7 @@
 ---
 casks_general:
   - hyperdock
-  - hyperswitch
+  # - hyperswitch
   - bartender
   - caffeine
   - adobe-acrobat-reader
