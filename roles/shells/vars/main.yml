@@ -1,5 +1,8 @@
 ---
-brew_shell:
+homebrew_installed_packages:
   - bash-completion
   - zsh
   - zsh-completions
+
+homebrew_cask_apps:
+  - iterm2

@@ -1,0 +1,4 @@
+---
+- name: restart Terminal
+  command: killall Terminal
+  ignore_errors: yes
