@@ -1,0 +1,32 @@
+---
+
+- name: Make sure we have a '{{ sudo_group }}' group
+  group:
+    name: sudo_group
+    state: present
+- name: Allow '{{ sudo_group }}' group to have passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%{{ sudo_group }}'
+    line: '%{{ sudo_group }} ALL=(ALL) NOPASSWD: ALL'
+  become: true
+- name: Add {{ sudo_user }} users to {{ sudo_group }} group
+  user:
+    name: sudo_user
+    groups: sudo_group
+    append: yes
+    state: present
+  become: true
+- stat:
+    path: public_key
+  register: public_key_stat
+- name: Set up authorized keys for the deployer user
+  authorized_key:
+    user: sudo_user
+    key: "{{ item }}"
+  with_file:
+    - public_key
+  when:
+    - public_key_stat is defined
+    - public_key_stat|isreg
