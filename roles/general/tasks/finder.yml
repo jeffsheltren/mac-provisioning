@@ -330,13 +330,29 @@
     value: false
     state: present
   notify: restart Finder
+
+- name: Check if ~/Library is hidden
+  shell: ls -aOl ~/Library | sed -n 2p
+  ignore_errors: true
+  changed_when: false
+  register: library_hidden
 - name: Show the ~/Library folder
   command: chflags nohidden ~/Library
+  when: library_hidden.stdout | search("hidden")
   notify: restart Finder
+
+- name: Check if /Volumes is hidden
+  shell: ls -aOl /Volumes | sed -n 2p
+  become: true
+  ignore_errors: true
+  changed_when: false
+  register: volumes_hidden
 - name: Show the /Volumes folder
   command: chflags nohidden /Volumes
   become: true
+  when: volumes_hidden.stdout | search("hidden")
   notify: restart Finder
+
 - stat:
     path: "{{ dropbox_icon }}"
   register: dropbox_icon_exists
@@ -347,6 +363,7 @@
     dest: "{{ dropbox_icon }}.bak"
   when: dropbox_icon_exists.stat.exists
   notify: restart Finder
+
 - name: 'Expand the following File Info panes: “General”, “Open with”, and “Sharing & Permissions”'
   command: 'defaults write com.apple.finder FXInfoPanesExpanded -dict \
             General -bool true \
