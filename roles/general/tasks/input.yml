@@ -85,17 +85,17 @@
     type: bool
     value: true
     state: present
-  become: true
+  become: yes
 
 - name: Check the timezone
   command: systemsetup -gettimezone
-  become: true
+  become: yes
   ignore_errors: true
   changed_when: false
   register: timezone
 - name: Set the timezone; see `sudo systemsetup -listtimezones` for other values
   command: systemsetup -settimezone "Europe/Brussels"
-  become: true
+  become: yes
   when: not timezone.stdout | match(".*Europe/Brussels$")
 
 # SIP needs to be disabled for this

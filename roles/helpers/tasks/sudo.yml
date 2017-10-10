@@ -10,14 +10,14 @@
     state: present
     regexp: '^%{{ sudo_group }}'
     line: '%{{ sudo_group }} ALL=(ALL) NOPASSWD: ALL'
-  become: true
+  become: yes
 - name: Add {{ sudo_user }} users to {{ sudo_group }} group
   user:
     name: "{{ sudo_user }}"
     groups: "{{ sudo_group }}"
     append: yes
     state: present
-  become: true
+  become: yes
 - name: Check for local key
   local_action:
     module: stat

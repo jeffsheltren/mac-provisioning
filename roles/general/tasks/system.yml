@@ -1,16 +1,16 @@
 ---
 # - name: Set standby delay to 24 hours (default is 1 hour)
 #   command: pmset -a standbydelay 86400
-#   become: true
+#   become: yes
 - name: Check the sound effects on boot
   command: nvram -x SystemAudioVolume
-  become: true
+  become: yes
   ignore_errors: true
   changed_when: false
   register: sound_effects
 - name: Disable the sound effects on boot
   command: nvram SystemAudioVolume=" "
-  become: true
+  become: yes
   when: not sound_effects.stdout | match("^SystemAudioVolume\s*$")
 # TODO
 # Menu bar: hide the Time Machine, Volume, and User icons
@@ -152,27 +152,27 @@
     type: string
     value: HostName
     state: present
-  become: true
+  become: yes
 
 - name: Check restart automatically if the computer freezes
   command: systemsetup -getrestartfreeze
-  become: true
+  become: yes
   ignore_errors: true
   changed_when: false
   register: restartfreeze
 - name: Restart automatically if the computer freezes
   command: systemsetup -setrestartfreeze on
-  become: true
+  become: yes
   when: not restartfreeze.stdout | match(".*On$")
 - name: Check never go into computer sleep mode
   command: systemsetup -getcomputersleep
-  become: true
+  become: yes
   ignore_errors: true
   changed_when: false
   register: computersleep
 - name: Never go into computer sleep mode
   command: systemsetup -setcomputersleep off
-  become: true
+  become: yes
   when: not computersleep.stdout | match(".*Never$")
 
 - name: Check for software updates daily, not just once per week

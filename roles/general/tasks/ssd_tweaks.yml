@@ -2,13 +2,13 @@
 
 - name: Check disable hibernation
   command: pmset -g
-  become: true
+  become: yes
   ignore_errors: true
   changed_when: false
   register: pmset
 - name: Disable hibernation (speeds up entering sleep mode)
   command: pmset -a hibernatemode 0
-  become: true
+  become: yes
   when: not pmset.stdout | search("hibernatemode\s*0")
 
 # Disabled for now since SIP prevents this manipulation
@@ -16,10 +16,10 @@
 #   file:
 #     path: /private/var/vm/sleepimage
 #     state: absent
-#   become: true
+#   become: yes
 # - name: "Create a zero-byte file instead…"
 #   command: "touch /private/var/vm/sleepimage"
-#   become: true
+#   become: yes
 # - name: "…and make sure it can’t be rewritten"
 #   command: "chflags uchg /private/var/vm/sleepimage"
-#   become: true
+#   become: yes

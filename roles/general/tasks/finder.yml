@@ -342,13 +342,13 @@
 
 - name: Check if /Volumes is hidden
   shell: ls -aOl /Volumes | sed -n 2p
-  become: true
+  become: yes
   ignore_errors: true
   changed_when: false
   register: volumes_hidden
 - name: Show the /Volumes folder
   command: chflags nohidden /Volumes
-  become: true
+  become: yes
   when: volumes_hidden.stdout | search("hidden")
   notify: restart Finder
 
