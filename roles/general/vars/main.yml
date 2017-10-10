@@ -1,4 +1,7 @@
 ---
+homebrew_installed_packages:
+  - dockutil
+
 homebrew_cask_apps:
   - hyperdock
   # - hyperswitch
@@ -27,3 +30,24 @@ mas_installed_apps:
     id: 880001334
   - name: Wunderlist
     id: 410628904
+
+dockitems_to_remove:
+  - Launchpad
+  - Contacts
+  - Notes
+  - Reminders
+  - Maps
+  - Pages
+  - Photos
+  - FaceTime
+  - iBooks
+  - App Store
+  - System Preferences
+
+dockitems_to_persist:
+  - name: VirtualBox
+    path: /Applications/VirtualBox.app
+    position: 2
+  - name: Terminal
+    path: /Applications/Utilities/Terminal.app
+    position: 5

@@ -10,3 +10,7 @@
 - include: finder.yml
 - include: dock.yml
 - include: spotlight.yml
+
+- import_role:
+    name: helpers
+    tasks_from: dock
