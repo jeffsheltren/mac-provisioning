@@ -2,7 +2,7 @@
 
 - name: Make sure we have a '{{ sudo_group }}' group
   group:
-    name: sudo_group
+    name: "{{ sudo_group }}"
     state: present
 - name: Allow '{{ sudo_group }}' group to have passwordless sudo
   lineinfile:
@@ -13,20 +13,23 @@
   become: true
 - name: Add {{ sudo_user }} users to {{ sudo_group }} group
   user:
-    name: sudo_user
-    groups: sudo_group
+    name: "{{ sudo_user }}"
+    groups: "{{ sudo_group }}"
     append: yes
     state: present
   become: true
-- stat:
-    path: public_key
+- name: Check for local key
+  local_action:
+    module: stat
+    path: "{{ public_key }}"
   register: public_key_stat
 - name: Set up authorized keys for the deployer user
   authorized_key:
-    user: sudo_user
+    user: "{{ sudo_user }}"
     key: "{{ item }}"
   with_file:
-    - public_key
+    - "{{ public_key }}"
   when:
     - public_key_stat is defined
-    - public_key_stat|isreg
+    - public_key_stat.stat.exists
+    - public_key_stat.stat.isreg

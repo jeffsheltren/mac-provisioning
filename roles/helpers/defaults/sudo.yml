@@ -1,4 +1,0 @@
----
-public_key: ~/.ssh/id_rsa.pub
-sudo_group: wheel
-sudo_user: daften
