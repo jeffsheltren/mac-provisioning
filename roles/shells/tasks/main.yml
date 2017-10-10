@@ -94,28 +94,37 @@
 - include_tasks: plistbuddy_set_add.yml
   with_items:
     - name: :GlobalKeyMap
+      type: ''
       value: dict
     - name: :GlobalKeyMap:0xf702-0x380000
+      type: ''
       value: dict
     - name: :GlobalKeyMap:0xf702-0x380000:Text
+      type: ''
       value: string
     - name: :GlobalKeyMap:0xf702-0x380000:Action
-      value: integer 2
+      type: integer
+      value: 2
     - name: :GlobalKeyMap:0xf703-0x380000
+      type: ''
       value: dict
     - name: :GlobalKeyMap:0xf703-0x380000:Text
+      type: ''
       value: string
     - name: :GlobalKeyMap:0xf703-0x380000:Action
-      value: integer 0
+      type: integer
+      value: 0
 
 # This section doesn't work yet:
 - name: "Profile 1: Unlimited scrollback"
   include_tasks: plistbuddy_set_add.yml
   with_items:
     - name: :'New Bookmarks':0:'Scrollback Lines'
-      value: "0"
+      type: integer
+      value: 0
     - name: :'New Bookmarks':0:'Unlimited Scrollback'
-      value: "true"
+      type: bool
+      value: true
 - name: "Profile 1: Save lines to scrollback when an app status bar is present"
   include_tasks: plistbuddy_set_add.yml
   with_items:
@@ -126,14 +135,14 @@
   include_tasks: plistbuddy_set_add.yml
   with_items:
     - name: ":'New Bookmarks':0:'Keyboard Map':0xf702-0x280000:Action"
-      type: int
-      value: "10"
+      type: integer
+      value: 10
     - name: ":'New Bookmarks':0:'Keyboard Map':0xf702-0x280000:Text"
       type: string
       value: b
     - name: ":'New Bookmarks':0:'Keyboard Map':0xf703-0x280000:Action"
-      type: int
-      value: "10"
+      type: integer
+      value: 10
     - name: ":'New Bookmarks':0:'Keyboard Map':0xf703-0x280000:Text"
       type: string
       value: f

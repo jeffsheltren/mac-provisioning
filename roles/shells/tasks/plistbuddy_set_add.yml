@@ -10,8 +10,8 @@
   command: '{{ plistbuddy }} -c "Set {{ item.name }} {{ item.value }}" {{ iterm2_plist }}'
   when:
     - check | succeeded
-    - not item.value | search("dict")
-    - not item.value == check.stdout
+    - not item.value|string | search("dict")
+    - not item.value|string == check.stdout
 - name: Add value with PlistBuddy
   command: '{{ plistbuddy }} -c "Add {{ item.name }} {{ item.type }} {{ item.value }}" {{ iterm2_plist }}'
   when: check|failed
