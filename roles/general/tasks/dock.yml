@@ -106,7 +106,7 @@
         domain: com.apple.dock
         key: largesize
         type: float
-        value: 77.2013854980469
+        value: 77.2
         state: present
       notify: restart Dock
 
@@ -270,14 +270,14 @@
   block:
     - osx_defaults:
         domain: com.apple.dock
-        key: wvous-tl-corner
+        key: wvous-tr-corner
         type: integer
         value: 4
         state: present
       notify: restart Dock
     - osx_defaults:
         domain: com.apple.dock
-        key: wvous-tl-modifier
+        key: wvous-tr-modifier
         type: integer
         value: 524288
         state: present
@@ -286,14 +286,14 @@
   block:
     - osx_defaults:
         domain: com.apple.dock
-        key: wvous-tl-corner
+        key: wvous-bl-corner
         type: integer
         value: 5
         state: present
       notify: restart Dock
     - osx_defaults:
         domain: com.apple.dock
-        key: wvous-tl-modifier
+        key: wvous-bl-modifier
         type: integer
         value: 524288
         state: present
@@ -302,14 +302,14 @@
   block:
     - osx_defaults:
         domain: com.apple.dock
-        key: wvous-tl-corner
+        key: wvous-br-corner
         type: integer
         value: 10
         state: present
       notify: restart Dock
     - osx_defaults:
         domain: com.apple.dock
-        key: wvous-tl-modifier
+        key: wvous-br-modifier
         type: integer
         value: 524288
         state: present

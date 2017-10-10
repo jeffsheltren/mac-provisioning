@@ -27,7 +27,7 @@
     type: string
     value: png
     state: present
-- name: Save screenshots to the desktop
+- name: Disable shadow in screenshots
   osx_defaults:
     domain: com.apple.screencapture
     key: disable-shadow
