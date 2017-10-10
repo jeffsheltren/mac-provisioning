@@ -29,3 +29,5 @@
         name: development
     - import_role:
         name: development-web
+  environment:
+    PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
