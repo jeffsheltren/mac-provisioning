@@ -13,14 +13,9 @@
   #     default: 'Hb#Ym618nN'
   #     when: app_store_password is undefined
   tasks:
-    - command: 'echo $PATH'
-    - shell: 'echo $PATH'
     - import_role:
         name: helpers
         tasks_from: sudo
-    - import_role:
-        name: helpers
-        tasks_from: path
     - import_role:
         name: general
     - import_role:
