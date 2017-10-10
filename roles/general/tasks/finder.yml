@@ -10,7 +10,8 @@
 # Check if FK_StandardViewSettings exists in finder_plist
 - command: '{{ plistbuddy }} -c "print FK_StandardViewSettings" {{ finder_plist }} 2>/dev/null'
   register: FK_StandardViewSettings
-  ignore_errors: True
+  ignore_errors: true
+  changed_when: false
 
 - name: "Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons"
   osx_defaults:
@@ -216,43 +217,94 @@
         value: true
         state: present
       notify: restart Finder
+
 - name: Show item info near icons on the desktop and in other icon views
-  command: '{{ plistbuddy }} -c "{{ item }}" {{ finder_plist }}'
+  include_role:
+    name: helpers
+    tasks_from: plistbuddy
   with_items:
-    - Set :DesktopViewSettings:IconViewSettings:showItemInfo true
-    - Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true
-    - Set :StandardViewSettings:IconViewSettings:showItemInfo true
-  when: (not item | search("FK_StandardViewSettings")) or FK_StandardViewSettings|succeeded
+    - name: ":DesktopViewSettings:IconViewSettings:showItemInfo"
+      type: bool
+      value: true
+      plist: "{{ finder_plist }}"
+    - name: ":FK_StandardViewSettings:IconViewSettings:showItemInfo"
+      type: bool
+      value: true
+      plist: "{{ finder_plist }}"
+    - name: ":StandardViewSettings:IconViewSettings:showItemInfo"
+      type: bool
+      value: true
+      plist: "{{ finder_plist }}"
   notify: restart Finder
+
 - name: Show item info near icons on the desktop and in other icon views
-  command: '{{ plistbuddy }} -c "{{ item }}" {{ finder_plist }}'
+  include_role:
+    name: helpers
+    tasks_from: plistbuddy
   with_items:
-    - "Set :DesktopViewSettings:IconViewSettings:labelOnBottom false"
+    - name: ":DesktopViewSettings:IconViewSettings:labelOnBottom"
+      type: bool
+      value: false
+      plist: "{{ finder_plist }}"
   notify: restart Finder
+
 - name: Enable snap-to-grid for icons on the desktop and in other icon views
-  command: '{{ plistbuddy }} -c "{{ item }}" {{ finder_plist }}'
+  include_role:
+    name: helpers
+    tasks_from: plistbuddy
   with_items:
-    - "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid"
-    - "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid"
-    - "Set :StandardViewSettings:IconViewSettings:arrangeBy grid"
-  when: (not item | search("FK_StandardViewSettings")) or FK_StandardViewSettings|succeeded
+    - name: ":DesktopViewSettings:IconViewSettings:arrangeBy"
+      type: string
+      value: grid
+      plist: "{{ finder_plist }}"
+    - name: ":FK_StandardViewSettings:IconViewSettings:arrangeBy"
+      type: string
+      value: grid
+      plist: "{{ finder_plist }}"
+    - name: ":StandardViewSettings:IconViewSettings:arrangeBy"
+      type: string
+      value: grid
+      plist: "{{ finder_plist }}"
   notify: restart Finder
+
 - name: Increase grid spacing for icons on the desktop and in other icon views
-  command: '{{ plistbuddy }} -c "{{ item }}" {{ finder_plist }}'
+  include_role:
+    name: helpers
+    tasks_from: plistbuddy
   with_items:
-    - "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100"
-    - "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 100"
-    - "Set :StandardViewSettings:IconViewSettings:gridSpacing 100"
-  when: (not item | search("FK_StandardViewSettings")) or FK_StandardViewSettings|succeeded
+    - name: ":DesktopViewSettings:IconViewSettings:gridSpacing"
+      type: integer
+      value: 100
+      plist: "{{ finder_plist }}"
+    - name: ":FK_StandardViewSettings:IconViewSettings:gridSpacing"
+      type: integer
+      value: 100
+      plist: "{{ finder_plist }}"
+    - name: ":StandardViewSettings:IconViewSettings:gridSpacing"
+      type: integer
+      value: 100
+      plist: "{{ finder_plist }}"
   notify: restart Finder
+
 - name: Increase the size of icons on the desktop and in other icon views
-  command: '{{ plistbuddy }} -c "{{ item }}" {{ finder_plist }}'
+  include_role:
+    name: helpers
+    tasks_from: plistbuddy
   with_items:
-    - "Set :DesktopViewSettings:IconViewSettings:iconSize 80"
-    - "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80"
-    - "Set :StandardViewSettings:IconViewSettings:iconSize 80"
-  when: (not item | search("FK_StandardViewSettings")) or FK_StandardViewSettings|succeeded
+    - name: ":DesktopViewSettings:IconViewSettings:iconSize"
+      type: integer
+      value: 80
+      plist: "{{ finder_plist }}"
+    - name: ":FK_StandardViewSettings:IconViewSettings:iconSize"
+      type: integer
+      value: 80
+      plist: "{{ finder_plist }}"
+    - name: ":StandardViewSettings:IconViewSettings:iconSize"
+      type: integer
+      value: 80
+      plist: "{{ finder_plist }}"
   notify: restart Finder
+
 - name: Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
   osx_defaults:
