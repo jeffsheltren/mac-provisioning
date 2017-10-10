@@ -1,2 +1,9 @@
 ---
-# vars file for development-web
+
+homebrew_installed_packages:
+  - nodejs
+
+homebrew_cask_apps:
+  - phpstorm
+  # - mamp
+  - sequel-pro

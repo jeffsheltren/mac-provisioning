@@ -1,20 +1,5 @@
 ---
-- name: Install PHPStorm
-  homebrew_cask:
-    name: phpstorm
-    state: present
-- name: Install MAMP Pro
-  homebrew_cask:
-    name: mamp
-    state: present
-- name: Install Sequel pro
-  homebrew_cask:
-    name: sequel-pro
-    state: present
-- name: Install NodeJs
-  homebrew:
-    name: nodejs
-    state: present
+
 - name: Ensure NPM version 5.4.2.
   npm:
     name: npm
