@@ -1,6 +1,8 @@
 ---
 # Based on https://blog.vandenbrand.org/2016/01/04/how-to-automate-your-mac-os-x-setup-with-ansible/
 #
+# This might need to run several times to get the positions correct
+#
 - name: Current Dock names
   shell: >
     dockutil --list |
@@ -25,7 +27,9 @@
 - name: Position Dock items
   shell: >
     dockutil --move '{{ item.name }}' --position {{ item.position }}
-  when: dockitems.stdout_lines[item.position -1 ] != item.name
+  when:
+    - item.position is defined
+    - dockitems.stdout_lines[item.position -1 ] != item.name
   with_items: '{{ dockitems_to_persist }}'
 
 #
