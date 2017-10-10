@@ -10,7 +10,3 @@
 - import_tasks: finder.yml
 - import_tasks: dock.yml
 - import_tasks: spotlight.yml
-
-- import_role:
-    name: helpers
-    tasks_from: dock
