@@ -2,9 +2,16 @@
 # - name: Set standby delay to 24 hours (default is 1 hour)
 #   command: pmset -a standbydelay 86400
 #   become: true
+- name: Check the sound effects on boot
+  command: nvram -x SystemAudioVolume
+  become: true
+  ignore_errors: true
+  changed_when: false
+  register: sound_effects
 - name: Disable the sound effects on boot
   command: nvram SystemAudioVolume=" "
   become: true
+  when: not sound_effects.stdout | match("^SystemAudioVolume\s*$")
 # TODO
 # Menu bar: hide the Time Machine, Volume, and User icons
 # for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
