@@ -15,13 +15,13 @@
 #         domain: NSGlobalDomain
 #         host: currentHost
 #         key: com.apple.mouse.tapBehavior
-#         type: int
+#         type: integer
 #         value: 1
 #         state: present
 #     - osx_defaults:
 #         domain: NSGlobalDomain
 #         key: com.apple.mouse.tapBehavior
-#         type: int
+#         type: integer
 #         value: 1
 #         state: present
 # - name: Trackpad enable tap to click for this user and for the login screen
@@ -29,7 +29,7 @@
 #     - osx_defaults:
 #         domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
 #         key: TrackpadCornerSecondaryClick
-#         type: int
+#         type: integer
 #         value: 2
 #         state: present
 #     - osx_defaults:
@@ -42,7 +42,7 @@
 #         domain: NSGlobalDomain
 #         host: currentHost
 #         key: com.apple.trackpad.trackpadCornerClickBehavior
-#         type: int
+#         type: integer
 #         value: 1
 #         state: present
 #     - osx_defaults:
@@ -63,6 +63,6 @@
   osx_defaults:
     domain: com.apple.BluetoothAudioAgent
     key: Apple Bitpool Min (editable)
-    type: int
+    type: integer
     value: 40
     state: present

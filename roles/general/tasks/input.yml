@@ -3,7 +3,7 @@
   osx_defaults:
     domain: NSGlobalDomain
     key: AppleKeyboardUIMode
-    type: int
+    type: integer
     value: 3
     state: present
 # - name: Use scroll gesture with the Ctrl (^) modifier key to zoom
@@ -17,7 +17,7 @@
 #     - osx_defaults:
 #         domain: com.apple.universalaccess
 #         key: HIDScrollZoomModifierMask
-#         type: int
+#         type: integer
 #         value: 262144
 #         state: present
 # - name: Follow the keyboard focus while zoomed in
@@ -39,13 +39,13 @@
 #     - osx_defaults:
 #         domain: NSGlobalDomain
 #         key: KeyRepeat
-#         type: int
+#         type: integer
 #         value: 1
 #         state: present
 #     - osx_defaults:
 #         domain: NSGlobalDomain
 #         key: InitialKeyRepeat
-#         type: int
+#         type: integer
 #         value: 10
 #         state: present
 - name: Set language and text formats

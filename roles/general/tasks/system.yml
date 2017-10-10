@@ -29,7 +29,7 @@
   osx_defaults:
     domain: NSGlobalDomain
     key: NSTableViewDefaultSizeMode
-    type: int
+    type: integer
     value: 2
     state: present
 - name: Always show scrollbars # Possible values: `WhenScrolling`, `Automatic` and `Always`
@@ -179,7 +179,7 @@
   osx_defaults:
     domain: com.apple.SoftwareUpdate
     key: ScheduleFrequency
-    type: int
+    type: integer
     value: 1
     state: present
 # - name: Disable Notification Center and remove the menu bar icon

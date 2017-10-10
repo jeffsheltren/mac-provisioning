@@ -52,7 +52,7 @@
   osx_defaults:
     domain: com.apple.dock
     key: tilesize
-    type: int
+    type: integer
     value: 41
     state: present
   notify: restart Dock
@@ -220,7 +220,7 @@
   osx_defaults:
     domain: com.apple.dock
     key: showLaunchpadGestureEnabled
-    type: int
+    type: integer
     value: 0
     state: present
   notify: restart Dock
@@ -255,14 +255,14 @@
     - osx_defaults:
         domain: com.apple.dock
         key: wvous-tl-corner
-        type: int
+        type: integer
         value: 2
         state: present
       notify: restart Dock
     - osx_defaults:
         domain: com.apple.dock
         key: wvous-tl-modifier
-        type: int
+        type: integer
         value: 524288
         state: present
       notify: restart Dock
@@ -271,14 +271,14 @@
     - osx_defaults:
         domain: com.apple.dock
         key: wvous-tl-corner
-        type: int
+        type: integer
         value: 4
         state: present
       notify: restart Dock
     - osx_defaults:
         domain: com.apple.dock
         key: wvous-tl-modifier
-        type: int
+        type: integer
         value: 524288
         state: present
       notify: restart Dock
@@ -287,14 +287,14 @@
     - osx_defaults:
         domain: com.apple.dock
         key: wvous-tl-corner
-        type: int
+        type: integer
         value: 5
         state: present
       notify: restart Dock
     - osx_defaults:
         domain: com.apple.dock
         key: wvous-tl-modifier
-        type: int
+        type: integer
         value: 524288
         state: present
       notify: restart Dock
@@ -303,14 +303,14 @@
     - osx_defaults:
         domain: com.apple.dock
         key: wvous-tl-corner
-        type: int
+        type: integer
         value: 10
         state: present
       notify: restart Dock
     - osx_defaults:
         domain: com.apple.dock
         key: wvous-tl-modifier
-        type: int
+        type: integer
         value: 524288
         state: present
       notify: restart Dock
