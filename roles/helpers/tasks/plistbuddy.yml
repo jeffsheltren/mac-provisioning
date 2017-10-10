@@ -1,0 +1,17 @@
+---
+- set_fact: 'plistbuddy=/usr/libexec/PlistBuddy'
+
+# Check if a key exists
+- command: '{{ plistbuddy }} -c "Print {{ item.name }}" {{ item.plist }}'
+  register: check
+  ignore_errors: true
+  changed_when: false
+- name: Set value with PlistBuddy
+  command: '{{ plistbuddy }} -c "Set {{ item.name }} {{ item.value }}" {{ item.plist }}'
+  when:
+    - check | succeeded
+    - not item.value|string | search("dict")
+    - not item.value|string == check.stdout
+- name: Add value with PlistBuddy
+  command: '{{ plistbuddy }} -c "Add {{ item.name }} {{ item.type }} {{ item.value }}" {{ item.plist }}'
+  when: check|failed

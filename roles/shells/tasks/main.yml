@@ -91,58 +91,80 @@
     value: false
     state: present
 
-- include_tasks: plistbuddy_set_add.yml
+- include_role:
+    name: helpers
+    tasks_from: plistbuddy
   with_items:
     - name: :GlobalKeyMap
       type: ''
       value: dict
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
     - name: :GlobalKeyMap:0xf702-0x380000
       type: ''
       value: dict
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
     - name: :GlobalKeyMap:0xf702-0x380000:Text
       type: ''
       value: string
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
     - name: :GlobalKeyMap:0xf702-0x380000:Action
       type: integer
       value: 2
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
     - name: :GlobalKeyMap:0xf703-0x380000
       type: ''
       value: dict
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
     - name: :GlobalKeyMap:0xf703-0x380000:Text
       type: ''
       value: string
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
     - name: :GlobalKeyMap:0xf703-0x380000:Action
       type: integer
       value: 0
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
 
 # This section doesn't work yet:
 - name: "Profile 1: Unlimited scrollback"
-  include_tasks: plistbuddy_set_add.yml
+  include_role:
+    name: helpers
+    tasks_from: plistbuddy
   with_items:
     - name: :'New Bookmarks':0:'Scrollback Lines'
       type: integer
       value: 0
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
     - name: :'New Bookmarks':0:'Unlimited Scrollback'
       type: bool
       value: true
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
 - name: "Profile 1: Save lines to scrollback when an app status bar is present"
-  include_tasks: plistbuddy_set_add.yml
+  include_role:
+    name: helpers
+    tasks_from: plistbuddy
   with_items:
     - name: ":'New Bookmarks':0:'Scrollback With Status Bar'"
       type: bool
-      value: "true"
+      value: true
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
 - name: "Profile 1: Make sure alt left/right work properly"
-  include_tasks: plistbuddy_set_add.yml
+  include_role:
+    name: helpers
+    tasks_from: plistbuddy
   with_items:
     - name: ":'New Bookmarks':0:'Keyboard Map':0xf702-0x280000:Action"
       type: integer
       value: 10
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
     - name: ":'New Bookmarks':0:'Keyboard Map':0xf702-0x280000:Text"
       type: string
       value: b
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
     - name: ":'New Bookmarks':0:'Keyboard Map':0xf703-0x280000:Action"
       type: integer
       value: 10
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
     - name: ":'New Bookmarks':0:'Keyboard Map':0xf703-0x280000:Text"
       type: string
       value: f
+      plist: ~/Library/Preferences/com.googlecode.iterm2.plist
