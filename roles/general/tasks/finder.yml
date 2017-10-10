@@ -3,7 +3,6 @@
 # Finder                                                                      #
 ###############################################################################
 
-- set_fact: 'plistbuddy=/usr/libexec/PlistBuddy'
 - set_fact: 'finder_plist=~/Library/Preferences/com.apple.finder.plist'
 - set_fact: 'dropbox_icon=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns'
 
@@ -365,8 +364,24 @@
   notify: restart Finder
 
 - name: 'Expand the following File Info panes: “General”, “Open with”, and “Sharing & Permissions”'
-  command: 'defaults write com.apple.finder FXInfoPanesExpanded -dict \
-            General -bool true \
-            OpenWith -bool true \
-            Privileges -bool true'
+  include_role:
+    name: helpers
+    tasks_from: plistbuddy
+  with_items:
+    - name: :FXInfoPanesExpanded
+      type: ''
+      value: dict
+      plist: "{{ finder_plist }}"
+    - name: :FXInfoPanesExpanded:General
+      type: bool
+      value: true
+      plist: "{{ finder_plist }}"
+    - name: :FXInfoPanesExpanded:OpenWith
+      type: bool
+      value: true
+      plist: "{{ finder_plist }}"
+    - name: :FXInfoPanesExpanded:Privileges
+      type: bool
+      value: true
+      plist: "{{ finder_plist }}"
   notify: restart Finder
