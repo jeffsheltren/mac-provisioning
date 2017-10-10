@@ -102,8 +102,10 @@
     type: bool
     value: false
     state: present
+
 - name: Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
   command: "/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
+
 - name: Display ASCII control characters using caret notation in standard text views # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
   osx_defaults:
     domain: NSGlobalDomain
@@ -151,12 +153,28 @@
     value: HostName
     state: present
   become: true
+
+- name: Check restart automatically if the computer freezes
+  command: systemsetup -getrestartfreeze
+  become: true
+  ignore_errors: true
+  changed_when: false
+  register: restartfreeze
 - name: Restart automatically if the computer freezes
   command: systemsetup -setrestartfreeze on
   become: true
-- name: Never go into computer sleep mode
-  command: systemsetup -setcomputersleep Off
+  when: not restartfreeze.stdout | match(".*On$")
+- name: Check never go into computer sleep mode
+  command: systemsetup -getcomputersleep
   become: true
+  ignore_errors: true
+  changed_when: false
+  register: computersleep
+- name: Never go into computer sleep mode
+  command: systemsetup -setcomputersleep off
+  become: true
+  when: not computersleep.stdout | match(".*Never$")
+
 - name: Check for software updates daily, not just once per week
   osx_defaults:
     domain: com.apple.SoftwareUpdate

@@ -1,7 +1,16 @@
 ---
+
+- name: Check disable hibernation
+  command: pmset -g
+  become: true
+  ignore_errors: true
+  changed_when: false
+  register: pmset
 - name: Disable hibernation (speeds up entering sleep mode)
   command: pmset -a hibernatemode 0
   become: true
+  when: not pmset.stdout | search("hibernatemode\s*0")
+
 # Disabled for now since SIP prevents this manipulation
 # - name: "Remove the sleep image file to save disk space"
 #   file:
