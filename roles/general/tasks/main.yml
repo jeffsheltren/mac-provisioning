@@ -2,14 +2,14 @@
 - name: Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
   command: osascript -e 'tell application "System Preferences" to quit'
 
-- include: system.yml
-- include: ssd_tweaks.yml
-- include: trackpad_mouse_btaccessories.yml
-- include: input.yml
-- include: screen.yml
-- include: finder.yml
-- include: dock.yml
-- include: spotlight.yml
+- import_tasks: system.yml
+- import_tasks: ssd_tweaks.yml
+- import_tasks: trackpad_mouse_btaccessories.yml
+- import_tasks: input.yml
+- import_tasks: screen.yml
+- import_tasks: finder.yml
+- import_tasks: dock.yml
+- import_tasks: spotlight.yml
 
 - import_role:
     name: helpers
