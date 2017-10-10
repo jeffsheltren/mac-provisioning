@@ -180,32 +180,32 @@
     state: present
   notify: restart Dock
 
-- name: Remove the auto-hiding Dock delay
-  osx_defaults:
-    domain: com.apple.dock
-    key: autohide-delay
-    type: float
-    value: 0
-    state: present
-  notify: restart Dock
+# - name: Remove the auto-hiding Dock delay
+#   osx_defaults:
+#     domain: com.apple.dock
+#     key: autohide-delay
+#     type: float
+#     value: 0
+#     state: present
+#   notify: restart Dock
 
-- name: Remove the animation when hiding/showing the Dock
-  osx_defaults:
-    domain: com.apple.dock
-    key: autohide-time-modifier
-    type: float
-    value: 0
-    state: present
-  notify: restart Dock
+# - name: Remove the animation when hiding/showing the Dock
+#   osx_defaults:
+#     domain: com.apple.dock
+#     key: autohide-time-modifier
+#     type: float
+#     value: 0
+#     state: present
+#   notify: restart Dock
 
-- name: Automatically hide and show the Dock
-  osx_defaults:
-    domain: com.apple.dock
-    key: autohide
-    type: bool
-    value: true
-    state: present
-  notify: restart Dock
+# - name: Automatically hide and show the Dock
+#   osx_defaults:
+#     domain: com.apple.dock
+#     key: autohide
+#     type: bool
+#     value: true
+#     state: present
+#   notify: restart Dock
 
 - name: Make Dock icons of hidden applications translucent
   osx_defaults:
