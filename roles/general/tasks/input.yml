@@ -86,9 +86,24 @@
     value: true
     state: present
   become: true
+
+- name: Check the timezone
+  command: systemsetup -gettimezone
+  become: true
+  ignore_errors: true
+  changed_when: false
+  register: timezone
 - name: Set the timezone; see `sudo systemsetup -listtimezones` for other values
   command: systemsetup -settimezone "Europe/Brussels"
   become: true
+  when: not timezone.stdout | match(".*Europe/Brussels$")
+
+# SIP needs to be disabled for this
+- name: Check iTunes responding to the keyboard media keys
+  command: launchctl list com.apple.rcd
+  ignore_errors: true
+  changed_when: false
+  register: rcd
 - name: Stop iTunes from responding to the keyboard media keys
   command: launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
-  become: true
+  when: rcd|succeeded
