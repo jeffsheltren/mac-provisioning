@@ -61,11 +61,20 @@
 - name: Load new settings before rebuilding the index
   command: killall mds
   ignore_errors: yes
+  changed_when: false
 
+- name: Check indexing status for the main volume
+  command: mdutil -s /
+  become: yes
+  ignore_errors: true
+  changed_when: false
+  register: mdutiL_root
 - name: Make sure indexing is enabled for the main volume
   command: mdutil -i on /
   become: yes
+  when: not mdutiL_root.stdout | search("Indexing enabled.\s*$")
 
 - name: Rebuild the index from scratch
   command: mdutil -E /
   become: yes
+  changed_when: false
