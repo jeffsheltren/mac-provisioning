@@ -16,19 +16,38 @@
   command: nvram SystemAudioVolume=" "
   become: yes
   when: not sound_effects.stdout | match("^SystemAudioVolume\s*$")
-# TODO
-# Menu bar: hide the Time Machine, Volume, and User icons
-# for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-#   defaults write "${domain}" dontAutoLoad -array \
-#     "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-#     "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-#     "/System/Library/CoreServices/Menu Extras/User.menu"
-# done
-# defaults write com.apple.systemuiserver menuExtras -array \
-#   "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-#   "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-#   "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-#   "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+- name: "Menu bar: hide the Time Machine, Volume, and User icons"
+  block:
+    - find:
+        paths: "~/Library/Preferences/ByHost"
+        patterns: "com.apple.systemuiserver.*"
+      register: systemui_files
+    - osx_defaults:
+        domain: "{{ item.path }}"
+        key: dontAutoLoad
+        type: array
+        value:
+          - /System/Library/CoreServices/Menu Extras/TimeMachine.menu
+          - /System/Library/CoreServices/Menu Extras/Volume.menu
+          - /System/Library/CoreServices/Menu Extras/User.menu
+        state: present
+      with_items: "{{ systemui_files.files }}"
+      notify: restart MenuBar
+
+- name: "Menu bar: show bluetooth, airport, battery and clock"
+  osx_defaults:
+    domain: com.apple.systemuiserver
+    key: menuExtras
+    type: array
+    value:
+      - /System/Library/CoreServices/Menu Extras/Bluetooth.menu
+      - /System/Library/CoreServices/Menu Extras/AirPort.menu
+      - /System/Library/CoreServices/Menu Extras/Battery.menu
+      - /System/Library/CoreServices/Menu Extras/Clock.menu
+    state: present
+  notify: restart MenuBar
+
 - name: Set sidebar icon size to medium
   osx_defaults:
     domain: NSGlobalDomain
