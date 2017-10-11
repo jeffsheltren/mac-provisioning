@@ -1,4 +1,8 @@
 ---
+###############################################################################
+# Screen                                                                      #
+###############################################################################
+
 - name: Require password immediately after sleep or screen saver begins
   block:
     - osx_defaults:

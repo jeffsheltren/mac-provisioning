@@ -1,6 +1,6 @@
 ---
 ###############################################################################
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+# Trackpad, mouse, keyboard, Bluetooth accessories                            #
 ###############################################################################
 
 # - name: Trackpad enable tap to click for this user and for the login screen

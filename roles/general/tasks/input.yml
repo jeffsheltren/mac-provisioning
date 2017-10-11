@@ -1,4 +1,8 @@
 ---
+###############################################################################
+# Input                                                                       #
+###############################################################################
+
 - name: Enable full keyboard access for all controls. (e.g. enable Tab in modal dialogs)
   osx_defaults:
     domain: NSGlobalDomain
