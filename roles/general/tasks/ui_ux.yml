@@ -198,13 +198,6 @@
   become: yes
   when: not computersleep.stdout | match(".*Never$")
 
-- name: Check for software updates daily, not just once per week
-  osx_defaults:
-    domain: com.apple.SoftwareUpdate
-    key: ScheduleFrequency
-    type: integer
-    value: 1
-    state: present
 # - name: Disable Notification Center and remove the menu bar icon
 #   command: launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 - name: Disable automatic capitalization as it’s annoying when typing code
