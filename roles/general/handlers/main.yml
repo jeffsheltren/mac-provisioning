@@ -18,3 +18,8 @@
   command: killall Finder
   ignore_errors: yes
   changed_when: false
+
+- name: restart Activity Monitor
+  command: killall "Activity Monitor"
+  ignore_errors: yes
+  changed_when: false
