@@ -3,7 +3,7 @@
   command: osascript -e 'tell application "System Preferences" to quit'
   changed_when: false
 
-- import_tasks: system.yml
+- import_tasks: ui_ux.yml
 - import_tasks: ssd_tweaks.yml
 - import_tasks: trackpad_mouse_btaccessories.yml
 - import_tasks: input.yml
