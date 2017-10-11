@@ -4,3 +4,5 @@
   copy:
     src: files/.gitignore
     dest: ~/.gitignore
+
+- import_tasks: tower.yml
