@@ -62,7 +62,7 @@
 - name: Turn on app auto-update
   osx_defaults:
     domain: com.apple.SoftwareUpdate
-    key: ScheduleFrequency
+    key: AutoUpdate
     type: bool
     value: true
     state: present
