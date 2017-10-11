@@ -23,3 +23,13 @@
   command: killall "Activity Monitor"
   ignore_errors: yes
   changed_when: false
+
+- name: restart Google Chrome
+  command: killall "Google Chrome"
+  ignore_errors: yes
+  changed_when: false
+
+- name: restart Transmission
+  command: killall Transmission
+  ignore_errors: yes
+  changed_when: false

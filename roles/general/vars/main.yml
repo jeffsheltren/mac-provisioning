@@ -17,6 +17,7 @@ homebrew_cask_apps:
   - opera
   - google-backup-and-sync
   - dropbox
+  - transmission
   - lastfm
 
 mas_installed_apps:

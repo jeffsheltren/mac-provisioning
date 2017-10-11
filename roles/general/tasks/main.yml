@@ -16,3 +16,4 @@
 - import_tasks: app_store.yml
 - import_tasks: photos.yml
 - import_tasks: google_chrome.yml
+- import_tasks: transmission.yml
