@@ -1,8 +1,22 @@
 ---
 
+# Config files for tools
+
+- name: Install .editorconfig
+  copy:
+    src: files/.editorconfig
+    dest: ~/.editorconfig
+
 - name: Install .gitignore
   copy:
     src: files/.gitignore
     dest: ~/.gitignore
+
+- name: Install .gitconfig
+  copy:
+    src: files/.gitconfig
+    dest: ~/.gitconfig
+
+# Application config
 
 - import_tasks: tower.yml
