@@ -6,7 +6,7 @@
   lineinfile:
     dest: "{{ homebrew_install_path }}/Library/Taps/caskroom/homebrew-cask/Casks/mamp.rb"
     state: present
-    regexp: "^    sha256 '808e9685153c12a50d582e5eb27badbbc0cdc0df3fd3e0bf4bcaa74c4dc6a058'$"
+    regexp: "^    sha256 '"
     line: "    sha256 '9428a3cf494d02d94ecaec302042822f54273ba9d412ecde25d1155ab07db56e'"
   become: yes
 - name: Install MAMP.
