@@ -1,0 +1,18 @@
+---
+###############################################################################
+# Sublime Text                                                                #
+###############################################################################
+
+# TODO
+
+# Install the command-line tool shortcut
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+# Don't forget to install package control!!!!
+# Symlink the User package folder to our shared Dropbox folder
+if [ ! -h ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User ]
+  then
+    rm -r "$HOME/Library/Application Support/Sublime Text 3/Packages/User";
+    ln -s "$HOME/Dropbox/Libraries/SublimeText3/Packages/User" "$HOME/Library/Application Support/Sublime Text 3/Packages/User";
+fi
+# Install Sublime Text settings
+#cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
