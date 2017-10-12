@@ -1,0 +1,62 @@
+---
+###############################################################################
+# Terminal                                                                    #
+###############################################################################
+
+- name: Only use UTF-8 in Terminal.app
+  osx_defaults:
+    domain: com.apple.terminal
+    key: StringEncodings
+    type: array
+    value:
+      - '4'
+    state: present
+  notify: restart Terminal
+
+# - name: Use a modified version of the Solarized Dark theme by default in Terminal.app
+#   block:
+#     - file:
+#         path: ~/init
+#         state: directory
+#         mode: 0755
+#     - get_url:
+#         url: https://raw.githubusercontent.com/altercation/solarized/master/osx-terminal.app-colors-solarized/Solarized%20Dark%20ansi.terminal
+#         dest: ~/init/Solarized Dark.terminal
+#     - script: files/terminal-solarized.applescript
+#       notify: restart Terminal
+
+# - name: Enable “focus follows mouse” for Terminal.app and all X11 apps i.e. hover over a window and start typing in it without clicking first
+#   block:
+#     - osx_defaults:
+#         domain: com.apple.terminal
+#         key: FocusFollowsMouse
+#         type: bool
+#         value: true
+#         state: present
+#       notify: restart Terminal
+#     - osx_defaults:
+#         domain: org.x.X11
+#         key: wm_ffm
+#         type: bool
+#         value: true
+#         state: present
+#       notify: restart Terminal
+
+- name: Enable Secure Keyboard Entry in Terminal.app
+# See: https://security.stackexchange.com/a/47786/8918
+  osx_defaults:
+    domain: com.apple.terminal
+    key: SecureKeyboardEntry
+    type: bool
+    value: true
+    state: present
+  notify: restart Terminal
+
+- name: Disable the annoying line marks
+  osx_defaults:
+    domain: com.apple.terminal
+    key: ShowLineMarks
+    type: integer
+    value: 0
+    state: present
+  notify: restart Terminal

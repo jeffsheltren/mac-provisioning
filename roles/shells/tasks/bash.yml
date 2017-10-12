@@ -1,0 +1,25 @@
+---
+
+- name: Install .bash_profile
+  copy:
+    src: files/bash/.bash_profile
+    dest: ~/.bash_profile
+
+- name: Install .bashrc
+  copy:
+    src: files/bash/.bashrc
+    dest: ~/.bashrc
+
+- file:
+    path: ~/.bash
+    state: directory
+
+- name: Install .bash_prompt
+  copy:
+    src: files/bash/.bash_prompt
+    dest: ~/.bash/.bash_prompt
+
+- name: Install .aliases
+  copy:
+    src: files/bash/.aliases
+    dest: ~/.bash/.aliases
