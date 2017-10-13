@@ -1,6 +1,11 @@
 ---
 
 homebrew_installed_packages:
+  - ack
+  - git
+  - git-lfs
+  - name: imagemagick
+    install_options: --with-gettext
 
 homebrew_cask_apps:
   - sublime-text
