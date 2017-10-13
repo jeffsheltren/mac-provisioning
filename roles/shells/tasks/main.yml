@@ -13,3 +13,23 @@
   copy:
     src: files/.hushlogin
     dest: ~/.hushlogin
+
+- name: Install .inputrc
+  copy:
+    src: files/.inputrc
+    dest: ~/.inputrc
+
+- name: Install .screenrc
+  copy:
+    src: files/.screenrc
+    dest: ~/.screenrc
+
+- name: Install .tmux.conf
+  copy:
+    src: files/.tmux.conf
+    dest: ~/.tmux.conf
+
+- name: Install .wgetrc
+  copy:
+    src: files/.wgetrc
+    dest: ~/.wgetrc
