@@ -4,13 +4,3 @@ all:
       hosts:
         localhost:
           ansible_connection: local
-    vm_group:
-      hosts:
-        vm:
-          ansible_port: 22
-          ansible_host: 10.211.55.6
-          ansible_user: daften
-        vm_local:
-          ansible_port: 2200
-          ansible_host: localhost
-          ansible_user: daften
