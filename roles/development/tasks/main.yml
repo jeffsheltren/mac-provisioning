@@ -7,15 +7,24 @@
     src: files/.editorconfig
     dest: ~/.editorconfig
 
+- name: Install .gitconfig
+  copy:
+    src: files/.gitconfig
+    dest: ~/.gitconfig
+
 - name: Install .gitignore
   copy:
     src: files/.gitignore
     dest: ~/.gitignore
 
-- name: Install .gitconfig
+- name: Install .vimrc
   copy:
-    src: files/.gitconfig
-    dest: ~/.gitconfig
+    src: files/.vimrc
+    dest: ~/.vimrc
+
+- copy:
+    src: files/.vim
+    dest: ~/
 
 # Application config
 
