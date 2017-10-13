@@ -22,15 +22,6 @@
     src: files/.gvimrc
     dest: ~/.gvimrc
 
-- name: Install .vimrc
-  copy:
-    src: files/.vimrc
-    dest: ~/.vimrc
-
-- copy:
-    src: files/.vim
-    dest: ~/
-
 # Application config
 
 - import_tasks: tower.yml

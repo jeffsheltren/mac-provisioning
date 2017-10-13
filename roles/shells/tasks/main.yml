@@ -29,6 +29,15 @@
     src: files/.tmux.conf
     dest: ~/.tmux.conf
 
+- name: Install .vimrc
+  copy:
+    src: files/.vimrc
+    dest: ~/.vimrc
+
+- copy:
+    src: files/.vim
+    dest: ~/
+
 - name: Install .wgetrc
   copy:
     src: files/.wgetrc
