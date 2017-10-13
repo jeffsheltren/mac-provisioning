@@ -1,9 +1,17 @@
 ---
 
+homebrew_taps:
+  - caskroom/cask
+  - bramstein/webfonttools # https://github.com/bramstein/homebrew-webfonttools
+
 homebrew_installed_packages:
   - homebrew/php/php71
   - nodejs
   - lynx # Text based web browser
+  # Web font tools:
+  - sfnt2woff
+  - sfnt2woff-zopfli
+  - woff2
 
 homebrew_cask_apps:
   - phpstorm
