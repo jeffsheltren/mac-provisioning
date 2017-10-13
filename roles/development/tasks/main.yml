@@ -17,6 +17,11 @@
     src: files/.gitignore
     dest: ~/.gitignore
 
+- name: Install .gvimrc
+  copy:
+    src: files/.gvimrc
+    dest: ~/.gvimrc
+
 - name: Install .vimrc
   copy:
     src: files/.vimrc
