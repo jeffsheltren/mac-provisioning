@@ -7,6 +7,8 @@ homebrew_taps:
 homebrew_installed_packages:
   - homebrew/php/php71
   - nodejs
+  - name: imagemagick
+    install_options: --with-gettext
   - lynx # Text based web browser
   # Web font tools:
   - sfnt2woff
