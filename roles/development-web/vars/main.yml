@@ -1,6 +1,7 @@
 ---
 
 homebrew_installed_packages:
+  - homebrew/php/php71
   - nodejs
 
 homebrew_cask_apps:
