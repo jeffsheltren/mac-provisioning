@@ -33,3 +33,11 @@
   copy:
     src: files/bash/.functions
     dest: ~/.bash/.functions
+
+- name: Switch to using brew-installed bash as default shell
+  lineinfile:
+    dest: /etc/shells
+    state: present
+    regexp: '^/usr/local/bin/bash$'
+    line: '/usr/local/bin/bash'
+  become: yes
