@@ -3,6 +3,7 @@
 homebrew_installed_packages:
   - homebrew/php/php71
   - nodejs
+  - lynx # Text based web browser
 
 homebrew_cask_apps:
   - phpstorm
