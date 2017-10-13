@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  tasks:
+    - import_role:
+        name: helpers
+        tasks_from: sudo
+    - import_role:
+        name: general
+    - import_role:
+        name: shells
+    - import_role:
+        name: development
+    - import_role:
+        name: development-web
+  environment:
+    PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
