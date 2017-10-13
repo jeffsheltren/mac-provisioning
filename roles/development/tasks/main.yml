@@ -7,6 +7,11 @@
     src: files/.editorconfig
     dest: ~/.editorconfig
 
+- name: Install .gitattributes
+  copy:
+    src: files/.gitattributes
+    dest: ~/.gitattributes
+
 - name: Install .gitconfig
   copy:
     src: files/.gitconfig
