@@ -9,9 +9,6 @@ before_install:
   - curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall
   - chmod +x ./uninstall
   - ./uninstall --force
-  - rm -rf /usr/local/Homebrew
-  - rm -rf /usr/local/Caskroom
-  - rm -rf /usr/local/bin/brew
 
 install:
   # Install pip.
@@ -21,7 +18,7 @@ install:
   - sudo pip install ansible
 
   # Add ansible.cfg to pick up roles path.
-  - "{ echo '[defaults]'; echo 'roles_path = ../:../roles_contrib:./roles_contrib'; } >> ansible.cfg"
+  - "{ echo '[defaults]'; echo 'roles_path = ../:../roles:./roles:../roles_contrib:./roles_contrib'; } >> ansible.cfg"
 
   # Add a hosts file.
   - sudo mkdir -p /etc/ansible
