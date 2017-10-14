@@ -11,14 +11,12 @@ homebrew_installed_packages:
   - name: findutils # Install GNU `find`, `locate`, `updatedb`, and `xargs`,  NOT `g`-prefixed.
     install_options: --with-default-names
   - diffutils
-  - name: gnu-sed # Install GNU `sed`, overwriting the built-in `sed`.
-    install_options: --with-default-names
   - name: ed
     install_options: --with-default-names
   - gawk
   - name: gnu-indent
     install_options: --with-default-names
-  - name: gnu-sed
+  - name: gnu-sed # Install GNU `sed`, overwriting the built-in `sed`.
     install_options: --with-default-names
   - name: gnu-tar
     install_options: --with-default-names
