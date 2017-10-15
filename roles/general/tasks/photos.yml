@@ -1,0 +1,13 @@
+---
+###############################################################################
+# Photos                                                                      #
+###############################################################################
+
+- name: Prevent Photos from opening automatically when devices are plugged in
+  osx_defaults:
+    domain: com.apple.ImageCapture
+    host: currentHost
+    key: disableHotPlug
+    type: bool
+    value: true
+    state: present

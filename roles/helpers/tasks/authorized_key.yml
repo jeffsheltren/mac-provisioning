@@ -1,0 +1,16 @@
+---
+- name: Check for local key
+  local_action:
+    module: stat
+    path: "{{ public_key }}"
+  register: public_key_stat
+- name: Set up authorized keys for the deployer user
+  authorized_key:
+    user: "{{ sudo_user }}"
+    key: "{{ item }}"
+  with_file:
+    - "{{ public_key }}"
+  when:
+    - public_key_stat is defined
+    - public_key_stat.stat.exists
+    - public_key_stat.stat.isreg

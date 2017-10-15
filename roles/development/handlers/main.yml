@@ -1,0 +1,5 @@
+---
+- name: install git-lfs
+  command: git lfs install --system
+  ignore_errors: yes
+  changed_when: false

@@ -1,0 +1,5 @@
+---
+dependencies:
+  - { role: geerlingguy.homebrew }
+  # - { role: geerlingguy.mas } # For this, we need to run it locally, since over SSH it seems it just hangs (https://github.com/mas-cli/mas/issues/71)
+  - { role: fubarhouse.macdock }

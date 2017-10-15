@@ -1,0 +1,11 @@
+---
+- name: restart Terminal
+  command: killall Terminal
+  ignore_errors: yes
+  changed_when: false
+
+- name: shell bash4
+  shell: chsh -s /usr/local/bin/bash {{ ansible_user_id }}
+  become: yes
+  ignore_errors: yes
+  changed_when: false

@@ -1,0 +1,39 @@
+---
+
+# Install git-lfs and install it
+- name: Install git-lfs
+  homebrew:
+    name: git-lfs
+    state: present
+  notify: install git-lfs
+
+# Config files for tools
+
+- name: Install .editorconfig
+  copy:
+    src: files/.editorconfig
+    dest: ~/.editorconfig
+
+- name: Install .gitattributes
+  copy:
+    src: files/.gitattributes
+    dest: ~/.gitattributes
+
+- name: Install .gitconfig
+  copy:
+    src: files/.gitconfig
+    dest: ~/.gitconfig
+
+- name: Install .gitignore
+  copy:
+    src: files/.gitignore
+    dest: ~/.gitignore
+
+- name: Install .gvimrc
+  copy:
+    src: files/.gvimrc
+    dest: ~/.gvimrc
+
+# Application config
+
+- import_tasks: tower.yml

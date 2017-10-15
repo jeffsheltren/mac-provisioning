@@ -1,0 +1,81 @@
+---
+###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories                            #
+###############################################################################
+
+# - name: Trackpad enable tap to click for this user and for the login screen
+#   block:
+#     - osx_defaults:
+#         domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+#         key: Clicking
+#         type: bool
+#         value: true
+#         state: present
+#     - osx_defaults:
+#         domain: NSGlobalDomain
+#         host: currentHost
+#         key: com.apple.mouse.tapBehavior
+#         type: integer
+#         value: 1
+#         state: present
+#     - osx_defaults:
+#         domain: NSGlobalDomain
+#         key: com.apple.mouse.tapBehavior
+#         type: integer
+#         value: 1
+#         state: present
+# - name: Trackpad enable tap to click for this user and for the login screen
+#   block:
+#     - osx_defaults:
+#         domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+#         key: TrackpadCornerSecondaryClick
+#         type: integer
+#         value: 2
+#         state: present
+#     - osx_defaults:
+#         domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+#         key: TrackpadRightClick
+#         type: bool
+#         value: true
+#         state: present
+#     - osx_defaults:
+#         domain: NSGlobalDomain
+#         host: currentHost
+#         key: com.apple.trackpad.trackpadCornerClickBehavior
+#         type: integer
+#         value: 1
+#         state: present
+#     - osx_defaults:
+#         domain: NSGlobalDomain
+#         host: currentHost
+#         key: com.apple.trackpad.enableSecondaryClick
+#         type: bool
+#         value: true
+#         state: present
+# - name: Disable “natural” (Lion-style) scrolling
+#   osx_defaults:
+#     domain: NSGlobalDomain
+#     key: com.apple.swipescrolldirection
+#     type: bool
+#     value: false
+#     state: present
+- name: Increase sound quality for Bluetooth headphones/headsets
+  osx_defaults:
+    domain: com.apple.BluetoothAudioAgent
+    key: Apple Bitpool Min (editable)
+    type: integer
+    value: 40
+    state: present
+
+- name: Install switch sound output app
+  copy:
+    src: files/SoundOutputSwitch.app
+    dest: /Applications
+- name: Install switch sound output workflow
+  copy:
+    src: files/Switch Sound Output.workflow
+    dest: ~/Library/Services
+- name: Set a keyboard shortcut to switch sound
+  command: defaults write pbs NSServicesStatus -dict-add '"(null) - Switch Sound Output - runWorkflowAsService"' '{key_equivalent = "@$1";}'
+    # Need a command because dict-add isn't supported in ansible osx_defaults yet (https://github.com/ansible/ansible/issues/24028)
+    # https://github.com/ansible/ansible/pull/24808

@@ -1,0 +1,59 @@
+---
+###############################################################################
+# Git Tower                                                                   #
+###############################################################################
+
+- name: Set the default directory for cloned repositories to Workspaces folder
+  osx_defaults:
+    domain: com.fournova.Tower2
+    key: GTUserDefaultsDefaultCloningDirectory
+    type: string
+    value: ~/Workspaces
+    state: present
+
+- name: Set the default terminal to iterm2
+  osx_defaults:
+    domain: com.fournova.Tower2
+    key: GTUserDefaultsDefaultTerminalApplication
+    type: string
+    value: com.googlecode.iterm2
+    state: present
+
+- name: Set the default sync interval to 5 minutes
+  osx_defaults:
+    domain: com.fournova.Tower2
+    key: GTUserDefaultsAutoFetchTimeInterval
+    type: integer
+    value: 300
+    state: present
+
+- name: Set to always update submodules automatically
+  osx_defaults:
+    domain: com.fournova.Tower2
+    key: GTUserDefaultsAlwaysAutoUpdateSubmodules
+    type: bool
+    value: true
+    state: present
+
+- name: Set to not warn when discarding changes in a chunk
+  osx_defaults:
+    domain: com.fournova.Tower2
+    key: GTUserDefaultsAlwaysDiscardDiffContent
+    type: bool
+    value: false
+    state: present
+
+- name: Set the directory diff tool
+  block:
+    - osx_defaults:
+        domain: com.fournova.Tower2
+        key: GTUserDefaultsDiffToolIdentifier
+        type: string
+        value: deltawalker
+        state: present
+    - osx_defaults:
+        domain: com.fournova.Tower2
+        key: GTUserDefaultsMergeToolIdentifier
+        type: string
+        value: deltawalker
+        state: present

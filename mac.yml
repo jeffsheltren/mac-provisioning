@@ -1,9 +1,0 @@
----
-- hosts: local
-  roles:
-    - mac
-    - shells
-    - brew-php
-    - brew-packages
-    - brew-cask-apps
-    - ruby

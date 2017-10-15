@@ -1,16 +1,44 @@
 ---
-- name: Install brew apps (e.g. zsh)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - "{{ brew_shell }}"
 
-- name: Get oh-my-zsh installer
-  get_url:
-    url: http://install.ohmyz.sh
-    dest: /tmp/install-ohmyz.sh
-    mode: 0755
+- import_tasks: terminal.yml
+- import_tasks: iterm2.yml
+- import_tasks: bash.yml
 
-- name: Install oh-my-zsh
-  shell: 'sh /tmp/install-ohmyz.sh'
-  args:
-    creates: '~/.oh-my-zsh'
+- name: Install .curlrc
+  copy:
+    src: files/.curlrc
+    dest: ~/.curlrc
+
+- name: Install .hushlogin
+  copy:
+    src: files/.hushlogin
+    dest: ~/.hushlogin
+
+- name: Install .inputrc
+  copy:
+    src: files/.inputrc
+    dest: ~/.inputrc
+
+- name: Install .screenrc
+  copy:
+    src: files/.screenrc
+    dest: ~/.screenrc
+
+- name: Install .tmux.conf
+  copy:
+    src: files/.tmux.conf
+    dest: ~/.tmux.conf
+
+- name: Install .vimrc
+  copy:
+    src: files/.vimrc
+    dest: ~/.vimrc
+
+- copy:
+    src: files/.vim
+    dest: ~/
+
+- name: Install .wgetrc
+  copy:
+    src: files/.wgetrc
+    dest: ~/.wgetrc

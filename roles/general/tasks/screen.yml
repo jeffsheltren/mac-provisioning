@@ -1,0 +1,56 @@
+---
+###############################################################################
+# Screen                                                                      #
+###############################################################################
+
+- name: Require password immediately after sleep or screen saver begins
+  block:
+    - osx_defaults:
+        domain: com.apple.screensaver
+        key: askForPassword
+        type: integer
+        value: 1
+        state: present
+    - osx_defaults:
+        domain: com.apple.screensaver
+        key: askForPasswordDelay
+        type: float
+        value: 0
+        state: present
+- name: Save screenshots to the desktop
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    type: string
+    value: ${HOME}/Desktop
+    state: present
+- name: "Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)"
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: type
+    type: string
+    value: png
+    state: present
+- name: Disable shadow in screenshots
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: disable-shadow
+    type: bool
+    value: true
+    state: present
+- name: Enable subpixel font rendering on non-Apple LCDs
+# Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleFontSmoothing
+    type: integer
+    value: 1
+    state: present
+- name: Enable HiDPI display modes (requires restart)
+  osx_defaults:
+    domain: /Library/Preferences/com.apple.windowserver
+    key: DisplayResolutionEnabled
+    type: bool
+    value: true
+    state: present
+  become: yes

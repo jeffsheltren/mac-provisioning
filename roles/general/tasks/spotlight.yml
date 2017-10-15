@@ -1,0 +1,80 @@
+---
+###############################################################################
+# Spotlight                                                                   #
+###############################################################################
+
+# - name: Hide Spotlight tray-icon (and subsequent helper)
+#   file:
+#     path: /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+#     mode: 0600
+#   become: yes
+
+# - name: Disable Spotlight indexing for any volume that gets mounted and has not yet been indexed before.
+# # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
+#   osx_defaults:
+#     domain: /.Spotlight-V100/VolumeConfiguration
+#     key: Exclusions
+#     type: array
+#     value:
+#       - /Volumes
+#     state: present
+#   become: yes
+
+- name: Change indexing order and disable some search results
+# Yosemite-specific search results (remove them if you are using OS X 10.9 or older):
+#   MENU_DEFINITION
+#   MENU_CONVERSION
+#   MENU_EXPRESSION
+#   MENU_SPOTLIGHT_SUGGESTIONS (send search queries to Apple)
+#   MENU_WEBSEARCH             (send search queries to Apple)
+#   MENU_OTHER
+  osx_defaults:
+    domain: com.apple.spotlight
+    key: orderedItems
+    type: array
+    value:
+      - '{"enabled" = 1;"name" = "APPLICATIONS";}'
+      - '{"enabled" = 1;"name" = "SYSTEM_PREFS";}'
+      - '{"enabled" = 1;"name" = "DIRECTORIES";}'
+      - '{"enabled" = 1;"name" = "PDF";}'
+      - '{"enabled" = 1;"name" = "FONTS";}'
+      - '{"enabled" = 0;"name" = "DOCUMENTS";}'
+      - '{"enabled" = 0;"name" = "MESSAGES";}'
+      - '{"enabled" = 0;"name" = "CONTACT";}'
+      - '{"enabled" = 0;"name" = "EVENT_TODO";}'
+      - '{"enabled" = 0;"name" = "IMAGES";}'
+      - '{"enabled" = 0;"name" = "BOOKMARKS";}'
+      - '{"enabled" = 0;"name" = "MUSIC";}'
+      - '{"enabled" = 0;"name" = "MOVIES";}'
+      - '{"enabled" = 0;"name" = "PRESENTATIONS";}'
+      - '{"enabled" = 0;"name" = "SPREADSHEETS";}'
+      - '{"enabled" = 0;"name" = "SOURCE";}'
+      - '{"enabled" = 0;"name" = "MENU_DEFINITION";}'
+      - '{"enabled" = 0;"name" = "MENU_OTHER";}'
+      - '{"enabled" = 0;"name" = "MENU_CONVERSION";}'
+      - '{"enabled" = 0;"name" = "MENU_EXPRESSION";}'
+      - '{"enabled" = 0;"name" = "MENU_WEBSEARCH";}'
+      - '{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+    state: present
+  notify: restart cfprefsd
+
+- name: Load new settings before rebuilding the index
+  command: killall mds
+  ignore_errors: yes
+  changed_when: false
+
+- name: Check indexing status for the main volume
+  command: mdutil -s /
+  become: yes
+  ignore_errors: true
+  changed_when: false
+  register: mdutiL_root
+- name: Make sure indexing is enabled for the main volume
+  command: mdutil -i on /
+  become: yes
+  when: not mdutiL_root.stdout | search("Indexing enabled.\s*$")
+
+- name: Rebuild the index from scratch
+  command: mdutil -E /
+  become: yes
+  changed_when: false

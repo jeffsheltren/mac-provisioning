@@ -1,5 +1,44 @@
 ---
-brew_shell:
-  - bash-completion
+homebrew_installed_packages:
   - zsh
   - zsh-completions
+  - openssh
+  # - binutils
+  - coreutils # Install GNU core utilities (those that come with macOS are outdated).
+              # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+  - moreutils # Install some other useful utilities like `sponge`.
+  - name: findutils # Install GNU `find`, `locate`, `updatedb`, and `xargs`,  NOT `g`-prefixed.
+    install_options: --with-default-names
+  - diffutils
+  - name: ed
+    install_options: --with-default-names
+  - gawk
+  - name: gnu-indent
+    install_options: --with-default-names
+  - name: gnu-sed # Install GNU `sed`, overwriting the built-in `sed`.
+    install_options: --with-default-names
+  - name: gnu-tar
+    install_options: --with-default-names
+  - name: gnu-which
+    install_options: --with-default-names
+  - gnutls
+  - name: grep
+    install_options: --with-default-names
+  - gzip
+  - pigz
+  - pv
+  - rename
+  - rlwrap
+  - screen
+  - ssh-copy-id
+  - tree
+  - vbindiff
+  - name: vim # More recent version than system default
+    install_options: --with-override-system-vi
+  - watch
+  - name: wdiff
+    install_options: --with-gettext
+  - wget
+
+homebrew_cask_apps:
+  - iterm2

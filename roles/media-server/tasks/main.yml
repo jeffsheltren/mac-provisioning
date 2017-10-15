@@ -1,0 +1,5 @@
+---
+- name: Install Plex Media Server
+  homebrew_cask:
+    name: plex-media-server
+    state: present

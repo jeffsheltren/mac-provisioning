@@ -1,0 +1,21 @@
+---
+
+homebrew_installed_packages:
+  - ack
+  - git
+  - diff-so-fancy
+  - chruby
+  - ruby-install
+  - wireshark
+
+homebrew_cask_apps:
+  - sublime-text
+  - tower
+  - shuttle
+  # - dash
+  - virtualbox
+  - vagrant
+  - vagrant-manager
+  - docker
+  - yed
+  - wireshark

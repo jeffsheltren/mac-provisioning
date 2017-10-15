@@ -1,6 +1,0 @@
----
-- name: Install {{ php_version }}
-  homebrew: name={{ php_version }} state=present
-
-- name: Unlink {{ php_version }}
-  homebrew: name={{ php_version }} state=unlinked

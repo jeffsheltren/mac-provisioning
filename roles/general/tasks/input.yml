@@ -1,0 +1,113 @@
+---
+###############################################################################
+# Input                                                                       #
+###############################################################################
+
+- name: Enable full keyboard access for all controls. (e.g. enable Tab in modal dialogs)
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleKeyboardUIMode
+    type: integer
+    value: 3
+    state: present
+# - name: Use scroll gesture with the Ctrl (^) modifier key to zoom
+#   block:
+#     - osx_defaults:
+#         domain: com.apple.universalaccess
+#         key: closeViewScrollWheelToggle
+#         type: bool
+#         value: true
+#         state: present
+#     - osx_defaults:
+#         domain: com.apple.universalaccess
+#         key: HIDScrollZoomModifierMask
+#         type: integer
+#         value: 262144
+#         state: present
+# - name: Follow the keyboard focus while zoomed in
+#   osx_defaults:
+#     domain: com.apple.universalaccess
+#     key: closeViewZoomFollowsFocus
+#     type: bool
+#     value: true
+#     state: present
+# - name: Disable press-and-hold for keys in favor of key repeat
+#   osx_defaults:
+#     domain: NSGlobalDomain
+#     key: ApplePressAndHoldEnabled
+#     type: bool
+#     value: false
+#     state: present
+# - name: Use scroll gesture with the Ctrl (^) modifier key to zoom
+#   block:
+#     - osx_defaults:
+#         domain: NSGlobalDomain
+#         key: KeyRepeat
+#         type: integer
+#         value: 1
+#         state: present
+#     - osx_defaults:
+#         domain: NSGlobalDomain
+#         key: InitialKeyRepeat
+#         type: integer
+#         value: 10
+#         state: present
+- name: Set language and text formats
+# Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
+# `Inches`, `en_GB` with `en_US`, and `true` with `false`.
+  block:
+    - osx_defaults:
+        domain: NSGlobalDomain
+        key: AppleLanguages
+        type: array
+        value:
+          - en
+          - nl
+        state: present
+    - osx_defaults:
+        domain: NSGlobalDomain
+        key: AppleLocale
+        type: string
+        value: "en_GB@currency=EUR"
+        state: present
+    - osx_defaults:
+        domain: NSGlobalDomain
+        key: AppleMeasurementUnits
+        type: string
+        value: "Centimeters"
+        state: present
+    - osx_defaults:
+        domain: NSGlobalDomain
+        key: AppleMetricUnits
+        type: bool
+        value: true
+        state: present
+- name: Show language menu in the top right corner of the boot screen
+  osx_defaults:
+    domain: /Library/Preferences/com.apple.loginwindow
+    key: showInputMenu
+    type: bool
+    value: true
+    state: present
+  become: yes
+
+- name: Check the timezone
+  command: systemsetup -gettimezone
+  become: yes
+  ignore_errors: true
+  changed_when: false
+  register: timezone
+- name: Set the timezone; see `sudo systemsetup -listtimezones` for other values
+  command: systemsetup -settimezone "Europe/Brussels"
+  become: yes
+  when: not timezone.stdout | match(".*Europe/Brussels$")
+
+# SIP needs to be disabled for this
+- name: Check iTunes responding to the keyboard media keys
+  command: launchctl list com.apple.rcd
+  ignore_errors: true
+  changed_when: false
+  register: rcd
+- name: Stop iTunes from responding to the keyboard media keys
+  command: launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+  when: rcd|succeeded

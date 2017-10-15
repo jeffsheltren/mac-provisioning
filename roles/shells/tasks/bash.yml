@@ -1,0 +1,54 @@
+---
+
+- name: Install bash 4
+  homebrew:
+    name: bash
+    state: present
+  notify: shell bash4
+
+- name: Install bash-completion@2
+  homebrew:
+    name: bash-completion@2
+    state: present
+
+- name: Add brew-installed bash to /etc/shells
+  lineinfile:
+    dest: /etc/shells
+    state: present
+    regexp: '^/usr/local/bin/bash$'
+    line: '/usr/local/bin/bash'
+  become: yes
+
+- name: Install .bash_profile
+  copy:
+    src: files/bash/.bash_profile
+    dest: ~/.bash_profile
+
+- name: Install .bashrc
+  copy:
+    src: files/bash/.bashrc
+    dest: ~/.bashrc
+
+- file:
+    path: ~/.bash
+    state: directory
+
+- name: Install .bash_prompt
+  copy:
+    src: files/bash/.bash_prompt
+    dest: ~/.bash/.bash_prompt
+
+- name: Install .aliases
+  copy:
+    src: files/bash/.aliases
+    dest: ~/.bash/.aliases
+
+- name: Install .exports
+  copy:
+    src: files/bash/.exports
+    dest: ~/.bash/.exports
+
+- name: Install .functions
+  copy:
+    src: files/bash/.functions
+    dest: ~/.bash/.functions

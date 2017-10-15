@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  tasks:
+    - import_role:
+        name: general
+    - import_role:
+        name: shells
+    - import_role:
+        name: development
+    - import_role:
+        name: development-web
+    - import_role:
+        name: development-chef
+    - import_role:
+        name: picabit
+    - import_role:
+        name: media-server
+  environment:
+    PATH: "/usr/local/bin:{{ ansible_env.PATH }}"

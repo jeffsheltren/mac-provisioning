@@ -1,0 +1,35 @@
+---
+- name: restart cfprefsd
+  command: killall cfprefsd
+  ignore_errors: yes
+  changed_when: false
+
+- name: restart MenuBar
+  command: killall SystemUIServer
+  ignore_errors: yes
+  changed_when: false
+
+- name: restart Dock
+  command: killall Dock
+  ignore_errors: yes
+  changed_when: false
+
+- name: restart Finder
+  command: killall Finder
+  ignore_errors: yes
+  changed_when: false
+
+- name: restart Activity Monitor
+  command: killall "Activity Monitor"
+  ignore_errors: yes
+  changed_when: false
+
+- name: restart Google Chrome
+  command: killall "Google Chrome"
+  ignore_errors: yes
+  changed_when: false
+
+- name: restart Transmission
+  command: killall Transmission
+  ignore_errors: yes
+  changed_when: false

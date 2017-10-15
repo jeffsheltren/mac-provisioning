@@ -1,0 +1,7 @@
+---
+homebrew_cask_apps:
+  - plex-media-server
+
+mas_installed_apps:
+  - name: WOL Wake
+    id: 1079488927
