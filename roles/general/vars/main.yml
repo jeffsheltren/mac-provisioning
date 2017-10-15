@@ -34,14 +34,18 @@ mas_installed_apps:
     id: 410628904
 
 dockitems_disabled:
+  - Siri
   - Launchpad
+  - Safari
+  - Mail
   - Contacts
   - Notes
   - Reminders
   - Maps
-  - Pages
   - Photos
+  - Messages
   - FaceTime
+  - iTunes
   - iBooks
   - App Store
   - System Preferences
