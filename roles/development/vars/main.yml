@@ -14,3 +14,4 @@ homebrew_cask_apps:
   - vagrant
   - vagrant-manager
   - docker
+  - yed
