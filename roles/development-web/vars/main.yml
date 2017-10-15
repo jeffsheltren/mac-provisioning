@@ -8,11 +8,11 @@ homebrew_installed_packages:
   - homebrew/php/php71
   - composer
   - drush
-  - nodejs
   - php-code-sniffer
   - drupal-code-sniffer
   - phpmd
   - symfony-installer
+  - node
   - name: imagemagick
     install_options: --with-gettext
   - lynx # Text based web browser
