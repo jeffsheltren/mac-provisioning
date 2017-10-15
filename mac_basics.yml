@@ -36,14 +36,14 @@
         path: /Applications/Sequel Pro.app
         pos: 12
   vars_prompt:
-    - name: app_store_email
+    - name: mas_email
       prompt: Mac Apple Store ID
       private: no
-      when: app_store_email is undefined
-    - name: app_store_password
+      when: mas_email is undefined
+    - name: mas_password
       prompt: Mac Apple Store Password
       private: yes
-      when: app_store_password is undefined
+      when: mas_password is undefined
   tasks:
     - import_role:
         name: helpers
