@@ -24,6 +24,10 @@ homebrew_cask_apps:
 mas_installed_apps:
   - name: Amphetamine
     id: 937984704
+  - name: Hyperdock
+    id: 449830122
+  - name: Lastpass
+    id: 926036361
   - name: Magnet
     id: 441258766
   - name: Monit
