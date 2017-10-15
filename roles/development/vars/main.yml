@@ -4,6 +4,8 @@ homebrew_installed_packages:
   - ack
   - git
   - git-lfs
+  - chruby
+  - ruby-install
 
 homebrew_cask_apps:
   - sublime-text
