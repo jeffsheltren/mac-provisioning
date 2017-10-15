@@ -6,6 +6,7 @@ homebrew_installed_packages:
   - diff-so-fancy
   - chruby
   - ruby-install
+  - wireshark
 
 homebrew_cask_apps:
   - sublime-text
@@ -17,3 +18,4 @@ homebrew_cask_apps:
   - vagrant-manager
   - docker
   - yed
+  - wireshark
