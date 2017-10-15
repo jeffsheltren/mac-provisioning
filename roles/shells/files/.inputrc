@@ -70,4 +70,4 @@ set output-meta on
 set convert-meta off
 
 # Set vim mode
-set -o vi
+#set -o vi
