@@ -1,5 +1,12 @@
 ---
 
+# Install git-lfs and install it
+- name: Install git-lfs
+  homebrew:
+    name: git-lfs
+    state: present
+  notify: install git-lfs
+
 # Config files for tools
 
 - name: Install .editorconfig

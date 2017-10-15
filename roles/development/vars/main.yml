@@ -3,7 +3,6 @@
 homebrew_installed_packages:
   - ack
   - git
-  - git-lfs
   - diff-so-fancy
   - chruby
   - ruby-install
