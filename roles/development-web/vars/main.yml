@@ -6,6 +6,8 @@ homebrew_taps:
 
 homebrew_installed_packages:
   - homebrew/php/php71
+  - composer
+  - drush
   - nodejs
   - name: imagemagick
     install_options: --with-gettext
