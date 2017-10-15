@@ -9,7 +9,7 @@ function ansible_install() {
 }
 
 function ansible_run() {
-  ansible-playbook -K -i ${DIR}/inventory ${DIR}/mac.yml;
+  ansible-playbook -K -i ${DIR}/inventory ${DIR}/mac_basics.yml;
 }
 
 # xcode-select --install;
