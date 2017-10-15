@@ -12,6 +12,7 @@ homebrew_installed_packages:
   - php-code-sniffer
   - drupal-code-sniffer
   - phpmd
+  - symfony-installer
   - name: imagemagick
     install_options: --with-gettext
   - lynx # Text based web browser
