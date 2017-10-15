@@ -218,7 +218,7 @@
       notify: restart Finder
 
 - name: Show item info near icons on the desktop and in other icon views
-  include_role:
+  import_role:
     name: helpers
     tasks_from: plistbuddy
   with_items:
@@ -237,7 +237,7 @@
   notify: restart Finder
 
 - name: Show item info near icons on the desktop and in other icon views
-  include_role:
+  import_role:
     name: helpers
     tasks_from: plistbuddy
   with_items:
@@ -248,7 +248,7 @@
   notify: restart Finder
 
 - name: Enable snap-to-grid for icons on the desktop and in other icon views
-  include_role:
+  import_role:
     name: helpers
     tasks_from: plistbuddy
   with_items:
@@ -267,7 +267,7 @@
   notify: restart Finder
 
 - name: Increase grid spacing for icons on the desktop and in other icon views
-  include_role:
+  import_role:
     name: helpers
     tasks_from: plistbuddy
   with_items:
@@ -286,7 +286,7 @@
   notify: restart Finder
 
 - name: Increase the size of icons on the desktop and in other icon views
-  include_role:
+  import_role:
     name: helpers
     tasks_from: plistbuddy
   with_items:
@@ -364,7 +364,7 @@
   notify: restart Finder
 
 - name: 'Expand the following File Info panes: “General”, “Open with”, and “Sharing & Permissions”'
-  include_role:
+  import_role:
     name: helpers
     tasks_from: plistbuddy
   with_items:

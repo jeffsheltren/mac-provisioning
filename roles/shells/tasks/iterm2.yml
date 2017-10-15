@@ -32,7 +32,7 @@
     value: false
     state: present
 
-- include_role:
+- import_role:
     name: helpers
     tasks_from: plistbuddy
   with_items:
@@ -67,7 +67,7 @@
 
 # This section doesn't work yet:
 - name: "Profile 1: Unlimited scrollback"
-  include_role:
+  import_role:
     name: helpers
     tasks_from: plistbuddy
   with_items:
@@ -80,7 +80,7 @@
       value: true
       plist: "{{ iterm2_plist }}"
 - name: "Profile 1: Save lines to scrollback when an app status bar is present"
-  include_role:
+  import_role:
     name: helpers
     tasks_from: plistbuddy
   with_items:
@@ -89,7 +89,7 @@
       value: true
       plist: "{{ iterm2_plist }}"
 - name: "Profile 1: Make sure alt left/right work properly"
-  include_role:
+  import_role:
     name: helpers
     tasks_from: plistbuddy
   with_items:
