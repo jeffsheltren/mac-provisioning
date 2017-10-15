@@ -6,6 +6,7 @@ homebrew_cask_apps:
   - hyperdock
   - bartender
   - flux
+  - prey
   - adobe-acrobat-reader
   - calibre
   - daisydisk
@@ -18,6 +19,7 @@ homebrew_cask_apps:
   - dropbox
   - transmission
   - lastfm
+  - whatsapp
 
 mas_installed_apps:
   - name: Amphetamine
