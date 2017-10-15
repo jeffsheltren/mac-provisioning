@@ -1,5 +1,6 @@
 ---
-# vars file for roles/media-server
+homebrew_cask_apps:
+  - plex-media-server
 
 mas_installed_apps:
   - name: WOL Wake
