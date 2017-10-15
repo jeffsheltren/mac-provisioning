@@ -1,5 +1,1 @@
 ---
-- name: Install Harvest
-  homebrew_cask:
-    name: harvest
-    state: present

@@ -1,2 +1,5 @@
 ---
-# vars file for roles/picabit
+# homebrew_installed_packages:
+
+homebrew_cask_apps:
+  - harvest

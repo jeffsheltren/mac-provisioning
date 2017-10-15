@@ -9,5 +9,7 @@
         name: development
     - import_role:
         name: development-web
+    - import_role:
+        name: picabit
   environment:
     PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
