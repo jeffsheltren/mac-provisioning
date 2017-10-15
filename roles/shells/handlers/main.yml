@@ -2,3 +2,9 @@
 - name: restart Terminal
   command: killall Terminal
   ignore_errors: yes
+  changed_when: false
+
+- name: shell bash4
+  command: chsh -s /usr/local/bin/bash
+  ignore_errors: yes
+  changed_when: false

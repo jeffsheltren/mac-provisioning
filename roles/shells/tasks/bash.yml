@@ -1,5 +1,11 @@
 ---
 
+- name: Install bash 4
+  homebrew:
+    name: bash
+    state: present
+  notify: shell bash4
+
 - name: Install .bash_profile
   copy:
     src: files/bash/.bash_profile

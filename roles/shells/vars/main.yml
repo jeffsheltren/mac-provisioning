@@ -1,6 +1,5 @@
 ---
 homebrew_installed_packages:
-  - bash # Install Bash 4.
   - bash-completion@2
   - zsh
   - zsh-completions
