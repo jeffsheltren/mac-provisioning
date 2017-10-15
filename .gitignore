@@ -1,4 +1,4 @@
 .idea
 roles_contrib/*
 !roles_contrib/.gitkeep
-/inventory_local
+/inventory_local.yml
