@@ -5,6 +5,7 @@
   changed_when: false
 
 - name: shell bash4
-  command: chsh -s /usr/local/bin/bash
+  shell: chsh -s /usr/local/bin/bash {{ ansible_user_id }}
+  become: yes
   ignore_errors: yes
   changed_when: false

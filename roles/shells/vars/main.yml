@@ -1,6 +1,5 @@
 ---
 homebrew_installed_packages:
-  - bash-completion@2
   - zsh
   - zsh-completions
   - openssh

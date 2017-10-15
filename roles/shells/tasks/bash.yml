@@ -6,6 +6,19 @@
     state: present
   notify: shell bash4
 
+- name: Install bash-completion@2
+  homebrew:
+    name: bash-completion@2
+    state: present
+
+- name: Add brew-installed bash to /etc/shells
+  lineinfile:
+    dest: /etc/shells
+    state: present
+    regexp: '^/usr/local/bin/bash$'
+    line: '/usr/local/bin/bash'
+  become: yes
+
 - name: Install .bash_profile
   copy:
     src: files/bash/.bash_profile
@@ -39,11 +52,3 @@
   copy:
     src: files/bash/.functions
     dest: ~/.bash/.functions
-
-- name: Switch to using brew-installed bash as default shell
-  lineinfile:
-    dest: /etc/shells
-    state: present
-    regexp: '^/usr/local/bin/bash$'
-    line: '/usr/local/bin/bash'
-  become: yes
