@@ -9,6 +9,9 @@ homebrew_installed_packages:
   - composer
   - drush
   - nodejs
+  - php-code-sniffer
+  - drupal-code-sniffer
+  - phpmd
   - name: imagemagick
     install_options: --with-gettext
   - lynx # Text based web browser
