@@ -13,3 +13,4 @@ homebrew_cask_apps:
   - virtualbox
   - vagrant
   - vagrant-manager
+  - docker
