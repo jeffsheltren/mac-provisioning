@@ -5,6 +5,7 @@ homebrew_installed_packages:
 homebrew_cask_apps:
   - hyperdock
   - bartender
+  - flux
   - adobe-acrobat-reader
   - calibre
   - daisydisk
