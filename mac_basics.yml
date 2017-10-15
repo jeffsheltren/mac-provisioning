@@ -1,6 +1,7 @@
 ---
 - hosts: all
   vars:
+    mas_run: true
     dockitems_enabled:
       - name: Google Chrome
         path: /Applications/Google Chrome.app
