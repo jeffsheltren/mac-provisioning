@@ -9,6 +9,7 @@ function ansible_install() {
 }
 
 function ansible_run() {
+  ansible-galaxy install -r requirements.yml
   ansible-playbook -K -i ${DIR}/inventory ${DIR}/mac_basics.yml;
 }
 
