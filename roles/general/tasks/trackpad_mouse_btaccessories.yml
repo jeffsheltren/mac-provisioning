@@ -66,16 +66,3 @@
     type: integer
     value: 40
     state: present
-
-- name: Install switch sound output app
-  copy:
-    src: files/SoundOutputSwitch.app
-    dest: /Applications
-- name: Install switch sound output workflow
-  copy:
-    src: files/Switch Sound Output.workflow
-    dest: ~/Library/Services
-- name: Set a keyboard shortcut to switch sound
-  command: defaults write pbs NSServicesStatus -dict-add '"(null) - Switch Sound Output - runWorkflowAsService"' '{key_equivalent = "@$1";}'
-    # Need a command because dict-add isn't supported in ansible osx_defaults yet (https://github.com/ansible/ansible/issues/24028)
-    # https://github.com/ansible/ansible/pull/24808
