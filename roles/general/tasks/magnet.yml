@@ -1,0 +1,9 @@
+---
+
+- name: Start Magnet
+  include_role:
+    name: helpers
+    tasks_from: loginitems
+  with_items:
+    - name: Magnet
+      path: /Applications/Magnet.app
