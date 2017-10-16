@@ -1,0 +1,10 @@
+---
+
+- name: Start toggl on launch
+  include_role:
+    name: helpers
+    tasks_from: loginitems
+  with_items:
+    - name: TogglDesktop
+      path: /Applications/togglDesktop.app
+      
