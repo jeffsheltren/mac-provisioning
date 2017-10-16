@@ -1,0 +1,17 @@
+---
+
+- name: Start a new session at launch
+  osx_defaults:
+    domain: com.if.Amphetamine
+    key: Start Session At Launch
+    type: int
+    value: 1
+    state: present
+
+- name: Disable notification sound
+  osx_defaults:
+    domain: com.if.Amphetamine
+    key: Enable Notification Sound
+    type: int
+    value: 0
+    state: present
