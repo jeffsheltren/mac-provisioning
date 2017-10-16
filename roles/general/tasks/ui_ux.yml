@@ -18,22 +18,17 @@
   when: not sound_effects.stdout | match("^SystemAudioVolume\s*$")
 
 - name: "Menu bar: hide the Time Machine, Volume, and User icons"
-  block:
-    - find:
-        paths: "~/Library/Preferences/ByHost"
-        patterns: "com.apple.systemuiserver.*"
-      register: systemui_files
-    - osx_defaults:
-        domain: "{{ item.path }}"
-        key: dontAutoLoad
-        type: array
-        value:
-          - /System/Library/CoreServices/Menu Extras/TimeMachine.menu
-          - /System/Library/CoreServices/Menu Extras/Volume.menu
-          - /System/Library/CoreServices/Menu Extras/User.menu
-        state: present
-      with_items: "{{ systemui_files.files }}"
-      notify: restart MenuBar
+  osx_defaults:
+    domain: com.apple.systemuiserver
+    host: currentHost
+    key: dontAutoLoad
+    type: array
+    value:
+      - /System/Library/CoreServices/Menu Extras/TimeMachine.menu
+      - /System/Library/CoreServices/Menu Extras/Volume.menu
+      - /System/Library/CoreServices/Menu Extras/User.menu
+    state: present
+  notify: restart MenuBar
 
 - name: "Menu bar: show bluetooth, airport, battery and clock"
   osx_defaults:
