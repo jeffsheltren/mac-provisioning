@@ -10,6 +10,7 @@
 - import_tasks: screen.yml
 - import_tasks: finder.yml
 - import_tasks: dock.yml
+- import_tasks: touchbar.yml
 - import_tasks: spotlight.yml
 - import_tasks: time_machine.yml
 - import_tasks: activity_monitor.yml

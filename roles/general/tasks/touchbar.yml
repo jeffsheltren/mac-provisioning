@@ -1,0 +1,22 @@
+---
+- name: Check if there are touchbar controlstrip settings
+  command: defaults find controlstrip
+  register: controlstrip_present
+  changed_when: false
+
+- name: Set the touchbar controlstrip
+  osx_defaults:
+    domain: com.apple.controlstrip
+    key: MiniCustomized
+    type: array
+    value:
+      - "com.apple.system.screen-lock"
+      - "com.apple.system.media-play-pause"
+      - "com.apple.system.volume"
+      - "com.apple.system.mute"
+    state: present
+  when: 
+    - controlstrip_present | succeeded
+    - controlstrip_present.stdout | search("Found \d+ keys in domain")
+  notify: restart ControlStrip
+  

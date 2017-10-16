@@ -33,3 +33,9 @@
   command: killall Transmission
   ignore_errors: yes
   changed_when: false
+
+- name: restart ControlStrip
+  command: killall ControlStrip
+  ignore_errors: yes
+  changed_when: false
+  
