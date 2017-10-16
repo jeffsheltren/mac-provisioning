@@ -35,7 +35,7 @@
     domain: com.apple.dock
     key: orientation
     type: string
-    value: right
+    value: left
     state: present
   notify: restart Dock
 
