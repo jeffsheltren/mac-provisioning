@@ -1,7 +1,7 @@
 ---
 - hosts: all
   vars:
-    mas_run: true
+    mas_run: false
     dockitems_enabled:
       - name: Google Chrome
         path: /Applications/Google Chrome.app
@@ -36,15 +36,6 @@
       - name: Sequel Pro
         path: /Applications/Sequel Pro.app
         pos: 12
-  vars_prompt:
-    - name: mas_email
-      prompt: Mac Apple Store ID
-      private: no
-      when: mas_email is undefined
-    - name: mas_password
-      prompt: Mac Apple Store Password
-      private: yes
-      when: mas_password is undefined
   tasks:
     - import_role:
         name: helpers
