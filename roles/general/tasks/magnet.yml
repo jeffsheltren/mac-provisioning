@@ -1,6 +1,6 @@
 ---
 
-- name: Start Magnet
+- name: Start Magnet on launch
   include_role:
     name: helpers
     tasks_from: loginitems
