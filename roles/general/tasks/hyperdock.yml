@@ -1,0 +1,57 @@
+---
+
+- name: Start Hyperdock Helper on launch
+  include_role:
+    name: helpers
+    tasks_from: loginitems
+  with_items:
+    - name: HyperDock Helper
+      path: /Applications/HyperDock.app/Contents/Library/LoginItems/HyperDock Helper.app
+
+- name: Don't snap to edges
+  osx_defaults:
+    domain: de.bahoom.HyperDock
+    key: resize_recommendations
+    type: bool
+    value: false
+    state: present
+
+- name: Don't use keyboard for snapping
+  osx_defaults:
+    domain: de.bahoom.HyperDock
+    key: keyboard_arrange
+    type: bool
+    value: false
+    state: present
+
+- name: Disable iTunes special preview
+  osx_defaults:
+    domain: de.bahoom.HyperDock
+    key: itunes_preview_enable
+    type: bool
+    value: false
+    state: present
+
+- name: Disable iTunes icon scroll volume
+  osx_defaults:
+    domain: de.bahoom.HyperDock
+    key: itunes_scroll_volume
+    type: bool
+    value: false
+    state: present
+
+- name: Disable Spotify special preview
+  osx_defaults:
+    domain: de.bahoom.HyperDock
+    key: spotify_preview_enable
+    type: bool
+    value: false
+    state: present
+
+- name: Disable Vox special preview
+  osx_defaults:
+    domain: de.bahoom.HyperDock
+    key: vox_preview_enable
+    type: bool
+    value: false
+    state: present

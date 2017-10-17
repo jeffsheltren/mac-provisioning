@@ -3,7 +3,6 @@ homebrew_installed_packages:
   - dockutil
 
 homebrew_cask_apps:
-  - hyperdock
   - bartender
   - flux
   # - prey
