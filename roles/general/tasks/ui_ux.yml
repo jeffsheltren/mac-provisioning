@@ -17,7 +17,7 @@
   become: yes
   when: not sound_effects.stdout | match("^SystemAudioVolume\s*$")
 
-- name: "Menu bar: hide the Time Machine, Volume, and User icons"
+- name: "Menu bar: hide the Time Machine, Volume, User and Display icons"
   osx_defaults:
     domain: com.apple.systemuiserver
     host: currentHost
@@ -30,7 +30,7 @@
     state: present
   notify: restart MenuBar
 
-- name: "Menu bar: show bluetooth, airport, battery and clock"
+- name: "Menu bar: show bluetooth, airport, battery, clock and text input change"
   osx_defaults:
     domain: com.apple.systemuiserver
     key: menuExtras
@@ -40,8 +40,20 @@
       - /System/Library/CoreServices/Menu Extras/AirPort.menu
       - /System/Library/CoreServices/Menu Extras/Battery.menu
       - /System/Library/CoreServices/Menu Extras/Clock.menu
+      - /System/Library/CoreServices/Menu Extras/TextInput.menu
     state: present
   notify: restart MenuBar
+
+- name: "Menu bar: Hide the airplay mirroring options"
+  osx_defaults:
+    domain: com.apple.airplay
+    key: showInMenuBarIfPresent
+    type: bool
+    value: false
+    state: present
+  notify: restart MenuBar
+
+  # defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 - name: Set sidebar icon size to medium
   osx_defaults:
