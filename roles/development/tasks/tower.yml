@@ -40,7 +40,7 @@
     domain: com.fournova.Tower2
     key: GTUserDefaultsAlwaysDiscardDiffContent
     type: bool
-    value: false
+    value: true
     state: present
 
 - name: Set the directory diff tool
