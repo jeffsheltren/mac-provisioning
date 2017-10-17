@@ -11,7 +11,7 @@
   when:
     - check | succeeded
     - not item.value|string | search("dict")
-    - not check.stdout | search(item.value|string|lower)
+    - not check.stdout | match(item.value|string|lower)
 - name: Add value with PlistBuddy
   command: '{{ plistbuddy }} -c "Add {{ item.name }} {{ item.type }} {{ item.value }}" {{ item.plist }}'
   when: check|failed
