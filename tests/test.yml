@@ -1,7 +1,5 @@
 ---
 - hosts: localhost
-  vars:
-    mas_run: false
   tasks:
     - import_role:
         name: general
