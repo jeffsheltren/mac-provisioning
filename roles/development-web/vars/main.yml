@@ -6,6 +6,7 @@ homebrew_taps:
 
 homebrew_installed_packages:
   - homebrew/php/php71
+  - homebrew/php/php71-mcrypt
   - composer
   - drush
   - php-code-sniffer
