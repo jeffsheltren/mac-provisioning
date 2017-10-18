@@ -1,0 +1,12 @@
+---
+- import_playbook: mac_basics.yml
+- hosts: all
+  vars:
+    mas_run: false
+  tasks:
+    - import_role:
+        name: picabit
+    # - import_role:
+    #     name: fubarhouse.macdock
+  environment:
+    PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
