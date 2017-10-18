@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export CDPATH='.:..:../..:~/Workspaces:~'
+export CDPATH='.:~/Workspaces'
 
 # Make vim the default editor.
 export EDITOR='vim';
