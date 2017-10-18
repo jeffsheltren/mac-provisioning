@@ -2,7 +2,6 @@
 - import_playbook: mac_basics.yml
 - hosts: all
   vars:
-    mas_run: false
   tasks:
     - import_role:
         name: digipolis
