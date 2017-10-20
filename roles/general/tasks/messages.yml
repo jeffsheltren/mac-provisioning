@@ -1,0 +1,22 @@
+---
+###############################################################################
+# Messages                                                                    #
+###############################################################################
+
+- name: Disable automatic emoji substitution (i.e. use plain text smileys)
+  command: defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
+    # Need a command because dict-add isn't supported in ansible osx_defaults yet (https://github.com/ansible/ansible/issues/24028)
+    # https://github.com/ansible/ansible/pull/24808
+  notify: restart Messages
+
+- name: Disable smart quotes as it’s annoying for messages that contain code
+  command: defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
+    # Need a command because dict-add isn't supported in ansible osx_defaults yet (https://github.com/ansible/ansible/issues/24028)
+    # https://github.com/ansible/ansible/pull/24808
+  notify: restart Messages
+
+- name: Disable continuous spell checking
+  command: defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+    # Need a command because dict-add isn't supported in ansible osx_defaults yet (https://github.com/ansible/ansible/issues/24028)
+    # https://github.com/ansible/ansible/pull/24808
+  notify: restart Messages
