@@ -1,0 +1,68 @@
+---
+###############################################################################
+# Mail                                                                        #
+###############################################################################
+
+- name: Disable send and reply animations in Mail.app
+  block:
+    - osx_defaults:
+        domain: com.apple.mail
+        key: DisableReplyAnimations
+        type: bool
+        value: true
+        state: present
+      notify: restart Mail
+    - osx_defaults:
+        domain: com.apple.mail
+        key: DisableSendAnimations
+        type: bool
+        value: true
+        state: present
+      notify: restart Mail
+
+- name: Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
+  osx_defaults:
+    domain: com.apple.mail
+    key: AddressesIncludeNameOnPasteboard
+    type: bool
+    value: false
+    state: present
+  notify: restart Mail
+
+- name: Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
+  command: defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
+  notify: restart Mail
+
+- name: Display emails in threaded mode, sorted by date (newest at the top)
+  block:
+    - command: defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
+      notify: restart Mail
+    - command: defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
+      notify: restart Mail
+    - command: defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
+      notify: restart Mail
+    - osx_defaults:
+        domain: com.apple.mail
+        key: ConversationViewSortDescending
+        type: bool
+        value: true
+        state: present
+      notify: restart Mail
+
+- name: Disable inline attachments (just show the icons)
+  osx_defaults:
+    domain: com.apple.mail
+    key: DisableInlineAttachmentViewing
+    type: bool
+    value: true
+    state: present
+  notify: restart Mail
+
+- name: Disable automatic spell checking
+  osx_defaults:
+    domain: com.apple.mail
+    key: SpellCheckingBehavior
+    type: string
+    value: NoSpellCheckingEnabled
+    state: present
+  notify: restart Mail

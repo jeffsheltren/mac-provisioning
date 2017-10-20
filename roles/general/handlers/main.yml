@@ -19,6 +19,11 @@
   ignore_errors: yes
   changed_when: false
 
+- name: restart Mail
+  command: killall Mail
+  ignore_errors: yes
+  changed_when: false
+
 - name: restart Activity Monitor
   command: killall "Activity Monitor"
   ignore_errors: yes
@@ -38,7 +43,6 @@
   command: killall Messages
   ignore_errors: yes
   changed_when: false
-  
 
 - name: restart ControlStrip
   command: killall ControlStrip
