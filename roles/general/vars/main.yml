@@ -36,6 +36,8 @@ mas_installed_apps:
   - name: Wunderlist
     id: 410628904
 
+dockitems_enabled: {}
+
 dockitems_disabled:
   - Siri
   - Launchpad
