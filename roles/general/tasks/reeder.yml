@@ -1,0 +1,9 @@
+---
+
+- name: Open browser links in background
+  osx_defaults:
+    domain: com.reederapp.rkit2.mac
+    key: OpenLinksInBackground
+    type: bool
+    value: true
+    state: present

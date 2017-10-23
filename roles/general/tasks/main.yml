@@ -27,3 +27,4 @@
 - import_tasks: amphetamine.yml
 - import_tasks: magnet.yml
 - import_tasks: hyperdock.yml
+- import_tasks: reeder.yml
