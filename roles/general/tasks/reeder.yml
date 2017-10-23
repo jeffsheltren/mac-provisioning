@@ -7,3 +7,11 @@
     type: bool
     value: true
     state: present
+
+- name: Don't ask before marking all as read
+  osx_defaults:
+    domain: com.reederapp.rkit2.mac
+    key: ConfirmMarkAllAsRead
+    type: bool
+    value: false
+    state: present
