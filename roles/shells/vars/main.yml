@@ -25,6 +25,7 @@ homebrew_installed_packages:
   - gnutls
   - name: grep
     install_options: --with-default-names
+  - pstree
   - gzip
   - pigz
   - pv
