@@ -4,14 +4,14 @@
   osx_defaults:
     domain: com.reederapp.rkit2.mac
     key: OpenLinksInBackground
-    type: bool
-    value: true
+    type: int
+    value: 1
     state: present
 
 - name: Don't ask before marking all as read
   osx_defaults:
     domain: com.reederapp.rkit2.mac
     key: ConfirmMarkAllAsRead
-    type: bool
-    value: false
+    type: int
+    value: 0
     state: present
