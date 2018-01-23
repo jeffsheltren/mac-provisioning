@@ -3,6 +3,7 @@
 # Finder                                                                      #
 ###############################################################################
 
+- set_fact: 'plistbuddy=/usr/libexec/PlistBuddy'
 - set_fact: 'finder_plist=~/Library/Preferences/com.apple.finder.plist'
 - set_fact: 'dropbox_icon=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns'
 
