@@ -1,0 +1,168 @@
+{
+  "_comments": [
+    "Valid terminals include: 'Terminal.app' or 'iTerm'",
+    "In the editor value change 'default' to 'nano', 'vi', or another terminal based editor.",
+    "Hosts will also be read from your ~/.ssh/config or /etc/ssh_config file, if available",
+    "For more information on how to configure, please see http://fitztrev.github.io/shuttle/"
+  ],
+  "editor": "vim",
+  "launch_at_login": true,
+  "terminal": "iTerm",
+  "iTerm_version": "nightly",
+  "default_theme": "Homebrew",
+  "open_in": "tab",  
+  "show_ssh_config_hosts": false,
+  "ssh_config_ignore_hosts": [  ],
+  "ssh_config_ignore_keywords": [  ],
+  "hosts": [
+    {
+      "Picabit": [
+        {
+          "name": "Infra root",
+          "cmd": "ssh root@infra.picabit.be"
+        },
+        {
+          "Customers": [
+            {
+              "name": "Book Island",
+              "cmd": "ssh -p 7822 bookisla@www.bookisland.co.nz"
+            },
+            {
+              "name": "Bel Acoustics",
+              "cmd": "ssh belacousticsbe@ssh.belacoustics.be"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Neostrada": [
+        {
+          "name": "Neostrada picabit (main account)",
+          "cmd": "ssh -p 4000 picabi1q@picabithosting.be"
+        },
+        {
+          "name": "Scholastralsundensis",
+          "cmd": "ssh -p 4000 scholastralsund@www.scholastralsundensis.de"
+        },
+        {
+          "name": "BWOW",
+          "cmd": "ssh -p 4000 bwow@www54.totaalholding.nl"
+        },
+        {
+          "name": "Chiro Jomego",
+          "cmd": "ssh -p 4000 chirojomego@www54.totaalholding.nl"
+        },
+        {
+          "name": "Songs for the Deaf",
+          "cmd": "ssh -p 4000 songsforthedeaf@www54.totaalholding.nl"
+        },
+        {
+          "name": "Restaurant Montmartre",
+          "cmd": "ssh -p 4000 restaurantmontma@www54.totaalholding.nl"
+        },
+        {
+          "name": "AV Project",
+          "cmd": "ssh -p 4000 avproject@www54.totaalholding.nl"
+        }
+      ]
+    },
+    {
+      "Spinternet": [
+        {
+          "name": "Garage Dewulf",
+          "cmd": "ssh sn3601@garagedewulf.be"
+        },
+        {
+          "name": "Wolster",
+          "cmd": "ssh sn3524@wolster.be"
+        }
+      ]
+    },
+    {
+      "StudentenInternet": [
+        {
+          "name": "Drupal server",
+          "cmd": "ssh drupal@users.studenteninternet.be -p 8222"
+        },
+        {
+          "name": "Drupal server dieter (symfony)",
+          "cmd": "ssh dieterb@users.studenteninternet.be -p 8222"
+        }
+      ]
+    },
+    {
+      "Blendify": [
+        {
+          "name": "Aegir production",
+          "cmd": "ssh daften@aegir1.production.blendify.eu"
+        },
+        {
+          "name": "MySQL production",
+          "cmd": "ssh daften@mysql1.production.blendify.eu"
+        },
+        {
+          "name": "Aegir staging",
+          "cmd": "ssh daften@aegir1.staging.blendify.eu"
+        },
+        {
+          "name": "MySQL staging",
+          "cmd": "ssh daften@mysql1.staging.blendify.eu"
+        },
+        {
+          "Legacy": [
+            {
+              "name": "Jenkins1 root",
+              "cmd": "ssh root@jenkins1.inceptum.eu"
+            },
+            {
+              "name": "Jenkins1 daften",
+              "cmd": "ssh daften@jenkins1.inceptum.eu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Inceptum": [
+        {
+          "name": "inceptum.eu daften",
+          "cmd": "ssh daften@inceptum.eu"
+        },
+        {
+          "name": "Aegir inceptum daften",
+          "cmd": "ssh daften@aegir.inceptum.eu"
+        },
+        {
+          "name": "Aegir inceptum aegir",
+          "cmd": "ssh aegir@aegir.inceptum.eu"
+        }
+      ]
+    },
+    {
+      "iMinds": [
+        {
+          "Legacy": [
+            {
+              "name": "Aegir1 iMinds daften",
+              "cmd": "ssh daften@aegir1.iminds.be"
+            },
+            {
+              "name": "Aegir1 iMinds aegir",
+              "cmd": "ssh aegir@aegir1.iminds.be"
+            },
+            {
+              "name": "iMinds staging daften",
+              "cmd": "ssh daften@aegir1.inceptum.eu"
+            },
+            {
+              "name": "iMinds staging aegir",
+              "cmd": "ssh aegir@aegir1.inceptum.eu"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+        

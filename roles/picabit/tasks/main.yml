@@ -1,1 +1,8 @@
 ---
+
+# Config file for Shuttle
+
+- name: Install .shuttle.json
+  copy:
+    src: files/.shuttle.json
+    dest: ~/.shuttle.json
