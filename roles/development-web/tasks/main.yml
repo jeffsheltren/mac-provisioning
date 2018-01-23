@@ -3,7 +3,7 @@
 - name: Ensure NPM version 5.4.2.
   npm:
     name: npm
-    version: '5.4.2'
+    version: '5.6.0'
     global: yes
   environment:
     PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
