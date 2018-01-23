@@ -2,6 +2,7 @@
 - import_playbook: mac_basics.yml
 - hosts: all
   vars:
+    dockitems_remove_all: true
     dockitems_enabled:
       - name: Google Chrome
         path: /Applications/Google Chrome.app
