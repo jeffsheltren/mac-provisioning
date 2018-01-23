@@ -1,5 +1,21 @@
 ---
 
+- name: Don't show welcome window
+  osx_defaults:
+    domain: com.if.Amphetamine
+    key: Show Welcome Window
+    type: int
+    value: 0
+    state: present
+
+- name: Don't show dock icon
+  osx_defaults:
+    domain: com.if.Amphetamine
+    key: Show Dock Icon
+    type: int
+    value: 0
+    state: present
+
 - name: Start a new session at launch
   osx_defaults:
     domain: com.if.Amphetamine
