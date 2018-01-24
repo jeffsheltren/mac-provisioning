@@ -1,6 +1,8 @@
 ---
 
 homebrew_installed_packages:
+  - name: vim # More recent version than system default
+    install_options: --with-override-system-vi
   - macvim
   - ack
   - git

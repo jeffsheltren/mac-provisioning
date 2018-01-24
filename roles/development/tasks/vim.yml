@@ -1,5 +1,14 @@
 ---
 
+- name: Install .vimrc
+  copy:
+    src: files/.vimrc
+    dest: ~/.vimrc
+
+- copy:
+    src: files/.vim
+    dest: ~/
+
 # Use .gvimrc for macvim
 - name: Install .gvimrc
   copy:
