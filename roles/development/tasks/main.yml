@@ -29,11 +29,6 @@
     src: files/.gitignore
     dest: ~/.gitignore
 
-- name: Install .gvimrc
-  copy:
-    src: files/.gvimrc
-    dest: ~/.gvimrc
-
 # Application config
 
 - import_tasks: tower.yml

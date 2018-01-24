@@ -1,6 +1,7 @@
 ---
 
 homebrew_installed_packages:
+  - macvim
   - ack
   - git
   - diff-so-fancy

@@ -1,0 +1,7 @@
+---
+
+# Use .gvimrc for macvim
+- name: Install .gvimrc
+  copy:
+    src: files/.gvimrc
+    dest: ~/.gvimrc
