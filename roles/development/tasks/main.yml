@@ -1,5 +1,7 @@
 ---
 
+- import_tasks: vim.yml
+
 # Install git-lfs and install it
 - name: Install git-lfs
   homebrew:
