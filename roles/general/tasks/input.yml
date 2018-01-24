@@ -122,3 +122,21 @@
 - name: Stop iTunes from responding to the keyboard media keys
   command: launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
   when: rcd|succeeded
+
+# Disable handoff
+- name: Prevent Photos from opening automatically when devices are plugged in
+  block:
+    - osx_defaults:
+        domain: com.apple.coreservices.useractivityd
+        host: currentHost
+        key: ActivityAdvertisingAllowed
+        type: bool
+        value: false
+        state: present
+    - osx_defaults:
+        domain: com.apple.coreservices.useractivityd
+        host: currentHost
+        key: ActivityReceivingAllowed
+        type: bool
+        value: false
+        state: present
