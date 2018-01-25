@@ -1,8 +1,8 @@
 ---
 
+- import_tasks: bash.yml
 - import_tasks: terminal.yml
 - import_tasks: iterm2.yml
-- import_tasks: bash.yml
 
 - name: Install .curlrc
   copy:
