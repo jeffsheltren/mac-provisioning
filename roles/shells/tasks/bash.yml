@@ -30,25 +30,10 @@
     dest: ~/.bashrc
 
 - file:
-    path: ~/.bash
+    path: ~/.bashrc.d
     state: directory
 
-- name: Install .bash_prompt
+- name: Install .bashrc.d files
   copy:
-    src: files/bash/.bash_prompt
-    dest: ~/.bash/.bash_prompt
-
-- name: Install .aliases
-  copy:
-    src: files/bash/.aliases
-    dest: ~/.bash/.aliases
-
-- name: Install .exports
-  copy:
-    src: files/bash/.exports
-    dest: ~/.bash/.exports
-
-- name: Install .functions
-  copy:
-    src: files/bash/.functions
-    dest: ~/.bash/.functions
+    src: files/bash/.bashrc.d
+    dest: ~/.bashrc.d
