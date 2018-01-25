@@ -11,7 +11,5 @@
         name: development-web
     - import_role:
         name: development-chef
-    - import_role:
-        name: fubarhouse.macdock
   environment:
     PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
