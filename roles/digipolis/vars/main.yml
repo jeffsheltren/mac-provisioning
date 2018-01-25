@@ -6,5 +6,5 @@ homebrew_taps:
 homebrew_installed_packages: {}
 
 homebrew_cask_apps:
-  - toggldesktop
+  - toggl
   - macpass
