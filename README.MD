@@ -26,20 +26,15 @@ You can filter which part of the provisioning process to run by specifying a set
 
 It's my hope that I can get the rest of these things wrapped up into Ansible playbooks soon, but for now, these steps need to be completed manually (assuming you already have Xcode and Ansible installed, and have run this playbook).
 
-* Install [Sublime Package Manager](http://sublime.wbond.net/installation).
-* Install all the apps that aren't yet in this setup (see below).
-* Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
-* Install licenses in applications.
-
-### Applications/packages to be added:
+### Applications/packages to be installed:
 
 These are mostly direct download links, some are more difficult to install because of custom installers or other nonstandard install quirks:
 
-NONE!
+See [manual installation](MANUAL_INSTALLATION.md)
 
 ### Configuration to be added:
 
-NONE!
+See [manual configuration](MANUAL_CONFIGURATION.md)
 
 ## Testing the Playbook
 

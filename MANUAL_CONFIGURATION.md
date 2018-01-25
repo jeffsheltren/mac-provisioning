@@ -1,4 +1,9 @@
-# Applications manual steps
+# Manual configuration steps
+
+## Accounts and licenses
+
+* Add the accounts for e.g. Mail, Calendar, Google Chrome, Dropbox
+* Add the licenses to the licensed applications
 
 ## PHPStorm
 
@@ -47,6 +52,7 @@ Add the bundle for Varnish on path /Users/daften/.tmbundles/varnish.tmbundle
 ## Sublime Text
 
 Install package control (See https://packagecontrol.io/installation)
+Symlink the packages folder to a synced folder, e.g. with Dropbox
 
 ## MAMP Pro
 
@@ -61,7 +67,6 @@ Synchronization settings
 * Go to Preferences -> General
 * Set Sync Favorites to "via Dropbox"
 * Authorize transmit to use dropbox and use the master password for this tool for synchronization
-
 
 ## Sequel Pro
 
