@@ -39,6 +39,6 @@
   osx_defaults:
     domain: com.apple.finder
     key: AppleShowAllFiles
-    type: bool
-    value: true
+    type: string
+    value: 'YES'
     state: present
