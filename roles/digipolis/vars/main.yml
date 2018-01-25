@@ -3,11 +3,8 @@ homebrew_taps:
   - caskroom/cask
   - caskroom/versions
 
-homebrew_installed_packages:
-  - java8
-  - name: jmeter
-    install_options: --with-plugins
+homebrew_installed_packages: {}
 
 homebrew_cask_apps:
-  - toggldesktop
+  - toggl
   - macpass
