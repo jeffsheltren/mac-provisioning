@@ -37,7 +37,5 @@
   copy:
     src: "{{ item }}"
     dest: ~/.bashrc.d
-    owner: root
-    mode: 600
   with_fileglob:
-    - bash/.bashrc.d/*
+    - bash/.bashrc.d/*.bashrc
