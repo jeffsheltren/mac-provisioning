@@ -3,6 +3,7 @@ homebrew_installed_packages:
   - zsh
   - zsh-completions
   - z
+  - fzf
   - openssh
   # - binutils
   - coreutils # Install GNU core utilities (those that come with macOS are outdated).
