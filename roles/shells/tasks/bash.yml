@@ -35,5 +35,9 @@
 
 - name: Install .bashrc.d files
   copy:
-    src: files/bash/.bashrc.d
+    src: "{{ item }}"
     dest: ~/.bashrc.d
+    owner: root
+    mode: 600
+  with_fileglob:
+    - files/bash/.bashrc.d/*
