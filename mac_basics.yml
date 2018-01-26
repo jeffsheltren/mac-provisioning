@@ -5,8 +5,12 @@
         name: general
     - import_role:
         name: shells
+      tags:
+      - shells
     - import_role:
         name: development
+      tags:
+      - development
     - import_role:
         name: development-web
     - import_role:
