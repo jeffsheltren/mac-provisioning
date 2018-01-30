@@ -16,9 +16,11 @@ This repository contains the playbooks and roles to set up my personal and profe
 
 ### Running a specific set of tagged tasks
 
-You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. The tags available are TODO.
+You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. The tags available are shells, development, media.
 
-  ansible-playbook main.yml -i inventory -K --tags "shells,homebrew"
+```
+ansible-playbook -K -i inventory.yml <playbook>.yml --tags "shells,homebrew"
+```
 
 ## Future additions
 
