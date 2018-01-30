@@ -51,6 +51,9 @@ alias week='date +%V'
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
 
+# Clear the icon cache for Dock
+alias dockiconclear='sudo find /private/var/folders/ -name com.apple.iconservices -exec rm -rf {} \;; sudo find /private/var/folders/ -name com.apple.dock.iconcache -exec rm -rf {} \;; sudo rm -rf /Library/Caches/com.apple.iconservices.store; echo "Now reboot the system"'
+
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
