@@ -2,7 +2,6 @@
 - import_playbook: mac_basics.yml
 - hosts: all
   vars:
-    mas_run: true
     dockitems_remove_all: true
     dockitems_enabled:
       - name: Google Chrome
@@ -39,9 +38,6 @@
         path: /Applications/Sequel Pro.app
         pos: 12
   tasks:
-    - debug:
-        msg: "Test {{ mas_run }}"
-      when: mas_run is defined and mas_run
     - import_role:
         name: media-server
       tags:
