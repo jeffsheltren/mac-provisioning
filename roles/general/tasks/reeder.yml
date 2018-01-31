@@ -1,4 +1,9 @@
 ---
+###############################################################################
+# Reeder                                                                      #
+###############################################################################
+
+- set_fact: 'reeder_plist=~/Library/Containers/com.reederapp.rkit2.mac/Data/Library/Preferences/com.reederapp.rkit2.mac.plist'
 
 - name: Open browser links in background
   osx_defaults:
@@ -15,3 +20,13 @@
     type: int
     value: 0
     state: present
+
+- name: Enable Show in toolbar for Browser
+  include_role:
+    name: helpers
+    tasks_from: plistbuddy
+  with_items:
+    - name: ":ShareRKServiceSafari:show-in-toolbar"
+      type: int
+      value: 1
+      plist: "{{ reeder_plist }}"
