@@ -10,3 +10,4 @@
 
 # Application settings
 - import_tasks: mamp.yml
+- import_tasks: transmit.yml

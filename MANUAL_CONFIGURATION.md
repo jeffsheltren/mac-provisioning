@@ -63,11 +63,12 @@ Add the hosts and import the databases.
 ## Transmit
 
 Synchronization settings
-* Go to Preferences -> General
-* Set Sync Favorites to "via Dropbox"
-* Authorize transmit to use dropbox and use the master password for this tool for synchronization
+* Go to Preferences -> Sync
+* Sign in
 
 ## Sequel Pro
+
+TODO: revisit
 
 Just insert the passwords, they are stored in the keychain then. Favorites are the plist and can be exported by getting the contents from ~/Library/Application\ Support/Sequel\ Pro/Data/Favorites.plist.
 

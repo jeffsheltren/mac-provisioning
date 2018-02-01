@@ -1,0 +1,12 @@
+---
+###############################################################################
+# Transmit                                                                    #
+###############################################################################
+
+- name: Set left browser default to ~/Workspaces
+  osx_defaults:
+    domain: com.panic.Transmit
+    key: LeftBrowserDefaultValue
+    type: string
+    value: "~/Workspaces"
+    state: present
