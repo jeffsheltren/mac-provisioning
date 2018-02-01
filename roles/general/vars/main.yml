@@ -33,8 +33,6 @@ mas_installed_apps:
     id: 1014850245
   - name: Reeder 3
     id: 880001334
-  - name: Wunderlist
-    id: 410628904
 
 dockitems_remove_all: true
 
