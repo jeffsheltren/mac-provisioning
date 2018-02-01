@@ -56,8 +56,7 @@ Symlink the packages folder to a synced folder, e.g. with Dropbox
 
 ## MAMP Pro
 
-Update the settings files so the following settings are set:
-*
+Use the cloud storage for the hosts.
 
 Add the hosts and import the databases.
 

@@ -1,0 +1,68 @@
+---
+###############################################################################
+# MAMP Pro                                                                    #
+###############################################################################
+
+- name: PHP individual version per host
+  osx_defaults:
+    domain: de.appsolute.mamppro
+    key: phpMode
+    type: int
+    value: 1
+    state: present
+
+- name: XDebug on
+  osx_defaults:
+    domain: de.appsolute.mamppro
+    key: xdebug
+    type: bool
+    value: true
+    state: present
+
+- name: Set ports to default ports
+  osx_defaults:
+    domain: de.appsolute.mamppro
+    key: "{{ item.key }}"
+    type: int
+    value: "{{ item.port | int }}"
+    state: present
+  with_items:
+    - { key: 'portApache', port: 80 }
+    - { key: 'portApacheSSL', port: 443 }
+    - { key: 'portMySQL', port: 3306 }
+    - { key: 'portNginx', port: 81 }
+    - { key: 'portNginxSSL', port: 7443 }
+
+- name: Start the servers on MAMP Pro startup
+  osx_defaults:
+    domain: de.appsolute.mamppro
+    key: startServers
+    type: bool
+    value: true
+    state: present
+
+- name: Use the black-and-white menu bar icon
+  osx_defaults:
+    domain: de.appsolute.mamppro
+    key: bwStatusIcon
+    type: bool
+    value: true
+    state: present
+
+- name: Auto-restart servers
+  osx_defaults:
+    domain: de.appsolute.mamppro
+    key: autoRestartServers
+    type: bool
+    value: true
+    state: present
+
+- name: Use the cloud service
+  osx_defaults:
+    domain: de.appsolute.mamppro
+    key: UseCloudService
+    type: bool
+    value: true
+    state: present
+
+

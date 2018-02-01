@@ -7,3 +7,6 @@
     global: yes
   environment:
     PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
+
+# Application settings
+- import_tasks: mamp.yml
