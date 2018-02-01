@@ -1,7 +1,6 @@
 ---
 homebrew_cask_apps:
   - plex-media-server
+  - wakeonlan
 
-mas_installed_apps:
-  - name: WOL Wake
-    id: 1079488927
+mas_installed_apps: {}
