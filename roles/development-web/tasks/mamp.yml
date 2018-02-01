@@ -33,6 +33,14 @@
     - { key: 'portNginx', port: 81 }
     - { key: 'portNginxSSL', port: 7443 }
 
+- name: Allow network access for MySQL
+  osx_defaults:
+    domain: de.appsolute.mamppro
+    key: mysqlNetworkAccess
+    type: bool
+    value: true
+    state: present
+
 - name: Start the servers on MAMP Pro startup
   osx_defaults:
     domain: de.appsolute.mamppro
