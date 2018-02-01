@@ -21,7 +21,7 @@
     value: 0
     state: present
 
-- name: Enable Show in toolbar for Browser
+- name: Enable Show in toolbar for browser, copy link, pocket
   include_role:
     name: helpers
     tasks_from: plistbuddy
@@ -29,4 +29,74 @@
     - name: ":ShareRKServiceSafari:show-in-toolbar"
       type: int
       value: 1
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceCopyLink:show-in-toolbar"
+      type: int
+      value: 1
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceReadItLater:enabled"
+      type: int
+      value: 1
+      plist: "{{ reeder_plist }}"
+
+- name: Disable other sharing options in toolbar
+  include_role:
+    name: helpers
+    tasks_from: plistbuddy
+  with_items:
+    - name: ":ShareRKServiceBuffer:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceEvernote:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceFacebook:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceInstapaper:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceMailLink:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceMarsEdit:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceMessage:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServicePinboard:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceReadingList:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceSystem_com_apple_Notes_SharingExtension:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceSystem_com_apple_reminders_RemindersShareExtension:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceSystem_com_apple_share_AirDrop_send:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceSystem_com_apple_share_LinkedIn_post:enabled"
+      type: int
+      value: 0
+      plist: "{{ reeder_plist }}"
+    - name: ":ShareRKServiceTwitter:enabled"
+      type: int
+      value: 0
       plist: "{{ reeder_plist }}"
