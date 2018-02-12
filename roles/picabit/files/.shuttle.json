@@ -36,6 +36,14 @@
       ]
     },
     {
+      "Chiro": [
+        {
+          "name": "Neostrada chiro profile",
+          "cmd": "ssh -p 4000 chiropicabit@picabithosting.be"
+        }
+      ]
+    },
+    {
       "Neostrada": [
         {
           "name": "Neostrada picabit (main account)",
