@@ -1,2 +1,4 @@
 ---
 # defaults file for development-web
+
+apache_group: staff

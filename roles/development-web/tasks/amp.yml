@@ -1,0 +1,147 @@
+---
+###############################################################################
+# AMP                                                                         #
+###############################################################################
+
+- name: Stop built-in Apache
+  command: /usr/sbin/apachectl stop
+  become: yes
+  changed_when: false
+  tags:
+    - apache
+
+- name: Don't autoload built-in Apache
+  command: launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+  become: yes
+  changed_when: false
+  tags:
+    - apache
+
+- name: Install Apache from homebrew
+  homebrew:
+    name: httpd
+    state: present
+    install_options: with-brewed-openssl,with-mpm-event
+  tags:
+    - apache
+
+- name: (Auto-)start homebrew Apache
+  command: brew services start httpd
+  become: yes
+  changed_when: false
+  tags:
+    - apache
+
+- name: configure httpd.conf (replace)
+  replace:
+    dest: /usr/local/etc/httpd/httpd.conf
+    regexp: "{{ item.regexp }}"
+    replace: "{{ item.replace }}"
+  with_items:
+    - { regexp: '^( *Listen) .*$',                                  replace: '\1 80' }
+    - { regexp: '^( *)# *(LoadModule rewrite_module +.*)$',         replace: '\1\2' }   # just comment in
+    - { regexp: '^( *User) .*$',                                    replace: '\1 {{ ansible_user_id }}' }
+    - { regexp: '^( *Group) .*$',                                   replace: '\1 {{ apache_group }}' }
+  tags:
+    - apache
+
+- name: Install MariaDB from homebrew
+  homebrew:
+    name: mariadb
+    state: present
+  tags:
+    - mariadb
+
+- name: Install MariaDB config files
+  copy:
+    src: "files/my.cnf.d/{{ item }}"
+    dest: "/usr/local/etc/my.cnf.d/{{ item }}"
+  with_items:
+    - mysqld.cnf
+    - innodb.cnf
+  tags:
+    - mariadb
+
+- name: (Auto-)start homebrew MariaDB
+  command: brew services start mariadb
+  become: yes
+  changed_when: false
+  tags:
+    - mariadb
+
+- name: Install PHP from homebrew
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - php@5.6
+    - php@7.1
+    - php@7.2
+  tags:
+    - php
+
+- name: Configure php.ini of php 5.6
+  replace:
+    dest: /usr/local/etc/php/5.6/php.ini
+    regexp: "{{ item.regexp }}"
+    replace: "{{ item.replace }}"
+  with_items: "{{ php_configs }}"
+  tags:
+    - php
+
+- name: Configure php.ini of php71
+  replace:
+    dest: /usr/local/etc/php/7.1/php.ini
+    regexp: "{{ item.regexp }}"
+    replace: "{{ item.replace }}"
+  with_items: "{{ php_configs }}"
+  tags:
+    - php
+
+- name: Configure php.ini of php 7.2
+  replace:
+    dest: /usr/local/etc/php/7.2/php.ini
+    regexp: "{{ item.regexp }}"
+    replace: "{{ item.replace }}"
+  with_items: "{{ php_configs }}"
+  tags:
+    - php
+
+# - name: Link PHP 7.1
+#   command: brew link php@7.1 --force
+#   # ignore_errors: yes
+#   # changed_when: false
+#   tags:
+#     - php
+
+- name: Add php files to DirectoryIndex
+  replace:
+    dest: /usr/local/etc/httpd/httpd.conf
+    regexp: '^( *DirectoryIndex) .*$'
+    replace: '\1 index.php index.html index.htm'
+  tags:
+    - apache
+
+- name: Create apache conf.d folder
+  file:
+    path: /usr/local/etc/httpd/conf.d
+    state: directory
+  tags:
+    - apache
+
+- name: Create apache vhosts folder
+  file:
+    path: /usr/local/etc/httpd/vhosts
+    state: directory
+  tags:
+    - apache
+
+- name: Add conf.d and vhosts folder to httpd.conf
+  lineinfile:
+    dest: /usr/local/etc/httpd/httpd.conf
+    line: "{{ item.line }}"
+  with_items:
+    - { line: "Include /usr/local/etc/httpd/conf.d" }
+    - { line: "Include /usr/local/etc/httpd/vhosts" }
+  tags:
+    - apache

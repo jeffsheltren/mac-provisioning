@@ -40,6 +40,7 @@
       - name: Sequel Pro
         path: /Applications/Sequel Pro.app
         pos: 13
+    apache_group: "GENTGRP\\Domain Users"
   tasks:
     - import_role:
         name: digipolis

@@ -29,3 +29,9 @@ homebrew_cask_apps:
   - sequel-pro
   - transmit
   - poedit
+
+php_configs:
+  - { regexp: '^;?(max_execution_time) *=.*$',            replace: '\1 = 0' }
+  - { regexp: '^;?(max_input_time) *=.*$',                replace: '\1 = -1' }
+  - { regexp: '^;?(memory_limit) *=.*$',                  replace: '\1 = 512M' }
+  - { regexp: '^;?(date.timezone) *=.*$',                 replace: '\1 = Europe/Brussels' }
