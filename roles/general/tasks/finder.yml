@@ -331,7 +331,7 @@
   register: library_hidden
 - name: Show the ~/Library folder
   command: chflags nohidden ~/Library
-  when: library_hidden.stdout | search("hidden")
+  when: library_hidden.stdout is search("hidden")
   notify: restart Finder
 
 - name: Check if /Volumes is hidden
@@ -343,7 +343,7 @@
 - name: Show the /Volumes folder
   command: chflags nohidden /Volumes
   become: yes
-  when: volumes_hidden.stdout | search("hidden")
+  when: volumes_hidden.stdout is search("hidden")
   notify: restart Finder
 
 - stat:

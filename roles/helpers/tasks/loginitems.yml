@@ -8,5 +8,5 @@
 - name: Add login item {{ item.name }}
   command: "osascript -e 'tell application \"System Events\" to make login item at end with properties {name: \"{{ item.name }}\", path: \"{{ item.path }}\", hidden:false}'"
   when:
-    - login_items | succeeded
-    - not login_items.stdout | search(item.name) 
+    - login_items is succeeded
+    - not login_items.stdout is search(item.name) 

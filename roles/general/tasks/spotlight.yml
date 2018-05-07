@@ -72,7 +72,7 @@
 - name: Make sure indexing is enabled for the main volume
   command: mdutil -i on /
   become: yes
-  when: not mdutiL_root.stdout | search("Indexing enabled.\s*$")
+  when: not mdutiL_root.stdout is search("Indexing enabled.\s*$")
 
 - name: Rebuild the index from scratch
   command: mdutil -E /

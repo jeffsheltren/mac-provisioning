@@ -12,7 +12,7 @@
 - name: Disable hibernation (speeds up entering sleep mode)
   command: pmset -a hibernatemode 0
   become: yes
-  when: not pmset.stdout | search("hibernatemode\s*0")
+  when: not pmset.stdout is search("hibernatemode\s*0")
 
 # Disabled for now since SIP prevents this manipulation
 # - name: "Remove the sleep image file to save disk space"

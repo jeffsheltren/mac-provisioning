@@ -15,7 +15,7 @@
 - name: Disable the sound effects on boot
   command: nvram SystemAudioVolume=" "
   become: yes
-  when: not sound_effects.stdout | match("^SystemAudioVolume\s*$")
+  when: not sound_effects.stdout is match("^SystemAudioVolume\s*$")
 
 - name: "Menu bar: hide the Time Machine, Volume, User and Display icons"
   osx_defaults:
@@ -193,7 +193,7 @@
 - name: Restart automatically if the computer freezes
   command: systemsetup -setrestartfreeze on
   become: yes
-  when: not restartfreeze.stdout | match(".*On$")
+  when: not restartfreeze.stdout is match(".*On$")
 - name: Check never go into computer sleep mode
   command: systemsetup -getcomputersleep
   become: yes
@@ -203,7 +203,7 @@
 - name: Never go into computer sleep mode
   command: systemsetup -setcomputersleep off
   become: yes
-  when: not computersleep.stdout | match(".*Never$")
+  when: not computersleep.stdout is match(".*Never$")
 
 # - name: Disable Notification Center and remove the menu bar icon
 #   command: launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist

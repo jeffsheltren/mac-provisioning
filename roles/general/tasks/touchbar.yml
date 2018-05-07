@@ -16,7 +16,7 @@
       - "com.apple.system.mute"
     state: present
   when: 
-    - controlstrip_present | succeeded
-    - controlstrip_present.stdout | search("Found \d+ keys in domain")
+    - controlstrip_present is succeeded
+    - controlstrip_present.stdout is search("Found \d+ keys in domain")
   notify: restart ControlStrip
   
