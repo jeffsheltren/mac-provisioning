@@ -5,15 +5,6 @@ homebrew_taps:
   - bramstein/webfonttools # https://github.com/bramstein/homebrew-webfonttools
 
 homebrew_installed_packages:
-  - homebrew/php/php71
-  - homebrew/php/php71-xdebug
-  - homebrew/php/php71-mcrypt
-  - composer
-  - drush
-  - php-code-sniffer
-  - drupal-code-sniffer
-  - phpmd
-  - symfony-installer
   - node
   - name: imagemagick
     install_options: --with-gettext

@@ -1,0 +1,18 @@
+---
+###############################################################################
+# PHP CLI tools                                                               #
+###############################################################################
+
+- name: Install PHP CLI tools from homebrew
+  homebrew:
+    name: httpd
+    state: present
+    install_options: with-brewed-openssl,with-mpm-event
+  with_items:
+    - composer
+    - drush
+    - php-code-sniffer
+    - drupal-code-sniffer
+    - phpmd
+  tags:
+    - php
