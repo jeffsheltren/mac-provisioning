@@ -1,6 +1,11 @@
 ---
 - hosts: all
+  gather_facts: false
   tasks:
+    - setup:
+        gather_subset: "!ohai"
+      tags:
+      - always
     - import_role:
         name: general
     - import_role:

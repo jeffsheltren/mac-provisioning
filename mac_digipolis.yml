@@ -41,6 +41,7 @@
         path: /Applications/Sequel Pro.app
         pos: 13
     apache_group: "GENTGRP\\Domain Users"
+  gather_facts: false
   tasks:
     - import_role:
         name: digipolis
