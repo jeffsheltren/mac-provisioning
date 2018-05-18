@@ -14,4 +14,4 @@
 
 - name: Disable local Time Machine backups
   shell: hash tmutil &> /dev/null && sudo tmutil disablelocal
-  when: ansible_distribution_version | version_compare('10.12', '<=')
+  when: ansible_distribution_version is version('10.12', '<=')
