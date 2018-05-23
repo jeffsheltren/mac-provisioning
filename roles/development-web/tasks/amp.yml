@@ -63,7 +63,6 @@
 
 - name: (Auto-)start homebrew MariaDB
   command: brew services start mariadb
-  become: yes
   changed_when: false
   tags:
     - mariadb
