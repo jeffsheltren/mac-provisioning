@@ -31,7 +31,7 @@
     regexp: "{{ item.regexp }}"
     replace: "{{ item.replace }}"
   with_items:
-    - { regexp: '^( *Listen) .*$',                                  replace: '\1 80' }
+    - { regexp: '^( *Listen) .*$',                                  replace: '\1 8080' }
     - { regexp: '^( *)# *(LoadModule rewrite_module +.*)$',         replace: '\1\2' }   # just comment in
     - { regexp: '^( *User) .*$',                                    replace: '\1 {{ ansible_user_id }}' }
     - { regexp: '^( *Group) .*$',                                   replace: '\1 {{ apache_group }}' }
@@ -40,7 +40,6 @@
 
 - name: (Auto-)start homebrew Apache
   command: brew services start httpd
-  become: yes
   changed_when: false
   tags:
     - apache
