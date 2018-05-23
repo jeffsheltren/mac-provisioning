@@ -2,3 +2,4 @@
 # defaults file for development-web
 
 apache_group: staff
+mysql_root_password: ""
