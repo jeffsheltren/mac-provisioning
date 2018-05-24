@@ -33,13 +33,33 @@
   with_items:
     - { regexp: '^( *Listen) .*$',                                  replace: '\1 8080' }
     - { regexp: '^( *)# *(LoadModule rewrite_module +.*)$',         replace: '\1\2' }   # just comment in
+    - { regexp: '^( *)# *(LoadModule expires_module +.*)$',         replace: '\1\2' }   # just comment in
+    - { regexp: '^( *)# *(LoadModule deflate_module +.*)$',         replace: '\1\2' }   # just comment in
+    - { regexp: '^( *)# *(LoadModule headers_module +.*)$',         replace: '\1\2' }   # just comment in
+    - { regexp: '^( *)# *(LoadModule actions_module +.*)$',         replace: '\1\2' }   # just comment in
     - { regexp: '^( *User) .*$',                                    replace: '\1 {{ ansible_user_id }}' }
     - { regexp: '^( *Group) .*$',                                   replace: '\1 {{ apache_group }}' }
+    - { regexp: '^( *)# *(LoadModule ssl_module +.*)$',             replace: '\1\2' }   # just comment in
+    - { regexp: '^( *)# *(Include /usr/local/etc/httpd/extra/httpd-ssl.conf)$',             replace: '\1\2' }   # just comment in
   tags:
     - apache
 
 - name: (Auto-)start homebrew Apache
   command: brew services start httpd
+  changed_when: false
+  tags:
+    - apache
+
+- name: Install firewall rule for httpd port forwarding
+  copy:
+    src: "files/co.echo.httpdfwd.plist"
+    dest: "/Library/LaunchDaemons/co.echo.httpdfwd.plist"
+  tags:
+    - apache
+
+- name: Activate firewall rule for httpd port forwarding
+  command: launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+  become: yes
   changed_when: false
   tags:
     - apache
