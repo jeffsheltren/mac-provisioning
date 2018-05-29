@@ -1,5 +1,4 @@
 ---
-- import_playbook: mac_basics.yml
 - hosts: all
   vars:
     dockitems_remove_all: true
@@ -41,8 +40,27 @@
         path: /Applications/Sequel Pro.app
         pos: 13
     apache_group: "GENTGRP\\Domain Users"
+    ssl_organization: "DigipolisGent"
   gather_facts: false
   tasks:
+    - setup:
+        gather_subset: "!ohai"
+      tags:
+      - always
+    - import_role:
+        name: general
+    - import_role:
+        name: shells
+      tags:
+      - shells
+    - import_role:
+        name: development
+      tags:
+      - development
+    - import_role:
+        name: development-web
+    - import_role:
+        name: development-chef
     - import_role:
         name: digipolis
     - import_role:

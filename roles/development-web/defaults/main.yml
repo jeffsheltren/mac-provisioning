@@ -3,3 +3,4 @@
 
 apache_group: staff
 mysql_root_password: ""
+ssl_organization: "organization"

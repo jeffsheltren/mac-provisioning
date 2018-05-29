@@ -37,10 +37,39 @@
     - { regexp: '^( *)# *(LoadModule deflate_module +.*)$',         replace: '\1\2' }   # just comment in
     - { regexp: '^( *)# *(LoadModule headers_module +.*)$',         replace: '\1\2' }   # just comment in
     - { regexp: '^( *)# *(LoadModule actions_module +.*)$',         replace: '\1\2' }   # just comment in
+    - { regexp: '^( *)# *(LoadModule socache_shmcb_module +.*)$',   replace: '\1\2' }   # just comment in, for SSL
     - { regexp: '^( *User) .*$',                                    replace: '\1 {{ ansible_user_id }}' }
     - { regexp: '^( *Group) .*$',                                   replace: '\1 {{ apache_group }}' }
     - { regexp: '^( *)# *(LoadModule ssl_module +.*)$',             replace: '\1\2' }   # just comment in
     - { regexp: '^( *)# *(Include /usr/local/etc/httpd/extra/httpd-ssl.conf)$',             replace: '\1\2' }   # just comment in
+  tags:
+    - apache
+
+- name: Create apache ssl folder
+  file:
+    path: /Volumes/webdev/.httpd/ssl
+    state: directory
+  tags:
+    - apache
+
+- stat: path=/Volumes/webdev/.httpd/ssl/selfsigned.crt
+  register: httpd_ssl_exists
+  changed_when: false
+  tags:
+    - apache
+
+- name: Create SSL certificate
+  command: |
+    openssl req \
+    -new \
+    -newkey rsa:2048 \
+    -days 3650 \
+    -nodes \
+    -x509 \
+    -subj /C=BE/ST=Oost-Vlaanderen/L=Gent/O={{ ssl_organization }}/OU=$(whoami)/CN=*.test \
+    -keyout /Volumes/webdev/.httpd/ssl/private.key \
+    -out /Volumes/webdev/.httpd/ssl/selfsigned.crt
+  when: httpd_ssl_exists.stat.exists == false
   tags:
     - apache
 
@@ -54,6 +83,7 @@
   copy:
     src: "files/co.echo.httpdfwd.plist"
     dest: "/Library/LaunchDaemons/co.echo.httpdfwd.plist"
+  become: yes
   tags:
     - apache
 
@@ -189,17 +219,13 @@
   tags:
     - apache
 
-- name: Create apache conf.d folder
+- name: Create apache conf.d and vhosts folder
   file:
-    path: /usr/local/etc/httpd/conf.d
+    path: "{{ item }}"
     state: directory
-  tags:
-    - apache
-
-- name: Create apache vhosts folder
-  file:
-    path: /usr/local/etc/httpd/vhosts
-    state: directory
+  with_items:
+    - "/Volumes/webdev/.httpd/conf.d"
+    - "/Volumes/webdev/.httpd/vhosts"
   tags:
     - apache
 
@@ -208,7 +234,7 @@
     dest: /usr/local/etc/httpd/httpd.conf
     line: "{{ item.line }}"
   with_items:
-    - { line: "Include /usr/local/etc/httpd/conf.d" }
-    - { line: "Include /usr/local/etc/httpd/vhosts" }
+    - { line: "Include /Volumes/webdev/.httpd/conf.d" }
+    - { line: "Include /Volumes/webdev/.httpd/vhosts" }
   tags:
     - apache
