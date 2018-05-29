@@ -42,6 +42,7 @@
     - { regexp: '^( *)# *(LoadModule socache_shmcb_module +.*)$',   replace: '\1\2' }   # Enable SSL
     - { regexp: '^( *)# *(Include /usr/local/etc/httpd/extra/httpd-ssl\.conf)$', replace: '\1\2' }   # Enable SSL
     - { regexp: '^( *)# *(Include /usr/local/etc/httpd/extra/httpd-info\.conf)$', replace: '\1\2' }   # Enable server-status check page
+    - { regexp: '^( *)# *(LoadModule info_module +.*)$',            replace: '\1\2' }   # Enable server-status check page
   tags:
     - apache
   notify: restart httpd
