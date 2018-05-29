@@ -1,2 +1,10 @@
 ---
-# handlers file for development-web
+- name: restart httpd
+  command: brew services restart httpd
+  ignore_errors: yes
+  changed_when: false
+
+- name: restart mariadb
+  command: brew services restart mariadb
+  ignore_errors: yes
+  changed_when: false

@@ -31,19 +31,20 @@
     regexp: "{{ item.regexp }}"
     replace: "{{ item.replace }}"
   with_items:
-    - { regexp: '^( *Listen) .*$',                                  replace: '\1 8080' }
-    - { regexp: '^( *)# *(LoadModule rewrite_module +.*)$',         replace: '\1\2' }   # just comment in
-    - { regexp: '^( *)# *(LoadModule expires_module +.*)$',         replace: '\1\2' }   # just comment in
-    - { regexp: '^( *)# *(LoadModule deflate_module +.*)$',         replace: '\1\2' }   # just comment in
-    - { regexp: '^( *)# *(LoadModule headers_module +.*)$',         replace: '\1\2' }   # just comment in
-    - { regexp: '^( *)# *(LoadModule actions_module +.*)$',         replace: '\1\2' }   # just comment in
-    - { regexp: '^( *)# *(LoadModule socache_shmcb_module +.*)$',   replace: '\1\2' }   # just comment in, for SSL
+    - { regexp: '^( *)# *(LoadModule rewrite_module +.*)$',         replace: '\1\2' }   # Enable rewriting
+    - { regexp: '^( *)# *(LoadModule expires_module +.*)$',         replace: '\1\2' }   # Enable caching headers
+    - { regexp: '^( *)# *(LoadModule deflate_module +.*)$',         replace: '\1\2' }   # Enable compressing content before delivery
+    - { regexp: '^( *)# *(LoadModule headers_module +.*)$',         replace: '\1\2' }   # Enable modification of HTTP headers
+    - { regexp: '^( *)# *(LoadModule actions_module +.*)$',         replace: '\1\2' }   # Enable CGI scripts integration
     - { regexp: '^( *User) .*$',                                    replace: '\1 {{ ansible_user_id }}' }
     - { regexp: '^( *Group) .*$',                                   replace: '\1 {{ apache_group }}' }
-    - { regexp: '^( *)# *(LoadModule ssl_module +.*)$',             replace: '\1\2' }   # just comment in
-    - { regexp: '^( *)# *(Include /usr/local/etc/httpd/extra/httpd-ssl\.conf)$',             replace: '\1\2' }   # just comment in
+    - { regexp: '^( *)# *(LoadModule ssl_module +.*)$',             replace: '\1\2' }   # Enable SSL
+    - { regexp: '^( *)# *(LoadModule socache_shmcb_module +.*)$',   replace: '\1\2' }   # Enable SSL
+    - { regexp: '^( *)# *(Include /usr/local/etc/httpd/extra/httpd-ssl\.conf)$', replace: '\1\2' }   # Enable SSL
+    - { regexp: '^( *)# *(Include /usr/local/etc/httpd/extra/httpd-info\.conf)$', replace: '\1\2' }   # Enable server-status check page
   tags:
     - apache
+  notify: restart httpd
 
 - name: configure httpd-ssl.conf (replace)
   replace:
@@ -55,6 +56,18 @@
     - { regexp: '^( *)((?!\# *))(SSLCertificateKeyFile +)(.*)$',    replace: '\1\3"/Volumes/webdev/.httpd/ssl/private.key"' }
   tags:
     - apache
+  notify: restart httpd
+
+- name: configure httpd-info.conf (replace)
+  replace:
+    dest: /usr/local/etc/httpd/extra/httpd-info.conf
+    regexp: "{{ item.regexp }}"
+    replace: "{{ item.replace }}"
+  with_items:
+    - { regexp: '^( *)(# *)?(Require host +).*$',                   replace: '\1\3localhost' }   # Enable rewriting
+  tags:
+    - apache
+  notify: restart httpd
 
 - name: Create apache ssl folder
   file:
@@ -83,6 +96,7 @@
   when: httpd_ssl_exists.stat.exists == false
   tags:
     - apache
+  notify: restart httpd
 
 - name: (Auto-)start homebrew Apache
   command: brew services start httpd
@@ -121,6 +135,7 @@
     - innodb.cnf
   tags:
     - mariadb
+  notify: restart mariadb
 
 - name: (Auto-)start homebrew MariaDB
   command: brew services start mariadb
