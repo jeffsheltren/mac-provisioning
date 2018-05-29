@@ -41,7 +41,18 @@
     - { regexp: '^( *User) .*$',                                    replace: '\1 {{ ansible_user_id }}' }
     - { regexp: '^( *Group) .*$',                                   replace: '\1 {{ apache_group }}' }
     - { regexp: '^( *)# *(LoadModule ssl_module +.*)$',             replace: '\1\2' }   # just comment in
-    - { regexp: '^( *)# *(Include /usr/local/etc/httpd/extra/httpd-ssl.conf)$',             replace: '\1\2' }   # just comment in
+    - { regexp: '^( *)# *(Include /usr/local/etc/httpd/extra/httpd-ssl\.conf)$',             replace: '\1\2' }   # just comment in
+  tags:
+    - apache
+
+- name: configure httpd-ssl.conf (replace)
+  replace:
+    dest: /usr/local/etc/httpd/extra/httpd-ssl.conf
+    regexp: "{{ item.regexp }}"
+    replace: "{{ item.replace }}"
+  with_items:
+    - { regexp: '^( *)((?!\# *))(SSLCertificateFile +)(.*)$',       replace: '\1\3"/Volumes/webdev/.httpd/ssl/selfsigned.crt"' }
+    - { regexp: '^( *)((?!\# *))(SSLCertificateKeyFile +)(.*)$',    replace: '\1\3"/Volumes/webdev/.httpd/ssl/private.key"' }
   tags:
     - apache
 

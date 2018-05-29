@@ -39,7 +39,7 @@
       - name: Sequel Pro
         path: /Applications/Sequel Pro.app
         pos: 13
-    apache_group: "GENTGRP\\Domain Users"
+    apache_group: "\"GENTGRP\\Domain Users\""
     ssl_organization: "DigipolisGent"
   gather_facts: false
   tasks:
