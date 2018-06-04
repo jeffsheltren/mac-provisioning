@@ -193,6 +193,21 @@
   tags:
     - mariadb
 
+- name: Create databases backup folder
+  file:
+    path: "{{ mysql_backup_dir }}"
+    state: directory
+  tags:
+    - mariadb
+
+- name: Add backup script for databases
+  template:
+    src: bin/db_backup.sh.j2
+    dest: /Volumes/webdev/bin/db_backup
+    mode: 0755
+  tags:
+    - mariadb
+
 - name: Install PHP from homebrew
   homebrew:
     name: "{{ item }}"
@@ -286,6 +301,7 @@
   copy:
     src: "files/bin/{{ item }}.sh"
     dest: "/Volumes/webdev/bin/{{ item }}"
+    mode: 0755
   with_items:
     - hammp
     - sphp
@@ -294,10 +310,14 @@
     - php
     - mariadb
 
-- name: Install .bashrc.d file
+- name: Install .bashrc.d files
   copy:
     src: "files/.bashrc.d/{{ item }}.bashrc"
     dest: "~/.bashrc.d/{{ item }}.bashrc"
   with_items:
     - php-xdebug-on
     - hammp_path
+  tags:
+    - apache
+    - php
+    - mariadb

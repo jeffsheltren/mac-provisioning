@@ -3,4 +3,6 @@
 
 apache_group: staff
 mysql_root_password: ""
+mysql_backup_dir: "/Volumes/Webdev/backups"
+mysql_backup_retention: 30 #days
 ssl_organization: "organization"
