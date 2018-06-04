@@ -293,3 +293,11 @@
     - apache
     - php
     - mariadb
+
+- name: Install .bashrc.d file
+  copy:
+    src: "files/.bashrc.d/{{ item }}.bashrc"
+    dest: "~/.bashrc.d/{{ item }}.bashrc"
+  with_items:
+    - php-xdebug-on
+    - hammp_path

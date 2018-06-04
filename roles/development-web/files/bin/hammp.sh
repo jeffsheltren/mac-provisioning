@@ -82,7 +82,7 @@ php_version
 
 # Menu function
 function menu {
-    echo
+  echo
   echo "------------------------------------------------------"
   echo "| `cwhite Manage\ Brew\ AMP\ Stack`                              |"
   echo "|  Apache      :  `cgreen 11` Start    `cred 12` Stop    `cyellow 13` Restart  |"

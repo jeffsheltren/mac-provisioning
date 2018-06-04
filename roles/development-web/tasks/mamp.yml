@@ -72,10 +72,3 @@
     type: bool
     value: true
     state: present
-
-- name: Install .bashrc.d files
-  copy:
-    src: "{{ item }}"
-    dest: ~/.bashrc.d
-  with_fileglob:
-    - .bashrc.d/*.bashrc
