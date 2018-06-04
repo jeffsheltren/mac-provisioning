@@ -231,13 +231,6 @@
   tags:
     - php
 
-# - name: Link PHP 7.1
-#   command: brew link php@7.1 --force
-#   # ignore_errors: yes
-#   # changed_when: false
-#   tags:
-#     - php
-
 - name: Add php files to DirectoryIndex
   replace:
     dest: /usr/local/etc/httpd/httpd.conf
@@ -245,6 +238,7 @@
     replace: '\1 index.php index.html index.htm'
   tags:
     - apache
+    - php
 
 - name: Create apache conf.d and vhosts folder
   file:
@@ -255,6 +249,17 @@
     - "/Volumes/webdev/.httpd/vhosts"
   tags:
     - apache
+
+- name: Install httpd extra config files
+  copy:
+    src: "files/apache.cnf.d/{{ item }}"
+    dest: "/Volumes/webdev/.httpd/conf.d/{{ item }}"
+  with_items:
+    - hostname.conf
+    - php-fpm.conf
+  tags:
+    - apache
+  notify: restart httpd
 
 - name: Add conf.d and vhosts folder to httpd.conf
   lineinfile:
