@@ -120,6 +120,14 @@
   tags:
     - apache
 
+- name: Add vhost script
+  template:
+    src: bin/vhost.sh.j2
+    dest: /Volumes/webdev/bin/vhost
+    mode: 0755
+  tags:
+    - mariadb
+
 - name: Install MariaDB from homebrew
   homebrew:
     name: mariadb
