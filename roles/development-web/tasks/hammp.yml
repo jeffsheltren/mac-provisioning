@@ -3,6 +3,30 @@
 # AMP                                                                         #
 ###############################################################################
 
+- name: Install hammp bin files
+  copy:
+    src: "files/bin/{{ item }}.sh"
+    dest: "/Volumes/webdev/bin/{{ item }}"
+    mode: 0755
+  with_items:
+    - hammp
+    - sphp
+  tags:
+    - apache
+    - php
+    - mariadb
+
+- name: Create hammp bin folder
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "/Volumes/webdev/bin"
+  tags:
+    - apache
+    - php
+    - mariadb
+
 - name: Stop built-in Apache
   command: /usr/sbin/apachectl stop
   become: yes
@@ -69,6 +93,26 @@
   tags:
     - apache
   notify: restart httpd
+
+- name: Create apache conf.d and vhosts folder
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "/Volumes/webdev/.httpd/conf.d"
+    - "/Volumes/webdev/.httpd/vhosts"
+  tags:
+    - apache
+
+- name: Add conf.d and vhosts folder to httpd.conf
+  lineinfile:
+    dest: /usr/local/etc/httpd/httpd.conf
+    line: "{{ item.line }}"
+  with_items:
+    - { line: "Include /Volumes/webdev/.httpd/conf.d" }
+    - { line: "Include /Volumes/webdev/.httpd/vhosts" }
+  tags:
+    - apache
 
 - name: Create apache ssl folder
   file:
@@ -216,41 +260,23 @@
   tags:
     - mariadb
 
-- name: Install PHP from homebrew
+- name: Install pkg-config
   homebrew:
-    name: "{{ item }}"
+    name: pkg-config
     state: present
+  tags:
+    - php
+
+- name: Configure php versions
+  include_role:
+    name: development-web
+    tasks_from: "php-versions"
   with_items:
-    - php@5.6
-    - php@7.1
-    - php@7.2
-  tags:
-    - php
-
-- name: Configure php.ini of php 5.6
-  replace:
-    dest: /usr/local/etc/php/5.6/php.ini
-    regexp: "{{ item.regexp }}"
-    replace: "{{ item.replace }}"
-  with_items: "{{ php_configs }}"
-  tags:
-    - php
-
-- name: Configure php.ini of php71
-  replace:
-    dest: /usr/local/etc/php/7.1/php.ini
-    regexp: "{{ item.regexp }}"
-    replace: "{{ item.replace }}"
-  with_items: "{{ php_configs }}"
-  tags:
-    - php
-
-- name: Configure php.ini of php 7.2
-  replace:
-    dest: /usr/local/etc/php/7.2/php.ini
-    regexp: "{{ item.regexp }}"
-    replace: "{{ item.replace }}"
-  with_items: "{{ php_configs }}"
+    - 5.6
+    - 7.1
+    - 7.2
+  loop_control:
+    loop_var: php_version
   tags:
     - php
 
@@ -263,16 +289,6 @@
     - apache
     - php
 
-- name: Create apache conf.d and vhosts folder
-  file:
-    path: "{{ item }}"
-    state: directory
-  with_items:
-    - "/Volumes/webdev/.httpd/conf.d"
-    - "/Volumes/webdev/.httpd/vhosts"
-  tags:
-    - apache
-
 - name: Install httpd extra config files
   copy:
     src: "files/apache.cnf.d/{{ item }}"
@@ -283,40 +299,6 @@
   tags:
     - apache
   notify: restart httpd
-
-- name: Add conf.d and vhosts folder to httpd.conf
-  lineinfile:
-    dest: /usr/local/etc/httpd/httpd.conf
-    line: "{{ item.line }}"
-  with_items:
-    - { line: "Include /Volumes/webdev/.httpd/conf.d" }
-    - { line: "Include /Volumes/webdev/.httpd/vhosts" }
-  tags:
-    - apache
-
-- name: Create hammp bin folder
-  file:
-    path: "{{ item }}"
-    state: directory
-  with_items:
-    - "/Volumes/webdev/bin"
-  tags:
-    - apache
-    - php
-    - mariadb
-
-- name: Install hammp bin files
-  copy:
-    src: "files/bin/{{ item }}.sh"
-    dest: "/Volumes/webdev/bin/{{ item }}"
-    mode: 0755
-  with_items:
-    - hammp
-    - sphp
-  tags:
-    - apache
-    - php
-    - mariadb
 
 - name: Install .bashrc.d files
   copy:

@@ -1,0 +1,100 @@
+---
+###############################################################################
+# PHP Extensions                                                              #
+###############################################################################
+
+- name: Install PHP from homebrew
+  homebrew:
+    name: php@{{ php_version }}
+    state: present
+  tags:
+    - php
+
+- name: Configure php.ini
+  replace:
+    dest: /usr/local/etc/php/{{ php_version }}/php.ini
+    regexp: "{{ item.regexp }}"
+    replace: "{{ item.replace }}"
+  with_items: "{{ php_configs }}"
+  tags:
+    - php
+
+- name: Configure php-fpm.ini
+  replace:
+    dest: /usr/local/etc/php/{{ php_version }}/php-fpm.conf
+    regexp: "{{ item.regexp }}"
+    replace: "{{ item.replace }}"
+  with_items:
+    - { regexp: '^( *)(listen = 127.0.0.1:).*$',                     replace: '\g<2>10000' }   # Enable opcache
+  when: php_version is version(5.6, '<=')
+  tags:
+    - php
+
+- name: Configure php-fpm.ini
+  replace:
+    dest: /usr/local/etc/php/{{ php_version }}/php-fpm.d/www.conf
+    regexp: "{{ item.regexp }}"
+    replace: "{{ item.replace }}"
+  with_items:
+    - { regexp: '^( *)(listen = 127.0.0.1:).*$',                     replace: '\g<2>10000' }   # Enable opcache
+  when: php_version is version(7.0, '>=')
+  tags:
+    - php
+
+- name: Switch PHP version
+  command: sphp {{ php_version }}
+  changed_when: false
+  tags:
+    - php
+
+- name: Install pecl imagick extension
+  pear:
+    name: pecl/imagick
+    state: present
+  tags:
+    - php
+
+- name: Configure opcache
+  replace:
+    dest: "/usr/local/etc/php/{{ php_version }}/php.ini"
+    regexp: "{{ item.regexp }}"
+    replace: "{{ item.replace }}"
+  with_items:
+    - { regexp: '^( *); *(opcache.enable=).*$',                     replace: '\1\g<2>1' }   # Enable opcache
+    - { regexp: '^( *); *(opcache.memory_consumption=).*$',         replace: '\1\g<2>256' }   # Set opcache memory consumption
+    - php
+
+- name: Set xdebug version to 2.5.5 for php 5.6
+  set_fact:
+     xdebug_version: "-2.5.5"
+  when: php_version is version(5.6, '==')
+  tags:
+    - php
+
+- name: Clear xdebug version for other php versions
+  set_fact:
+     xdebug_version: ""
+  when: php_version is version(7.0, '>=')
+  tags:
+    - php
+
+- name: Install pecl xdebug extension
+  pear:
+    name: "pecl/xdebug{{ xdebug_version }}"
+    state: present
+  tags:
+    - php
+
+- name: Configure xdebug
+  copy:
+    src: "files/php/ext-xdebug.ini"
+    dest: "/usr/local/etc/php/{{ php_version }}/conf.d/ext-xdebug.ini"
+  tags:
+    - php
+
+- name: Restart if php 7.2
+  command: brew services restart php@7.2
+  changed_when: false
+  when: php_version is version(7.2, '==')
+  tags:
+    - php
