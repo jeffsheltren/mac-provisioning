@@ -76,13 +76,14 @@ function main {
 
         <Directory $rootDir>
           Options Includes FollowSymLinks ExecCGI
+          
           AllowOverride All
+          <IfModule authz_host_module>
+            Require all granted
+          </IfModule>
           <IfModule access_compat_module>
             Order allow,deny
             Allow from all
-          </IfModule>
-          <IfModule authz_host_module>
-            Require all granted
           </IfModule>
         </Directory>
 
