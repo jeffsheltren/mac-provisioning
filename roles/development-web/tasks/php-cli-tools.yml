@@ -16,3 +16,10 @@
     - phpmd
   tags:
     - php
+
+- name: Install composer path .bashrc.d files
+  copy:
+    src: "files/.bashrc.d/composer_path.bashrc"
+    dest: "~/.bashrc.d/composer_path.bashrc"
+  tags:
+    - php
