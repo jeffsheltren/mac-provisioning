@@ -3,17 +3,10 @@
 # PHP CLI tools                                                               #
 ###############################################################################
 
-- name: Install PHP CLI tools from homebrew
+- name: Install Composer from homebrew
   homebrew:
-    name: httpd
+    name: composer
     state: present
-    install_options: with-brewed-openssl,with-mpm-event
-  with_items:
-    - composer
-    - drush
-    - php-code-sniffer
-    - drupal-code-sniffer
-    - phpmd
   tags:
     - php
 
@@ -21,5 +14,27 @@
   copy:
     src: "files/.bashrc.d/composer_path.bashrc"
     dest: "~/.bashrc.d/composer_path.bashrc"
+  tags:
+    - php
+
+- name: Install drush through composer
+  composer:
+    command: require
+    global_command: yes
+    arguments: drush/drush ~8.1
+  tags:
+    - php
+
+- name: Create ~/.drush folder
+  file:
+    path: "$HOME/.drush"
+    state: directory
+  tags:
+    - apache
+
+- name: Configure drush
+  copy:
+    src: "files/drushrc.php"
+    dest: "$HOME/.drush/drushrc.php"
   tags:
     - php
