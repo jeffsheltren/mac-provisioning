@@ -16,7 +16,6 @@ homebrew_installed_packages:
 
 homebrew_cask_apps:
   - phpstorm
-  - mamp
   - sequel-pro
   - transmit
   - poedit

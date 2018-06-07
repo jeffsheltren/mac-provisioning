@@ -9,7 +9,6 @@
     PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
 
 # Application settings
-- import_tasks: mamp.yml
 - import_tasks: hammp.yml
 - import_tasks: php-cli-tools.yml
 - import_tasks: transmit.yml
