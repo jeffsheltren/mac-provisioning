@@ -49,6 +49,10 @@ See http://stackoverflow.com/questions/16451359/is-it-possible-to-get-ruby-synta
 
 Add the bundle for Varnish on path /Users/daften/.tmbundles/varnish.tmbundle
 
+#### XDebug browser extensions
+
+See https://confluence.jetbrains.com/display/PhpStorm/Browser+Debugging+Extensions
+
 ## Sublime Text
 
 Install package control (See https://packagecontrol.io/installation)
