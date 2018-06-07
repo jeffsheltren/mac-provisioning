@@ -49,6 +49,14 @@
   tags:
     - apache
 
+- name: Install httpd hostname config file
+  copy:
+    src: "files/apache.cnf.d/hostname.conf"
+    dest: "/Volumes/webdev/.httpd/conf.d/hostname.conf"
+  tags:
+    - apache
+  notify: restart httpd
+
 - name: configure httpd.conf (replace)
   replace:
     dest: /usr/local/etc/httpd/httpd.conf
@@ -289,15 +297,13 @@
     - apache
     - php
 
-- name: Install httpd extra config files
+- name: Install httpd php-fpm config file
   copy:
-    src: "files/apache.cnf.d/{{ item }}"
-    dest: "/Volumes/webdev/.httpd/conf.d/{{ item }}"
-  with_items:
-    - hostname.conf
-    - php-fpm.conf
+    src: "files/apache.cnf.d/php-fpm.conf"
+    dest: "/Volumes/webdev/.httpd/conf.d/php-fpm.conf"
   tags:
     - apache
+    - php
   notify: restart httpd
 
 - name: Install .bashrc.d files
