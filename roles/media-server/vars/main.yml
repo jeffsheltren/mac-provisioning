@@ -2,5 +2,3 @@
 homebrew_cask_apps:
   - plex-media-server
   - wakeonlan
-
-mas_installed_apps: {}
