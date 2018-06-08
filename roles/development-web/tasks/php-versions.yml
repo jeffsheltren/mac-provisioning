@@ -42,7 +42,7 @@
     - php
 
 - name: Switch PHP version
-  command: sphp {{ php_version }}
+  command: /Volumes/webdev/bin/sphp {{ php_version }}
   changed_when: false
   tags:
     - php
