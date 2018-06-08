@@ -14,6 +14,16 @@
     - php
     - mariadb
 
+- name: Create apache conf.d and vhosts folder
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "/Volumes/webdev/.httpd/conf.d"
+    - "/Volumes/webdev/.httpd/vhosts"
+  tags:
+    - apache
+
 - name: Install hammp bin files
   copy:
     src: "files/bin/{{ item }}.sh"
@@ -101,16 +111,6 @@
   tags:
     - apache
   notify: restart httpd
-
-- name: Create apache conf.d and vhosts folder
-  file:
-    path: "{{ item }}"
-    state: directory
-  with_items:
-    - "/Volumes/webdev/.httpd/conf.d"
-    - "/Volumes/webdev/.httpd/vhosts"
-  tags:
-    - apache
 
 - name: Add conf.d and vhosts folder to httpd.conf
   lineinfile:
