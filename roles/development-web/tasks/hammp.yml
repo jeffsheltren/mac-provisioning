@@ -317,3 +317,25 @@
     - apache
     - php
     - mariadb
+
+- name: Install mailhog
+  homebrew:
+    name: mailhog
+    state: present
+  tags:
+    - mailhog
+
+- name: (Auto-)start homebrew mailhog
+  command: brew services start mailhog
+  changed_when: false
+  tags:
+    - mailhog
+
+- name: Set mailhog as relayhost for postfix
+  lineinfile:
+    dest: /etc/postfix/main.cf
+    line: relayhost = 127.0.0.1:1025
+  become: yes
+  tags:
+    - postfix
+    - mailhog

@@ -25,3 +25,4 @@ php_configs:
   - { regexp: '^;?(max_input_time) *=.*$',                replace: '\1 = -1' }
   - { regexp: '^;?(memory_limit) *=.*$',                  replace: '\1 = 512M' }
   - { regexp: '^;?(date.timezone) *=.*$',                 replace: '\1 = Europe/Brussels' }
+  - { regexp: '^;?(sendmail_path) *=.*$',                 replace: '\1 = /usr/sbin/sendmail -S mail:1025' }
