@@ -1,7 +1,7 @@
 ---
 
 homebrew_taps:
-  - caskroom/cask
+  - homebrew/cask
   - bramstein/webfonttools # https://github.com/bramstein/homebrew-webfonttools
 
 homebrew_installed_packages:
