@@ -62,6 +62,7 @@
   with_items:
     - { regexp: '^( *); *(opcache.enable=).*$',                     replace: '\1\g<2>1' }   # Enable opcache
     - { regexp: '^( *); *(opcache.memory_consumption=).*$',         replace: '\1\g<2>256' }   # Set opcache memory consumption
+  tags:
     - php
 
 - name: Set xdebug version to 2.5.5 for php 5.6
