@@ -37,6 +37,18 @@
     - php
     - mariadb
 
+- name: Install .bashrc.d files
+  copy:
+    src: "files/.bashrc.d/{{ item }}.bashrc"
+    dest: "~/.bashrc.d/{{ item }}.bashrc"
+  with_items:
+    - php-xdebug
+    - hammp_path
+  tags:
+    - apache
+    - php
+    - mariadb
+
 - name: Stop built-in Apache
   command: /usr/sbin/apachectl stop
   become: yes
@@ -305,18 +317,6 @@
     - apache
     - php
   notify: restart httpd
-
-- name: Install .bashrc.d files
-  copy:
-    src: "files/.bashrc.d/{{ item }}.bashrc"
-    dest: "~/.bashrc.d/{{ item }}.bashrc"
-  with_items:
-    - php-xdebug-on
-    - hammp_path
-  tags:
-    - apache
-    - php
-    - mariadb
 
 - name: Install mailhog
   homebrew:
