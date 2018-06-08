@@ -3,6 +3,17 @@
 # AMP                                                                         #
 ###############################################################################
 
+- name: Create hammp bin folder
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "/Volumes/webdev/bin"
+  tags:
+    - apache
+    - php
+    - mariadb
+
 - name: Install hammp bin files
   copy:
     src: "files/bin/{{ item }}.sh"
@@ -11,17 +22,6 @@
   with_items:
     - hammp
     - sphp
-  tags:
-    - apache
-    - php
-    - mariadb
-
-- name: Create hammp bin folder
-  file:
-    path: "{{ item }}"
-    state: directory
-  with_items:
-    - "/Volumes/webdev/bin"
   tags:
     - apache
     - php
