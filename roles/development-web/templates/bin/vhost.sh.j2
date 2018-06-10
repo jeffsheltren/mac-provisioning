@@ -126,11 +126,14 @@ function main {
         newhost=${domain//./\\.}
         sed -i "/$newhost/d" /etc/hosts
 
-        ### restart Apache
-        sudo -u $owner brew services restart httpd
+        ### Get Docroot from vhost file
+        rootDir=`awk '/DocumentRoot/{print $NF}' $vhostFile`
 
         ### Delete virtual host rules files
         rm $vhostFile
+
+        ### restart Apache
+        sudo -u $owner brew services restart httpd
       fi
 
       ### check if directory exists or not
