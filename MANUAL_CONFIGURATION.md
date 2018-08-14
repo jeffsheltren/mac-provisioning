@@ -5,6 +5,19 @@
 * Add the accounts for e.g. Mail, Calendar, Google Chrome, Dropbox
 * Add the licenses to the licensed applications
 
+## Git
+
+Add or edit the ~/.bashrc.d/extra.bashrc file and enter something like this:
+```
+# Git credentials
+GIT_AUTHOR_NAME="Dieter Blomme"
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+git config --global user.name "$GIT_AUTHOR_NAME"
+GIT_AUTHOR_EMAIL="dieterblomme@gmail.com"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
+```
+
 ## PHPStorm
 
 After PHPStorm install, you still need to install the plugins and configure the Settings Repository settings.
