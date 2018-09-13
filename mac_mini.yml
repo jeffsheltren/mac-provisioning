@@ -37,6 +37,7 @@
         path: /Applications/Sequel Pro.app
         pos: 12
     ssl_organization: "Picabit"
+    mysql_backup_ignore: "|radius"
   gather_facts: false
   tasks:
     - setup:
