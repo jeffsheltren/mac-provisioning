@@ -3,39 +3,42 @@
   vars:
     dockitems_remove_all: true
     dockitems_enabled:
+      - name: Firefox
+        path: /Applications/Firefox.app
+        pos: 2
       - name: Google Chrome
         path: /Applications/Google Chrome.app
-        pos: 2
+        pos: 3
       - name: Mail
         path: /Applications/Mail.app
-        pos: 3
+        pos: 4
       - name: Calendar
         path: /Applications/Calendar.app
-        pos: 4
+        pos: 5
       - name: Slack
         path: /Applications/Slack.app
-        pos: 5
+        pos: 6
       - name: Reeder
         path: /Applications/Reeder.app
-        pos: 6
+        pos: 7
       - name: MAMP PRO
         path: /Applications/MAMP PRO/MAMP PRO.app
-        pos: 7
+        pos: 8
       - name: PhpStorm
         path: /Applications/PhpStorm.app
-        pos: 8
+        pos: 9
       - name: Sublime Text
         path: /Applications/Sublime Text.app
-        pos: 9
+        pos: 10
       - name: iTerm
         path: /Applications/iTerm.app
-        pos: 10
+        pos: 11
       - name: Tower
         path: /Applications/Tower.app
-        pos: 11
+        pos: 12
       - name: Sequel Pro
         path: /Applications/Sequel Pro.app
-        pos: 12
+        pos: 13
     ssl_organization: "Picabit"
   gather_facts: false
   tasks:
