@@ -14,6 +14,7 @@ homebrew_cask_apps:
   - sublime-text
   - macvim
   - tower2
+  - sublime-merge
   - shuttle
   # - dash
   - virtualbox

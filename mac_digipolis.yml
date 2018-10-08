@@ -36,8 +36,8 @@
       - name: iTerm
         path: /Applications/iTerm.app
         pos: 12
-      - name: Tower
-        path: /Applications/Tower.app
+      - name: Sublime Merge
+        path: /Applications/Sublime Merge.app
         pos: 13
       - name: Sequel Pro
         path: /Applications/Sequel Pro.app
