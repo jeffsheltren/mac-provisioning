@@ -66,6 +66,10 @@ Add the bundle for Varnish on path /Users/daften/.tmbundles/varnish.tmbundle
 
 See https://confluence.jetbrains.com/display/PhpStorm/Browser+Debugging+Extensions
 
+## Visual-studio-code
+
+Install Settings sync (See https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) and configure it.
+
 ## Sublime Text
 
 Install package control (See https://packagecontrol.io/installation)

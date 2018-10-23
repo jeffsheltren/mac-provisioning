@@ -12,6 +12,7 @@ homebrew_installed_packages:
 
 homebrew_cask_apps:
   - sublime-text
+  - visual-studio-code
   - macvim
   - tower2
   - sublime-merge
