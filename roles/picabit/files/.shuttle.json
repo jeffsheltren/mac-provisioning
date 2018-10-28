@@ -10,17 +10,13 @@
   "terminal": "iTerm",
   "iTerm_version": "nightly",
   "default_theme": "Homebrew",
-  "open_in": "tab",  
+  "open_in": "tab",
   "show_ssh_config_hosts": false,
   "ssh_config_ignore_hosts": [  ],
   "ssh_config_ignore_keywords": [  ],
   "hosts": [
     {
       "Picabit": [
-        {
-          "name": "Infra root",
-          "cmd": "ssh root@infra.picabit.be"
-        },
         {
           "Customers": [
             {
@@ -32,14 +28,6 @@
               "cmd": "ssh belacousticsbe@ssh.belacoustics.be"
             }
           ]
-        }
-      ]
-    },
-    {
-      "Chiro": [
-        {
-          "name": "Neostrada chiro profile",
-          "cmd": "ssh -p 4000 chiropicabit@picabithosting.be"
         }
       ]
     },
@@ -58,18 +46,6 @@
           "cmd": "ssh -p 4000 bwow@www54.totaalholding.nl"
         },
         {
-          "name": "Chiro Jomego",
-          "cmd": "ssh -p 4000 chirojomego@www54.totaalholding.nl"
-        },
-        {
-          "name": "Songs for the Deaf",
-          "cmd": "ssh -p 4000 songsforthedeaf@www54.totaalholding.nl"
-        },
-        {
-          "name": "Restaurant Montmartre",
-          "cmd": "ssh -p 4000 restaurantmontma@www54.totaalholding.nl"
-        },
-        {
           "name": "AV Project",
           "cmd": "ssh -p 4000 avproject@www54.totaalholding.nl"
         }
@@ -80,10 +56,6 @@
         {
           "name": "Garage Dewulf",
           "cmd": "ssh sn3601@garagedewulf.be"
-        },
-        {
-          "name": "Wolster",
-          "cmd": "ssh sn3524@wolster.be"
         }
       ]
     },
@@ -136,41 +108,8 @@
         {
           "name": "inceptum.eu daften",
           "cmd": "ssh daften@inceptum.eu"
-        },
-        {
-          "name": "Aegir inceptum daften",
-          "cmd": "ssh daften@aegir.inceptum.eu"
-        },
-        {
-          "name": "Aegir inceptum aegir",
-          "cmd": "ssh aegir@aegir.inceptum.eu"
-        }
-      ]
-    },
-    {
-      "iMinds": [
-        {
-          "Legacy": [
-            {
-              "name": "Aegir1 iMinds daften",
-              "cmd": "ssh daften@aegir1.iminds.be"
-            },
-            {
-              "name": "Aegir1 iMinds aegir",
-              "cmd": "ssh aegir@aegir1.iminds.be"
-            },
-            {
-              "name": "iMinds staging daften",
-              "cmd": "ssh daften@aegir1.inceptum.eu"
-            },
-            {
-              "name": "iMinds staging aegir",
-              "cmd": "ssh aegir@aegir1.inceptum.eu"
-            }
-          ]
         }
       ]
     }
   ]
 }
-        
