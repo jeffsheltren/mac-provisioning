@@ -5,7 +5,9 @@ homebrew_taps:
   - bramstein/webfonttools # https://github.com/bramstein/homebrew-webfonttools
 
 homebrew_installed_packages:
-  - node
+  - node@10
+  - npm
+  - yarn
   - name: imagemagick
     install_options: --with-gettext
   - lynx # Text based web browser

@@ -1,6 +1,9 @@
 ---
 
-- name: Ensure NPM version 5.4.2.
+- name: Ensure node is linked
+  command: 'brew link node@10 --overwrite --force'
+
+- name: Ensure NPM version 5.6.0.
   npm:
     name: npm
     version: '5.6.0'
