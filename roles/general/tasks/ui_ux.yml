@@ -17,7 +17,7 @@
   become: yes
   when: not sound_effects.stdout is match("^SystemAudioVolume\s*$")
 
-- name: "Menu bar: hide the Time Machine, Volume, User and Display icons"
+- name: "Menu bar: hide the Time Machine, User and Display icons"
   osx_defaults:
     domain: com.apple.systemuiserver
     host: currentHost
@@ -25,17 +25,17 @@
     type: array
     value:
       - /System/Library/CoreServices/Menu Extras/TimeMachine.menu
-      - /System/Library/CoreServices/Menu Extras/Volume.menu
       - /System/Library/CoreServices/Menu Extras/User.menu
     state: present
   notify: restart MenuBar
 
-- name: "Menu bar: show bluetooth, airport, battery, clock and text input change"
+- name: "Menu bar: show volume, bluetooth, airport, battery, clock and text input change"
   osx_defaults:
     domain: com.apple.systemuiserver
     key: menuExtras
     type: array
     value:
+      - /System/Library/CoreServices/Menu Extras/Volume.menu
       - /System/Library/CoreServices/Menu Extras/Bluetooth.menu
       - /System/Library/CoreServices/Menu Extras/AirPort.menu
       - /System/Library/CoreServices/Menu Extras/Battery.menu

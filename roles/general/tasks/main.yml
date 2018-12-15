@@ -8,7 +8,6 @@
 - import_tasks: ssd_tweaks.yml
 - import_tasks: trackpad_mouse_btaccessories.yml
 - import_tasks: input.yml
-- import_tasks: soundoutput.yml
 - import_tasks: screen.yml
 - import_tasks: finder.yml
 - import_tasks: dock.yml
