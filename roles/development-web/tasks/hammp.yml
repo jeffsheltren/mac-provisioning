@@ -295,6 +295,7 @@
     - 5.6
     - 7.1
     - 7.2
+    - 7.3
   loop_control:
     loop_var: php_version
   tags:
