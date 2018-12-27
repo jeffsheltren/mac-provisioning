@@ -21,24 +21,21 @@
       - name: Reeder
         path: /Applications/Reeder.app
         pos: 7
-      - name: MAMP PRO
-        path: /Applications/MAMP PRO/MAMP PRO.app
-        pos: 8
       - name: PhpStorm
         path: /Applications/PhpStorm.app
-        pos: 9
+        pos: 8
       - name: Visual Studio Code
         path: /Applications/Visual Studio Code.app
-        pos: 10
+        pos: 9
       - name: iTerm
         path: /Applications/iTerm.app
-        pos: 11
+        pos: 10
       - name: Sublime Merge
         path: /Applications/Sublime Merge.app
-        pos: 12
+        pos: 11
       - name: Sequel Pro
         path: /Applications/Sequel Pro.app
-        pos: 13
+        pos: 12
     ssl_organization: "Picabit"
   gather_facts: false
   tasks:
