@@ -32,14 +32,14 @@
 
 - name: Install sensible-vim
   git:
-    repo: "git@github.com:tpope/vim-sensible.git"
+    repo: "https://github.com/tpope/vim-sensible.git"
     dest: ~/.vim/bundle/vim-sensible
 
 - name: Install fzf.vim
   git:
-    repo: "git@github.com:junegunn/fzf.vim.git"
+    repo: "https://github.com/junegunn/fzf.vim.git"
     dest: ~/.vim/bundle/fzf.vim
 - name: Install fzf
   git:
-    repo: "git@github.com:junegunn/fzf.git"
+    repo: "https://github.com/junegunn/fzf.git"
     dest: ~/.vim/bundle/fzf
