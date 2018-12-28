@@ -9,33 +9,30 @@
       - name: Google Chrome
         path: /Applications/Google Chrome.app
         pos: 3
-      - name: Mail
-        path: /Applications/Mail.app
-        pos: 4
       - name: Calendar
         path: /Applications/Calendar.app
-        pos: 5
+        pos: 4
       - name: Slack
         path: /Applications/Slack.app
-        pos: 6
+        pos: 5
       - name: Reeder
         path: /Applications/Reeder.app
-        pos: 7
+        pos: 6
       - name: PhpStorm
         path: /Applications/PhpStorm.app
-        pos: 8
+        pos: 7
       - name: Visual Studio Code
         path: /Applications/Visual Studio Code.app
-        pos: 9
+        pos: 8
       - name: iTerm
         path: /Applications/iTerm.app
-        pos: 10
+        pos: 9
       - name: Sublime Merge
         path: /Applications/Sublime Merge.app
-        pos: 11
+        pos: 10
       - name: Sequel Pro
         path: /Applications/Sequel Pro.app
-        pos: 12
+        pos: 11
     ssl_organization: "Picabit"
     mysql_backup_ignore: "|radius"
   gather_facts: false
