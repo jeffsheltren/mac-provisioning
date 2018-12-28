@@ -1,6 +1,6 @@
 # Provisioning for mac
 
-This repository contains the playbooks and roles to set up my personal and professional machines. It contains configuration for general apps, development (generic, web and chef), shells, media-server, roles to configure items for Digipolis work and Picabit work.
+This repository contains the playbooks and roles to set up my personal and professional machines. It contains configuration for general apps, development (generic, web and chef), shells, media-server, roles to configure items for Dropsolid work and Picabit work.
 
 ## Installation
 
