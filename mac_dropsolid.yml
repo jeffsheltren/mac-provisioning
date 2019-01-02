@@ -53,8 +53,6 @@
     - import_role:
         name: development-web
     - import_role:
-        name: development-chef
-    - import_role:
         name: dropsolid
     - import_role:
         name: fubarhouse.macdock
