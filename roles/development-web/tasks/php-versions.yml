@@ -74,7 +74,7 @@
 
 - name: Set xdebug version to 2.7.0beta1 for php 7.3
   set_fact:
-     xdebug_version: ""
+     xdebug_version: "-2.7.0beta1"
   when: php_version is version(7.3, '>=')
   tags:
     - php
