@@ -1,0 +1,8 @@
+---
+
+- name: Install Dropsolid .bashrc.d files
+  copy:
+    src: "{{ item }}"
+    dest: ~/.bashrc.d
+  with_fileglob:
+    - bash/.bashrc.d/*.bashrc

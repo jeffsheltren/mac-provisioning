@@ -1,1 +1,3 @@
 ---
+
+- import_tasks: bash.yml
