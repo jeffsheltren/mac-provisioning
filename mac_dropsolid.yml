@@ -3,36 +3,33 @@
   vars:
     dockitems_remove_all: true
     dockitems_enabled:
-      - name: Firefox
-        path: /Applications/Firefox.app
-        pos: 2
       - name: Google Chrome
         path: /Applications/Google Chrome.app
-        pos: 3
+        pos: 2
       - name: Calendar
         path: /Applications/Calendar.app
-        pos: 4
+        pos: 3
       - name: Slack
         path: /Applications/Slack.app
-        pos: 5
+        pos: 4
       - name: Reeder
         path: /Applications/Reeder.app
-        pos: 6
+        pos: 5
       - name: PhpStorm
         path: /Applications/PhpStorm.app
-        pos: 7
+        pos: 6
       - name: Visual Studio Code
         path: /Applications/Visual Studio Code.app
-        pos: 8
+        pos: 7
       - name: iTerm
         path: /Applications/iTerm.app
-        pos: 9
+        pos: 8
       - name: Sublime Merge
         path: /Applications/Sublime Merge.app
-        pos: 10
+        pos: 9
       - name: Sequel Pro
         path: /Applications/Sequel Pro.app
-        pos: 11
+        pos: 10
     ssl_organization: "Dropsolid"
   gather_facts: false
   tasks:
