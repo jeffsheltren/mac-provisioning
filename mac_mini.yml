@@ -41,26 +41,26 @@
         gather_subset: "!ohai"
       tags:
       - always
-    # - import_role:
-    #     name: general
-    # - import_role:
-    #     name: shells
-    #   tags:
-    #   - shells
-    # - import_role:
-    #     name: development
-    #   tags:
-    #   - development
-    # - import_role:
-    #     name: development-web
-    # - import_role:
-    #     name: development-chef
-    # - import_role:
-    #     name: media-server
-    #   tags:
-    #   - media
-    # - import_role:
-    #     name: picabit
+    - import_role:
+        name: general
+    - import_role:
+        name: shells
+      tags:
+      - shells
+    - import_role:
+        name: development
+      tags:
+      - development
+    - import_role:
+        name: development-web
+    - import_role:
+        name: development-chef
+    - import_role:
+        name: media-server
+      tags:
+      - media
+    - import_role:
+        name: picabit
     - import_role:
         name: fubarhouse.macdock
   environment:
